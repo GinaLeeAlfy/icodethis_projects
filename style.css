@@ -39,4 +39,7 @@ h1 {
 .feeling-buttons button {
   height: 7em;
   width: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
