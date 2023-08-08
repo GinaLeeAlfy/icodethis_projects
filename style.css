@@ -1,0 +1,42 @@
+.body {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(228, 250, 255);
+}
+h1 {
+  margin: 0;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 40lvw;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: content-box;
+  width: 100%;
+  height: 400px;
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: -50px -50px rgb(148, 189, 211), 5px 5px 5px gray;
+}
+.textarea-size {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 4em;
+  min-height: 4em;
+  width: 100%;
+  resize: none;
+}
+.feeling-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.feeling-buttons button {
+  height: 7em;
+  width: 5em;
+}
