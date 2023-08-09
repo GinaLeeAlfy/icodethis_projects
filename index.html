@@ -14,20 +14,58 @@
     <div class="center">
       <div class="form">
         <h1>Give feedback</h1>
-        <label for="feelings">
+        <legend for="feelings">
           What do you think of the issue search experience within Jira projects?
-        </label>
-        <div class="feeling-buttons" name="feelings">
-          <button>
-            <i class="fa-regular fa-face-sad-tear fa-2xl"></i>Terrible
-          </button>
-          <button><i class="fa-regular fa-face-frown fa-2xl"></i>Bad</button>
+        </legend>
+        <ul class="feeling-buttons" name="feelings">
+          <li>
+            <input type="radio" name="feelings" id="terrible" />
+            <label for="terrible">
+              <button>
+                <i class="fa-regular fa-face-sad-tear fa-2xl"></i>Terrible
+              </button></label
+            >
+          </li>
+          <li>
+            <input type="radio" name="feelings" id="bad" />
+            <label for="bad">
+              <button>
+                <i class="fa-regular fa-face-frown fa-2xl"></i>Bad
+              </button></label
+            >
+          </li>
+          <li>
+            <input type="radio" name="feelings" id="okay" />
+            <label for="okay">
+              <button>
+                <i class="fa-regular fa-face-meh fa-2xl"></i>Okay
+              </button></label
+            >
+          </li>
+          <li>
+            <input type="radio" name="feelings" id="good" />
+            <label for="good">
+              <button>
+                <i class="fa-regular fa-face-smile fa-2xl"></i>Good
+              </button></label
+            >
+          </li>
+          <li>
+            <input type="radio" name="feelings" id="amazing" />
+            <label for="amazing">
+              <button>
+                <i class="fa-regular fa-face-laugh-beam fa-2xl"></i>Amazing
+              </button></label
+            >
+          </li>
+
+          <!-- <button><i class="fa-regular fa-face-frown fa-2xl"></i>Bad</button>
           <button><i class="fa-regular fa-face-meh fa-2xl"></i>Okay</button>
           <button><i class="fa-regular fa-face-smile fa-2xl"></i>Good</button>
           <button>
             <i class="fa-regular fa-face-laugh-beam fa-2xl"></i>Amazing
-          </button>
-        </div>
+          </button> -->
+        </ul>
         <div>
           <label for="reasons"
             >What are the main reasons for your rating?</label
