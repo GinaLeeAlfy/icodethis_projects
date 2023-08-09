@@ -23,7 +23,7 @@ h1 {
   height: 500px;
   padding: 50px;
   border-radius: 25px;
-  box-shadow: -50px -50px #e0e9fe, 5px 20px 10px #e0e9fe;
+  box-shadow: -50px -50px #e0e9fe, 5px 20px 10px 10px #e0e9fe;
 }
 .textarea-size {
   max-width: 100%;
@@ -32,12 +32,16 @@ h1 {
   min-height: 4em;
   width: 100%;
   resize: none;
+  border-color: #8faff8;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px 1px #8faff8;
 }
 button {
   margin: 5px;
 }
 .feeling-buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 .feeling-buttons button {
@@ -47,14 +51,15 @@ button {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  border: solid #e0e9fe;
   border-radius: 5px;
   border-color: #e0e9fe;
+  box-shadow: 0px 0px 1px 1px #e0e9fe;
   background-color: white;
 }
 
 .feeling-buttons button:hover {
   box-shadow: 2px 2px 5px #ffaecb, -2px -2px 5px #ffaecb;
-  border: none;
 }
 
 .response-buttons {
