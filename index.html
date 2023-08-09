@@ -22,9 +22,11 @@
             <i class="fa-regular fa-face-sad-tear fa-2xl"></i>Terrible
           </button>
           <button><i class="fa-regular fa-face-frown fa-2xl"></i>Bad</button>
-          <button>Okay</button>
-          <button>Good</button>
-          <button>Amazing</button>
+          <button><i class="fa-regular fa-face-meh fa-2xl"></i>Okay</button>
+          <button><i class="fa-regular fa-face-smile fa-2xl"></i>Good</button>
+          <button>
+            <i class="fa-regular fa-face-laugh-beam fa-2xl"></i>Amazing
+          </button>
         </div>
         <div>
           <label for="reasons"
@@ -39,14 +41,22 @@
           ></textarea>
         </div>
         <div>
-          <input type="checkbox" name="privacy" id="privacy" /> I may be
-          contacted about this feedback. <a href="#">Privacy Policy</a>>
-          <input type="checkbox" name="privacy" id="privacy" /> I'd like to help
-          improve by joining the <a href="#">Research Group</a>.>
+          <input type="checkbox" name="privacy" id="privacy" class="check" />
+          <label for="privacy"
+            >I may be contacted about this feedback.
+            <a href="#">Privacy Policy</a></label
+          >
         </div>
         <div>
-          <button>Submit</button>
-          <button>Cancel</button>
+          <input type="checkbox" name="privacy" id="research" class="check" />
+          <label for="research"
+            >I'd like to help improve by joining the
+            <a href="#">Research Group</a>.</label
+          >
+        </div>
+        <div class="response-buttons">
+          <button id="submit">Submit</button>
+          <button id="cancel">Cancel</button>
         </div>
       </div>
     </div>
