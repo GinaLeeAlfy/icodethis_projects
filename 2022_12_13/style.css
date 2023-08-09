@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -26,4 +30,40 @@ body {
   background-color: #2648c1;
   border-radius: 15px;
   box-shadow: 0 0 0 1.5em #dce5f9;
+}
+img {
+  background-color: #7d93dd;
+
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border: 7px solid white;
+}
+fieldset {
+  position: relative;
+  border: none;
+}
+legend {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+input[type="email"] {
+  color: white;
+  background-color: #7d93dd;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #dce5f9;
+}
+
+::placeholder {
+  color: white;
+}
+button {
+  background-color: white;
 }
