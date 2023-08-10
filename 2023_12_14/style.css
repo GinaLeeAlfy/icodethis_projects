@@ -151,20 +151,24 @@ ul button {
   border: none;
 }
 
+.icon {
+  text-align: center;
+  color: gray;
+}
+
 ul button:hover {
   color: #628cff;
   border-left: 5px solid #628cff;
+}
+
+ul button:hover .icon {
+  color: #628cff;
 }
 
 ul button p {
   font-size: 24px;
   margin: 10px;
   text-align: left;
-}
-
-.icon {
-  text-align: center;
-  color: gray;
 }
 
 .cancel {
