@@ -5,10 +5,11 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: #f3f8fe;
+  background-color: white;
   font-size: 18px;
   color: white;
 }
+
 h1 {
   text-align: end;
   margin: 0;
@@ -16,6 +17,7 @@ h1 {
   padding-left: 15px;
   padding-right: 15px;
 }
+
 header p {
   margin: 0;
   padding-left: 15px;
@@ -33,12 +35,13 @@ header p {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   box-sizing: content-box;
   width: 400px;
-  height: 600px;
+  height: 700px;
   padding: 0px;
+  overflow: hidden;
   background-color: white;
   border-radius: 15px;
   box-shadow: 3px 5px 12px -1px #b9c7ef, -3px 5px 12px -1px #b9c7ef;
@@ -47,14 +50,15 @@ header p {
 .form::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: block;
+  top: -20%;
+  left: -6%;
+  right: -5%;
+  bottom: 75%;
   background: transparent;
   border-radius: 50px;
 
-  box-shadow: inset 50px -80px 4px 10px #555;
+  box-shadow: inset 50px -80px 0px 150px #6382d6;
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   -o-transform: rotate(-10deg);
@@ -66,31 +70,91 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: blue;
-  z-index: 10;
   height: 25%;
-  border-radius: 25px;
+  font-size: 16px;
+  z-index: 10;
 }
 
 img {
-  background-color: #7d93dd;
+  background-color: #a2b6f9;
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  border: 7px solid white;
-  z-index: 10;
+  border: 7px solid #748ed6;
+  margin: 5px;
 }
 ul {
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .branch {
   display: flex;
-  justify-content: space-around;
-  height: 3em;
-  width: 10em;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 186px;
   color: white;
-  background-color: #7d93dd;
+  background-color: #628cff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.branch:hover {
+  background-color: #628cff;
+}
+
+.branch p {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+ul button {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  height: 6em;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+}
+
+ul button:hover {
+  color: #628cff;
+  border-left: 5px solid #628cff;
+}
+
+ul button p {
+  font-size: 24px;
+  margin: 10px;
+  text-align: left;
+}
+
+.icon {
+  text-align: center;
+  color: gray;
+}
+
+.cancel {
+  color: gray;
+  margin: 15px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.cancel:hover {
+  color: #628cff;
+  border: 5px solid #628cff;
 }
