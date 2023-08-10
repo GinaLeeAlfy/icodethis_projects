@@ -5,9 +5,32 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: #f7fbff;
   font-size: 18px;
   color: white;
+}
+
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  height: 50%;
+  width: 50%;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+}
+
+.bottom {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 h1 {
@@ -40,6 +63,7 @@ header p {
   box-sizing: content-box;
   width: 400px;
   height: 700px;
+  min-height: 567px;
   padding: 0px;
   overflow: hidden;
   background-color: white;
@@ -105,6 +129,7 @@ ul {
   border-radius: 10px;
   margin: 5px;
   font-size: 18px;
+  z-index: 10;
 }
 
 .branch:hover {
