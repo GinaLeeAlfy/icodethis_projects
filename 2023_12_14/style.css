@@ -72,7 +72,7 @@ header p {
   box-shadow: 3px 5px 12px -1px #b9c7ef, -3px 5px 12px -1px #b9c7ef;
 }
 
-.form::before {
+.decor {
   content: "";
   position: absolute;
   display: block;
@@ -80,10 +80,9 @@ header p {
   left: -6%;
   right: -5%;
   bottom: 75%;
-  background: transparent;
+  background-image: linear-gradient(to right, #6f8ad6, #4d71d7);
   border-radius: 50px;
 
-  box-shadow: inset 50px -80px 0px 150px #6382d6;
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   -o-transform: rotate(-10deg);
@@ -134,7 +133,7 @@ ul {
 }
 
 .branch:hover {
-  background-color: #628cff;
+  background-color: #3956a3;
 }
 
 .branch p {
