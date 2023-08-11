@@ -54,6 +54,7 @@ img {
 .item {
   margin-top: 9px;
   font-weight: bold;
+  font-size: 24px;
 }
 
 .original {
@@ -65,7 +66,7 @@ img {
 .sale {
   margin-top: 9px;
   margin-bottom: 0;
-  font-size: xx-large;
+  font-size: 48px;
   font-weight: bolder;
 }
 
@@ -112,6 +113,7 @@ img {
 .button:hover {
   background-color: #4988eb;
   color: white;
+  border: 2px solid #1c56ed;
 }
 
 button {
