@@ -43,14 +43,13 @@ img {
 .shipping {
   color: white;
   background-color: #1d1b4a;
+  width: fit-content;
   border-radius: 50px;
   border: none;
   height: 2em;
-}
-
-.shipping:hover {
-  background-color: #4988eb;
-  border: 2px solid #1d1b4a;
+  padding: 10px;
+  margin: 0;
+  line-height: 14px;
 }
 
 .item {
