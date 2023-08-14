@@ -1,7 +1,7 @@
 const namesDisplay = document.querySelectorAll(".name");
 const scoresDisplay = document.querySelectorAll(".score");
 const exit = document.querySelector("footer button:first-child");
-const MAXDISPLAY = 5;
+const MAX_DISPLAY = 5;
 
 const data = [
   { name: "Brandon Lawson", score: 248.357, id: 1 },
@@ -12,9 +12,9 @@ const data = [
   { name: "GinaLeeAlfy", score: 500.345, id: 6 },
 ];
 
-const organizedData = data.sort((a, b) => a.score - b.score).reverse();
+const organizedData = data.sort((a, b) => b.score - a.score);
 
-for (let index = 0; index < MAXDISPLAY; index++) {
+for (let index = 0; index < MAX_DISPLAY; index++) {
   namesDisplay[index].innerHTML = organizedData[index].name;
   scoresDisplay[index].innerHTML = organizedData[index].score;
 }
