@@ -8,7 +8,7 @@ body {
   background-color: #eff2fa;
   font-size: 18px;
   color: #1d1b4a;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .center {
@@ -85,8 +85,24 @@ li:nth-child(odd) {
   background-color: #f9f9f9;
 }
 li:first-child {
+  position: relative;
+  top: -2%;
+  left: -1%;
+  width: 102%;
   background-color: #5b5be6;
+  box-shadow: 0 6px 4px -3px rgba(128, 128, 128, 0.724);
   color: white;
+}
+
+li:first-child::after {
+  position: absolute;
+  bottom: -36%;
+  width: 100%;
+  content: " s";
+  background-color: #5b5be6;
+  clip-path: polygon(100% 0%, 99% 50%, 1% 50%, 0% 0%);
+  z-index: -1;
+  text-align: center;
 }
 
 footer {
