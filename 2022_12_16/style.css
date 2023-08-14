@@ -25,7 +25,7 @@ body {
   justify-content: space-between;
   align-items: stretch;
   width: 100%;
-  min-width: 275px;
+  min-width: 323px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 3px 5px 12px -1px #b9c7ef, -3px 5px 12px -1px #b9c7ef;
@@ -67,11 +67,16 @@ ol li {
   align-items: center;
 }
 
-ol li div {
+ol li div:not(.winner) {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding-right: 5%;
+}
+.winner {
+  display: flex;
+  justify-content: space-evenly;
+  width: 25%;
 }
 
 li::before {
