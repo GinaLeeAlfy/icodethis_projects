@@ -67,16 +67,21 @@ ol li {
   align-items: center;
 }
 
+ol li div:not(.winner, ol li:first-child div) {
+  padding-right: 5%;
+}
+
 ol li div:not(.winner) {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-right: 5%;
 }
+
 .winner {
   display: flex;
   justify-content: space-evenly;
-  width: 25%;
+  flex-basis: 25%;
+  padding-right: 1%;
 }
 
 li::before {
