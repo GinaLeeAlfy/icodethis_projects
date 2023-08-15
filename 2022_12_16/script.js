@@ -1,6 +1,7 @@
 const namesDisplay = document.querySelectorAll(".name");
 const scoresDisplay = document.querySelectorAll(".score");
 const exit = document.querySelector("footer button:first-child");
+const share = document.querySelector("header button");
 const MAX_DISPLAY = 5;
 
 const data = [
@@ -19,4 +20,11 @@ for (let index = 0; index < MAX_DISPLAY; index++) {
   scoresDisplay[index].innerHTML = organizedData[index].score;
 }
 
-// exit.addEventListener("click", )
+exit.addEventListener("click", (event) => {
+  close();
+});
+
+share.addEventListener("click", (event) => {
+  const url = window.location.href;
+  //share page
+});
