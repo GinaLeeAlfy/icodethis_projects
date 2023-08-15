@@ -26,5 +26,6 @@ exit.addEventListener("click", (event) => {
 
 share.addEventListener("click", (event) => {
   const url = window.location.href;
-  //share page
+  navigator.clipboard.writeText(url);
+  alert(`Copied the text: + ${url}`);
 });
