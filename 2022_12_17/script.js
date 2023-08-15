@@ -13,10 +13,10 @@ let goal = 2;
 
 log.addEventListener("click", (event) => {
   //adjust water drank
-  drankDisplay.innerHTML = `${drank}L`;
-  let percent = (drank / goal) * 100;
-  toggleMenu(circles[day]);
-  circles[day].setAttribute("style", `width=${percent}%, height=${percent}%`);
+
+  if (circles[day].style.display === "block") {
+    circles[day].setAttribute("style", `width=20px, height=20px`);
+  }
 });
 
 notification.addEventListener("click", (event) => {
@@ -34,3 +34,10 @@ function toggleMenu(element) {
     element.style.display = "block";
   }
 }
+
+function calculate() {
+  drankDisplay.innerHTML = `${drank}L`;
+  let percent = (drank / goal) * 100;
+  toggleMenu(circles[day]);
+}
+calculate();
