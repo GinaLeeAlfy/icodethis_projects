@@ -3,6 +3,7 @@ let day = d.getDay();
 const menu = document.querySelector("header button:first-child");
 const notification = document.querySelector("header button:last-child");
 const log = document.querySelector("section button");
+const days = document.querySelectorAll(".day");
 const circles = document.querySelectorAll(".circle");
 const drankDisplay = document.querySelector(".drank");
 const goalDisplay = document.querySelector(".goal");
@@ -13,10 +14,12 @@ let goal = 2;
 
 log.addEventListener("click", (event) => {
   //adjust water drank
-
-  if (circles[day].style.display === "block") {
-    circles[day].setAttribute("style", `width=20px, height=20px`);
-  }
+  drankDisplay.innerHTML = `${drank}L`;
+  let percent = (drank / goal) * 100;
+  circles[day].setAttribute(
+    "style",
+    `display:block; width:${percent}%; height:${percent}%`
+  );
 });
 
 notification.addEventListener("click", (event) => {
@@ -35,9 +38,8 @@ function toggleMenu(element) {
   }
 }
 
-function calculate() {
-  drankDisplay.innerHTML = `${drank}L`;
-  let percent = (drank / goal) * 100;
-  toggleMenu(circles[day]);
+function currentDay(day) {
+  days[day].classList.add("current-day");
 }
-calculate();
+
+currentDay(day);
