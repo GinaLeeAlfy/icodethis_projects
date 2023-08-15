@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #eff2fa;
+  font-size: 18px;
+  color: #1d1b4a;
+  font-weight: 700;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 40lvw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  min-width: 323px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 3px 5px 12px -1px #b9c7ef, -3px 5px 12px -1px #b9c7ef;
+}
