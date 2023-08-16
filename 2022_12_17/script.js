@@ -2,24 +2,30 @@ let d = new Date();
 let day = d.getDay();
 const menu = document.querySelector("header button:first-child");
 const notification = document.querySelector("header button:last-child");
-const log = document.querySelector("section button");
+const log = document.querySelector("input");
+const removeButton = document.querySelector("section button:first-child");
+const addButton = document.querySelector("section button:last-child");
 const days = document.querySelectorAll(".day");
 const circles = document.querySelectorAll(".circle");
 const drankDisplay = document.querySelector(".drank");
 const goalDisplay = document.querySelector(".goal");
 const myLinks = document.getElementById("myLinks");
 let data = [];
-let drank = 1.3;
+let drank = 0;
 let goal = 2;
+let fullDate = null;
 
-log.addEventListener("click", (event) => {
-  //adjust water drank
-  drankDisplay.innerHTML = `${drank}L`;
-  let percent = (drank / goal) * 100;
-  circles[day].setAttribute(
-    "style",
-    `display:block; width:${percent}%; height:${percent}%`
-  );
+removeButton.addEventListener("click", (event) => {
+  drank = drank - Number(log.value);
+  if (drank < 0) {
+    drank = 0;
+  }
+  displayWater();
+});
+
+addButton.addEventListener("click", (event) => {
+  drank = drank + Number(log.value);
+  displayWater();
 });
 
 notification.addEventListener("click", (event) => {
@@ -43,17 +49,40 @@ function markCurrentDay(day) {
 }
 
 function logDate() {
-  let currentD = d;
-  let currentDay = currentD.getDay();
-  let date = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+  let year = d.getFullYear();
+  let month = `${d.getMonth() + 1}`;
+  let date = `${d.getDate()}`;
 
-  if (!data.includes(date)) {
-    data.push({ date: amountDrank });
+  if (month.length == 1) {
+    month = `0${month}`;
   }
 
-  if (currentDay != day) {
-    //add drank to data
+  if (date.length == 1) {
+    date = `0${date}`;
   }
+
+  //   fullDate = `${year}/${month}/${date}`;
+  //   if (!data.includes(fullDate)) {
+  //     data.push({ fullDate: amountDrank });
+  //   }
 }
+
+function displayWater() {
+  drank = Number(drank.toFixed(2));
+  drankDisplay.innerHTML = `${drank}L`;
+  let percent = (drank / goal) * 100;
+  if (percent >= 100) {
+    percent = 100;
+    days[day].classList.add("finished-goal");
+  } else if (percent < 100) {
+    days[day].classList.remove("finished-goal");
+  }
+  circles[day].setAttribute(
+    "style",
+    `display:block; width:${percent}%; height:${percent}%`
+  );
+}
+
+logDate();
 
 markCurrentDay(day);
