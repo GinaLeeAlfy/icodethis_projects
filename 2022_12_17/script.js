@@ -1,4 +1,4 @@
-const d = new Date();
+let d = new Date();
 let day = d.getDay();
 const menu = document.querySelector("header button:first-child");
 const notification = document.querySelector("header button:last-child");
@@ -8,7 +8,7 @@ const circles = document.querySelectorAll(".circle");
 const drankDisplay = document.querySelector(".drank");
 const goalDisplay = document.querySelector(".goal");
 const myLinks = document.getElementById("myLinks");
-const tues = document.getElementById("tues");
+let data = [];
 let drank = 1.3;
 let goal = 2;
 
@@ -38,8 +38,22 @@ function toggleMenu(element) {
   }
 }
 
-function currentDay(day) {
+function markCurrentDay(day) {
   days[day].classList.add("current-day");
 }
 
-currentDay(day);
+function logDate() {
+  let currentD = d;
+  let currentDay = currentD.getDay();
+  let date = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+
+  if (!data.includes(date)) {
+    data.push({ date: amountDrank });
+  }
+
+  if (currentDay != day) {
+    //add drank to data
+  }
+}
+
+markCurrentDay(day);
