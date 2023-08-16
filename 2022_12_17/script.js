@@ -1,3 +1,4 @@
+const DAYS_OF_WEEK = 7;
 let d = new Date();
 let day = d.getDay();
 const menu = document.querySelector("header button:first-child");
@@ -10,7 +11,50 @@ const circles = document.querySelectorAll(".circle");
 const drankDisplay = document.querySelector(".drank");
 const goalDisplay = document.querySelector(".goal");
 const myLinks = document.getElementById("myLinks");
-let data = [];
+let data = [
+  {
+    fullDate: "2023/08/15",
+    year: "2023",
+    month: "08",
+    date: "15",
+    day: "2",
+    drank: "1",
+  },
+  {
+    fullDate: "2023/08/14",
+    year: "2023",
+    month: "08",
+    date: "14",
+    day: "1",
+    drank: "0.8",
+  },
+  {
+    fullDate: "2023/08/13",
+    year: "2023",
+    month: "08",
+    date: "13",
+    day: "0",
+    drank: "2",
+  },
+  {
+    fullDate: "2023/08/12",
+    year: "2023",
+    month: "08",
+    date: "12",
+    day: "6",
+    drank: "1.5",
+  },
+  {
+    fullDate: "2023/08/11",
+    year: "2023",
+    month: "08",
+    date: "11",
+    day: "5",
+    drank: "0.2",
+  },
+];
+let weekData = [];
+
 let drank = 0;
 let goal = 2;
 let fullDate = null;
@@ -21,11 +65,13 @@ removeButton.addEventListener("click", (event) => {
     drank = 0;
   }
   displayWater();
+  data[0].drank = drank;
 });
 
 addButton.addEventListener("click", (event) => {
   drank = drank + Number(log.value);
   displayWater();
+  data[0].drank = `${drank}`;
 });
 
 notification.addEventListener("click", (event) => {
@@ -52,6 +98,7 @@ function logDate() {
   let year = d.getFullYear();
   let month = `${d.getMonth() + 1}`;
   let date = `${d.getDate()}`;
+  let thisDay = `${d.getDay()}`;
 
   if (month.length == 1) {
     month = `0${month}`;
@@ -61,28 +108,51 @@ function logDate() {
     date = `0${date}`;
   }
 
-  //   fullDate = `${year}/${month}/${date}`;
-  //   if (!data.includes(fullDate)) {
-  //     data.push({ fullDate: amountDrank });
-  //   }
+  fullDate = `${year}/${month}/${date}`;
+  if (!data.some((e) => e.fullDate === fullDate)) {
+    data.unshift({
+      fullDate: `${fullDate}`,
+      year: `${year}`,
+      month: `${month}`,
+      date: `${date}`,
+      day: `${day}`,
+      drank: `${drank}`,
+    });
+  }
+  const sliceOrganizedData = data.slice(0, day + 1);
+  weekData = sliceOrganizedData.sort((a, b) => a.day - b.day);
 }
 
 function displayWater() {
   drank = Number(drank.toFixed(2));
   drankDisplay.innerHTML = `${drank}L`;
-  let percent = (drank / goal) * 100;
+  displayCircle(day, drank);
+}
+
+function displayCircle(theDay, amountDrank) {
+  let percent = (amountDrank / goal) * 100;
   if (percent >= 100) {
     percent = 100;
-    days[day].classList.add("finished-goal");
+    days[theDay].classList.add("finished-goal");
   } else if (percent < 100) {
-    days[day].classList.remove("finished-goal");
+    days[theDay].classList.remove("finished-goal");
   }
-  circles[day].setAttribute(
+  circles[theDay].setAttribute(
     "style",
     `display:block; width:${percent}%; height:${percent}%`
   );
 }
 
+function populateWeek() {
+  for (let index = 0; index < weekData.length; index++) {
+    let theDay = weekData[index].day;
+    let amountDrank = weekData[index].drank;
+    displayCircle(theDay, amountDrank);
+  }
+}
+
 logDate();
 
 markCurrentDay(day);
+
+populateWeek();
