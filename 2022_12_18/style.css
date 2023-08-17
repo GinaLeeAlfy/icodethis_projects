@@ -25,7 +25,7 @@ body {
   align-items: stretch;
   width: 100%;
   min-width: 323px;
-  padding: 2%;
+  padding: 5%;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 3px 5px 12px -1px #444444, -3px 5px 12px -1px #444444;
@@ -36,18 +36,26 @@ body {
 .top-image {
   position: absolute;
   display: block;
-  top: -20%;
-  left: 55%;
-  right: -25%;
+  top: -10%;
+  left: 50%;
+  right: -20%;
   bottom: 50%;
-  background-image: linear-gradient(45deg, #ff7675, #ff9645);
+  background-image: linear-gradient(360deg, #ff7675, #ff9645);
   transform: rotate(30deg);
   /* top-left | top-right | bottom-right | bottom-left */
-  border-radius: 0 0 25% 30%;
+  border-radius: 25% 0 15% 30%;
 }
 
 .bottom-image {
   position: absolute;
+  display: block;
+  background-image: linear-gradient(180deg, #ff7675, #ff9645);
+  top: 90%;
+  left: -30%;
+  right: 50%;
+  bottom: -90%;
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 50% 50% 15% 30%;
 }
 
 header {
@@ -57,14 +65,25 @@ header {
   font-size: 16px;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 5%;
   z-index: 10;
+}
+
+header button {
+  font-size: medium;
+  background-color: transparent;
+  color: white;
+}
+
+header button:hover {
+  background-color: white;
+  color: #ff7675;
 }
 
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 3%;
   z-index: 10;
 }
 
@@ -91,10 +110,36 @@ section {
 .friend-info p {
   margin: 0;
 }
+
+.friend-info p:first-child {
+  font-weight: bold;
+}
+
 img {
   background-color: #7d93dd;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  border: 7px solid white;
+  height: 90px;
+  width: 90px;
+  border: none;
+}
+
+section button {
+  margin: 6px;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 5px 1px gray;
+}
+
+section button:hover {
+  background-color: #bababa;
+  border: 2px solid black;
+  box-shadow: none;
+}
+
+button {
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
 }
