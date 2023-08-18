@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #f7fbff;
+  font-size: 18px;
+  color: white;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: content-box;
+  width: 400px;
+  height: 700px;
+  min-height: 567px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 3px 5px 12px -1px #b9c7ef, -3px 5px 12px -1px #b9c7ef;
+}
