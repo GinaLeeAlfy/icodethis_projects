@@ -1,14 +1,20 @@
-const button = document.querySelector("button");
+const buttons = document.querySelectorAll("button");
 const footer = document.querySelector("footer");
 
-button.addEventListener("click", (event) => {
-  if (!button.classList.contains("following")) {
-    button.classList.add("following");
-    button.innerHTML = "Following";
-    footer.style.visibility = "hidden";
-  } else if (button.classList.contains("following")) {
-    button.classList.remove("following");
-    button.innerHTML = "Follow";
-    footer.style.visibility = "visible";
-  }
+buttons.forEach((element) => {
+  element.addEventListener("click", (event) => {
+    if (!element.classList.contains("following")) {
+      buttons.forEach((element) => {
+        element.classList.add("following");
+        element.innerHTML = "Following";
+      });
+      footer.style.visibility = "hidden";
+    } else if (element.classList.contains("following")) {
+      buttons.forEach((element) => {
+        element.classList.remove("following");
+        element.innerHTML = "Follow";
+      });
+      footer.style.visibility = "visible";
+    }
+  });
 });

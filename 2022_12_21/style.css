@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 468px;
+  min-width: 467px;
   padding: 7%;
   border-radius: 10px;
   background-color: #ffffff;
@@ -50,7 +50,6 @@ button {
   border: none;
   font-size: 16px;
   height: 2.5rem;
-  flex-basis: 25%;
   cursor: pointer;
 }
 
@@ -80,7 +79,7 @@ button:hover {
 
 h1 {
   font-size: x-large;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 
 p {
@@ -96,4 +95,38 @@ footer {
   gap: 1%;
   align-items: center;
   color: rgb(99, 99, 99);
+}
+
+.header {
+  display: initial;
+  flex-basis: 25%;
+}
+
+.footer {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .description,
+  footer {
+    display: none;
+  }
+
+  .form {
+    min-width: 245px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer {
+    display: initial;
+  }
+
+  .header {
+    display: none;
+  }
+
+  button {
+    width: 50%;
+  }
 }
