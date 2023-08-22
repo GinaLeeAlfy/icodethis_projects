@@ -58,20 +58,20 @@ button:hover {
   border: 6px double white;
 }
 
-.clicked {
+.following {
   background-color: white;
   color: gray;
   border: 2px solid gray;
 }
 
-.clicked:hover {
+.following:hover {
   background-color: #10182f;
   color: white;
   border: 6px double white;
 }
 
 .container {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .username {
