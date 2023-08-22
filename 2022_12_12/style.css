@@ -19,7 +19,7 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   box-sizing: content-box;
-  width: 100%;
+  min-width: 460px;
   height: 600px;
   padding: 50px;
   border-radius: 25px;
