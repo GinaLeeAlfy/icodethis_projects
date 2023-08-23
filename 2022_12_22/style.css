@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fd;
+  color: #232e4d;
+  font-size: 18px;
+  background-image: url("https://images.unsplash.com/photo-1513941025786-ed97f054ebba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80");
+  background-color: #eff1f3;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 40lvw;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 467px;
+  padding: 2%;
+  border-radius: 5px 25px 5px 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 20px 1px #cbcbd7;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+header button {
+  background-color: transparent;
+  color: gray;
+  height: 3rem;
+  width: 3rem;
+  padding: 1%;
+  border-radius: 5px 25px 5px 5px;
+  border: none;
+}
+
+header button:hover {
+  background-color: #232e4d;
+  color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+.discount {
+  color: #d99431;
+  margin-bottom: 50px;
+}
+
+.content button {
+  background-color: #232e4d;
+  color: white;
+  height: 4rem;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 3px 10px 1px rgb(174, 174, 174);
+}
+
+.content button:hover {
+  border: 10px double white;
+  border-radius: 10px;
+}
+
+button {
+  cursor: pointer;
+}
