@@ -93,8 +93,7 @@ img {
   width: 60px;
 }
 
-button,
-.button {
+button {
   position: relative;
   background-color: transparent;
   color: #d5deed;
@@ -103,48 +102,30 @@ button,
   text-align: center;
 }
 
-.pages .button {
+.pages button {
   color: #d5deed;
   height: 2rem;
   width: 2rem;
-  border-radius: 50%;
   text-align: center;
-}
-
-button:hover,
-.button:hover {
-  color: black;
-}
-
-.button input,
-.button label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-input[type="radio"] {
-  opacity: 0.011;
-  z-index: 100;
-}
-
-.button input[type="radio"]:checked + label .circle {
-  background-color: transparent;
-  border: 3px solid #d5deed;
 }
 
 .circle {
   background-color: #d5deed;
-  height: 60%;
-  width: 60%;
+  height: 18px;
+  width: 18px;
   border-radius: 50%;
 }
 
-.button:hover .circle {
+button:hover .circle {
   background-color: black;
+}
+
+.active {
+  background-color: white;
+  border: 3px solid #d5deed;
+}
+
+button:hover .active {
+  background-color: white;
+  border: 3px solid black;
 }

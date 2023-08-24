@@ -49,7 +49,8 @@ const data = [
 
 const left = document.querySelector(".scroll button:first-child");
 const right = document.querySelector(".scroll button:last-child");
-const pagesButtons = document.querySelectorAll(".button");
+const pagesButtons = document.querySelectorAll("button");
+const circles = document.querySelectorAll(".circle");
 const icons = document.querySelectorAll(".pages i");
 const contentContainer = document.querySelector(".scroll-content");
 let contents = document.querySelectorAll(".content");
@@ -122,17 +123,21 @@ left.addEventListener("click", (event) => {
   }
 });
 
-// for (let page = 0; page < pagesButtons.length; page++) {
-//   const element = pagesButtons[page];
-//   element.addEventListener("click", (event) => {
-//     for (let index = 0; index < contents.length; index++) {
-//       const element = contents[index];
-//       element.style.order = index;
-//       if (element.style.order <= 1) {
-//         element.classList.remove("hidden");
-//       } else {
-//         element.classList.add("hidden");
-//       }
-//     }
-//   });
-// }
+for (let page = 0; page < pagesButtons.length; page++) {
+  const element = pagesButtons[page];
+  element.classList.remove("active");
+  element.addEventListener("click", (event) => {
+    console.log(element);
+    element.classList.add("active");
+
+    // for (let index = 0; index < contents.length; index++) {
+    //   const element = contents[index];
+    //   element.style.order = index;
+    //   if (element.style.order <= 1) {
+    //     element.classList.remove("hidden");
+    //   } else {
+    //     element.classList.add("hidden");
+    //   }
+    // }
+  });
+}
