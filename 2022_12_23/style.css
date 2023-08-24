@@ -48,6 +48,10 @@ body {
   padding: 5%;
 }
 
+.hidden {
+  display: none;
+}
+
 .profile {
   display: flex;
   align-items: center;

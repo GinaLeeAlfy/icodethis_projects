@@ -49,3 +49,30 @@ const data = [
 
 const left = document.querySelector(".scroll button:first-child");
 const right = document.querySelector(".scroll button:last-child");
+const contentContainer = document.querySelector(".scroll-content");
+let contents = document.querySelectorAll(".content");
+const contentToCopy = document.querySelector(".clone");
+let contentClone = contentToCopy.cloneNode(true);
+
+while (contents.length < data.length) {
+  contentClone = contentToCopy.cloneNode(true);
+  contentClone.classList.add("hidden");
+  contentContainer.appendChild(contentClone);
+  contents = document.querySelectorAll(".content");
+}
+
+if (contents.length == data.length) {
+  const names = document.querySelectorAll(".info p:first-child");
+  const jobs = document.querySelectorAll(".info p:last-child");
+  const imgs = document.querySelectorAll("img");
+  const reviews = document.querySelectorAll(".review");
+  //populate contents
+  for (let index = 0; index < data.length; index++) {
+    const element = data[index];
+    names[index].innerHTML = element.name;
+    jobs[index].innerHTML = element.job;
+    reviews[index].innerHTML = element.review;
+    imgs[index].src = element.img;
+    imgs[index].alt = element.imgAlt;
+  }
+}
