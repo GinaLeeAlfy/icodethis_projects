@@ -32,7 +32,7 @@ body {
 .scroll {
   display: flex;
   justify-content: space-between;
-  min-width: 734px;
+  width: 800px;
 }
 
 .scroll-content {
@@ -42,6 +42,9 @@ body {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #ffffff;
   border-radius: 10px;
   flex-basis: 46%;
@@ -78,6 +81,8 @@ body {
 
 .pages {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin-top: 40px;
 }
 
@@ -88,14 +93,17 @@ img {
   width: 60px;
 }
 
-button {
+button,
+.button {
+  position: relative;
   background-color: transparent;
   color: #d5deed;
   cursor: pointer;
   border: none;
+  text-align: center;
 }
 
-.pages button {
+.pages .button {
   color: #d5deed;
   height: 2rem;
   width: 2rem;
@@ -103,6 +111,40 @@ button {
   text-align: center;
 }
 
-button:hover {
+button:hover,
+.button:hover {
   color: black;
+}
+
+.button input,
+.button label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="radio"] {
+  opacity: 0.011;
+  z-index: 100;
+}
+
+.button input[type="radio"]:checked + label .circle {
+  background-color: transparent;
+  border: 3px solid #d5deed;
+}
+
+.circle {
+  background-color: #d5deed;
+  height: 60%;
+  width: 60%;
+  border-radius: 50%;
+}
+
+.button:hover .circle {
+  background-color: black;
 }

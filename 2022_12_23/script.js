@@ -49,10 +49,16 @@ const data = [
 
 const left = document.querySelector(".scroll button:first-child");
 const right = document.querySelector(".scroll button:last-child");
+const pagesButtons = document.querySelectorAll(".button");
+const icons = document.querySelectorAll(".pages i");
 const contentContainer = document.querySelector(".scroll-content");
 let contents = document.querySelectorAll(".content");
 const contentToCopy = document.querySelector(".clone");
 let contentClone = contentToCopy.cloneNode(true);
+let orders = [];
+const PAGINATION_LIMIT = 2;
+let pageCount;
+let currentPage = 1;
 
 while (contents.length < data.length) {
   contentClone = contentToCopy.cloneNode(true);
@@ -61,7 +67,14 @@ while (contents.length < data.length) {
   contents = document.querySelectorAll(".content");
 }
 
+for (let index = 0; index < data.length; index++) {
+  orders.push(index);
+  contents[index].style.order = orders[index];
+}
+
 if (contents.length == data.length) {
+  pageCount = Math.ceil(contents.length / PAGINATION_LIMIT);
+
   const names = document.querySelectorAll(".info p:first-child");
   const jobs = document.querySelectorAll(".info p:last-child");
   const imgs = document.querySelectorAll("img");
@@ -76,3 +89,50 @@ if (contents.length == data.length) {
     imgs[index].alt = element.imgAlt;
   }
 }
+
+right.addEventListener("click", (event) => {
+  for (let index = 0; index < contents.length; index++) {
+    const element = contents[index];
+    if (element.style.order == orders[orders.length - 1]) {
+      element.style.order = 0;
+    } else {
+      element.style.order++;
+    }
+    if (element.style.order <= 1) {
+      element.classList.remove("hidden");
+    } else {
+      element.classList.add("hidden");
+    }
+  }
+});
+
+left.addEventListener("click", (event) => {
+  for (let index = 0; index < contents.length; index++) {
+    const element = contents[index];
+    if (element.style.order == 0) {
+      element.style.order = orders.length - 1;
+    } else {
+      element.style.order--;
+    }
+    if (element.style.order <= 1) {
+      element.classList.remove("hidden");
+    } else {
+      element.classList.add("hidden");
+    }
+  }
+});
+
+// for (let page = 0; page < pagesButtons.length; page++) {
+//   const element = pagesButtons[page];
+//   element.addEventListener("click", (event) => {
+//     for (let index = 0; index < contents.length; index++) {
+//       const element = contents[index];
+//       element.style.order = index;
+//       if (element.style.order <= 1) {
+//         element.classList.remove("hidden");
+//       } else {
+//         element.classList.add("hidden");
+//       }
+//     }
+//   });
+// }
