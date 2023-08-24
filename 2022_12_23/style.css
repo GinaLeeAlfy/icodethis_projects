@@ -35,10 +35,16 @@ body {
   min-width: 734px;
 }
 
+.scroll-content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-basis: 95%;
+}
+
 .content {
   background-color: #ffffff;
-  flex-basis: 40%;
   border-radius: 10px;
+  flex-basis: 46%;
   padding: 5%;
 }
 
