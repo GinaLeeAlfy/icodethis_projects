@@ -49,13 +49,18 @@ const data = [
 
 const left = document.querySelector(".scroll button:first-child");
 const right = document.querySelector(".scroll button:last-child");
-const pagesButtons = document.querySelectorAll("button");
 const circles = document.querySelectorAll(".circle");
-const icons = document.querySelectorAll(".pages i");
+
+const pagesContainer = document.querySelector(".pages");
+let pagesButtons = document.querySelectorAll(".pages button");
+const pageButtonToCopy = document.querySelector(".button-clone");
+let pageButtonClone = pageButtonToCopy.cloneNode(true);
+
 const contentContainer = document.querySelector(".scroll-content");
 let contents = document.querySelectorAll(".content");
 const contentToCopy = document.querySelector(".clone");
 let contentClone = contentToCopy.cloneNode(true);
+
 let orders = [];
 const PAGINATION_LIMIT = 2;
 let pageCount;
@@ -91,6 +96,13 @@ if (contents.length == data.length) {
   }
 }
 
+while (pagesButtons.length < pageCount) {
+  pageButtonClone = pageButtonToCopy.cloneNode(true);
+  pageButtonClone.childNodes[1].classList.remove("active");
+  pagesContainer.appendChild(pageButtonClone);
+  pagesButtons = document.querySelectorAll(".pages button");
+}
+
 right.addEventListener("click", (event) => {
   for (let index = 0; index < contents.length; index++) {
     const element = contents[index];
@@ -123,21 +135,28 @@ left.addEventListener("click", (event) => {
   }
 });
 
-for (let page = 0; page < pagesButtons.length; page++) {
-  const element = pagesButtons[page];
-  element.classList.remove("active");
-  element.addEventListener("click", (event) => {
-    console.log(element);
-    element.classList.add("active");
+// for (let page = 0; page < pagesButtons.length; page++) {
+//   const element = pagesButtons[page];
+//   element.classList.remove("active");
+//   element.addEventListener("click", (event) => {
+//     circles[].classList.remove("active");
+//     console.log(element);
+//     element.classList.add("active");
 
-    // for (let index = 0; index < contents.length; index++) {
-    //   const element = contents[index];
-    //   element.style.order = index;
-    //   if (element.style.order <= 1) {
-    //     element.classList.remove("hidden");
-    //   } else {
-    //     element.classList.add("hidden");
-    //   }
-    // }
+//     for (let index = 0; index < contents.length; index++) {
+//       const element = contents[index];
+//       element.style.order = index;
+//       if (element.style.order <= 1) {
+//         element.classList.remove("hidden");
+//       } else {
+//         element.classList.add("hidden");
+//       }
+//     }
+//   });
+// }
+
+const handleActivePageNumber = () => {
+  circles.forEach((element) => {
+    element.classList.remove("active");
   });
-}
+};
