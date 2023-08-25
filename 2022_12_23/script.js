@@ -49,7 +49,7 @@ const data = [
 
 const left = document.querySelector(".scroll button:first-child");
 const right = document.querySelector(".scroll button:last-child");
-const circles = document.querySelectorAll(".circle");
+let circles = document.querySelectorAll(".circle");
 
 const pagesContainer = document.querySelector(".pages");
 let pagesButtons = document.querySelectorAll(".pages button");
@@ -65,6 +65,13 @@ let orders = [];
 const PAGINATION_LIMIT = 2;
 let pageCount;
 let currentPage = 1;
+
+const removeActive = () => {
+  circles = document.querySelectorAll(".circle");
+  circles.forEach((element) => {
+    element.classList.remove("active");
+  });
+};
 
 while (contents.length < data.length) {
   contentClone = contentToCopy.cloneNode(true);
@@ -135,28 +142,33 @@ left.addEventListener("click", (event) => {
   }
 });
 
-// for (let page = 0; page < pagesButtons.length; page++) {
-//   const element = pagesButtons[page];
-//   element.classList.remove("active");
-//   element.addEventListener("click", (event) => {
-//     circles[].classList.remove("active");
-//     console.log(element);
-//     element.classList.add("active");
+for (let index = 0; index < pagesButtons.length; index++) {
+  const element = pagesButtons[index];
+  element.classList.add("pagination-number");
+  element.setAttribute("page-index", index + 1);
+  element.setAttribute("aria-label", "Page " + (index + 1));
+}
 
-//     for (let index = 0; index < contents.length; index++) {
-//       const element = contents[index];
-//       element.style.order = index;
-//       if (element.style.order <= 1) {
-//         element.classList.remove("hidden");
-//       } else {
-//         element.classList.add("hidden");
-//       }
-//     }
-//   });
-// }
+const setCurrentPage = (pageNum) => {
+  currentPage = pageNum;
 
-const handleActivePageNumber = () => {
-  circles.forEach((element) => {
-    element.classList.remove("active");
-  });
+  handleActivePageNumber();
+  handlePageButtonStatus();
 };
+for (let page = 0; page < pagesButtons.length; page++) {
+  const element = pagesButtons[page];
+  element.addEventListener("click", (event) => {
+    removeActive();
+    circles[page].classList.add("active");
+
+    for (let index = 0; index < contents.length; index++) {
+      const element = contents[index];
+      element.style.order = index;
+      if (element.style.order <= 1) {
+        element.classList.remove("hidden");
+      } else {
+        element.classList.add("hidden");
+      }
+    }
+  });
+}
