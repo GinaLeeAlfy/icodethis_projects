@@ -102,6 +102,15 @@ button {
   text-align: center;
 }
 
+button:hover {
+  color: black;
+}
+
+button:disabled {
+  color: white;
+  cursor: default;
+}
+
 .pages button {
   color: #d5deed;
   height: 2rem;
