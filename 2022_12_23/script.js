@@ -152,8 +152,7 @@ for (let index = 0; index < pagesButtons.length; index++) {
 const setCurrentPage = (pageNum) => {
   currentPage = pageNum;
 
-  handleActivePageNumber();
-  handlePageButtonStatus();
+  const prevRange = (pageNum - 1) * PAGINATION_LIMIT;
 };
 for (let page = 0; page < pagesButtons.length; page++) {
   const element = pagesButtons[page];
