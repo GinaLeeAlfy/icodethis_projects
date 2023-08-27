@@ -97,6 +97,8 @@ section div p {
 img {
   background-color: transparent;
   margin-bottom: 25px;
+  height: 50%;
+  width: 20%;
 }
 
 label {
