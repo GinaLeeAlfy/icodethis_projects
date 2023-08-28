@@ -70,6 +70,7 @@ input[type="email"] {
   padding: 1.5em;
   border-radius: 50px;
   border: 1px solid #dce5f9;
+  width: 100%;
 }
 
 ::placeholder {
@@ -78,6 +79,7 @@ input[type="email"] {
 
 .email-button {
   position: relative;
+  width: 70%;
   margin: 1em;
 }
 
