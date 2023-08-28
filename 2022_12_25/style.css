@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #14143b;
+  font-size: 18px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 70lvw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 504px;
+  border-radius: 10px;
+  padding: 3%;
+  background-color: #fffbf3;
+  box-shadow: 0 10px 20px 4px rgba(152, 185, 189, 0.437);
+}
+section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.profile {
+  flex-basis: 40%;
+}
+
+h1 {
+  font-size: x-large;
+  margin-bottom: 5px;
+}
+h2 {
+  font-size: medium;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-top: 5px;
+}
+
+.container {
+  width: 100%;
+}
+
+.info {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+i {
+  cursor: pointer;
+}
+
+.percentage-container {
+  background-color: #e1dfe0;
+  width: 100%;
+  border-radius: 25px;
+  height: 1rem;
+}
+
+.percentage {
+  background-color: #f27b36;
+  width: 75%;
+  height: 100%;
+  border-radius: 25px 0 0 25px;
+}
+
+.info p {
+  font-size: 20px;
+}
+
+img {
+  border-radius: 40%;
+  height: 80px;
+  width: 80px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button {
+  height: 4rem;
+  cursor: pointer;
+  background-color: #14143b;
+  color: white;
+  border: none;
+  width: 10rem;
+  border-radius: 10px;
+  font-size: large;
+}
+
+button:hover {
+  border: 10px double white;
+}
+
+.socials button {
+  font-size: medium;
+  background-color: #fffffe;
+  color: #14143b;
+  width: 4rem;
+  border-radius: 15px;
+  margin-right: 10px;
+  border: 2px solid #e1dfe0;
+}
+
+.socials button:hover {
+  background-color: #14143b;
+  border: none;
+  color: white;
+}
