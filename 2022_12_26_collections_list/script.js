@@ -78,3 +78,19 @@ const dataHistory = [
     hover: "photo by Joshua",
   },
 ];
+
+const peopleAnchors = document.querySelectorAll(".people a");
+const peopleImages = document.querySelectorAll(".people img");
+
+const natureAnchors = document.querySelectorAll(".people a");
+const natureImages = document.querySelectorAll(".people img");
+
+const historyAnchors = document.querySelectorAll(".people a");
+const historyImages = document.querySelectorAll(".people img");
+
+for (let index = 0; index < dataPeople.length; index++) {
+  const element = dataPeople[index];
+  peopleAnchors[index].href = element.link;
+  peopleImages[index].src = element.src;
+  peopleImages[index].alt = element.alt;
+}
