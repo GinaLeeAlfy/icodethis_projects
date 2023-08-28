@@ -81,16 +81,36 @@ const dataHistory = [
 
 const peopleAnchors = document.querySelectorAll(".people a");
 const peopleImages = document.querySelectorAll(".people img");
+const peopleText = document.querySelectorAll(".people .text");
 
-const natureAnchors = document.querySelectorAll(".people a");
-const natureImages = document.querySelectorAll(".people img");
+const natureAnchors = document.querySelectorAll(".nature a");
+const natureImages = document.querySelectorAll(".nature img");
+const natureText = document.querySelectorAll(".nature .text");
 
-const historyAnchors = document.querySelectorAll(".people a");
-const historyImages = document.querySelectorAll(".people img");
+const historyAnchors = document.querySelectorAll(".history a");
+const historyImages = document.querySelectorAll(".history img");
+const historyText = document.querySelectorAll(".history .text");
 
 for (let index = 0; index < dataPeople.length; index++) {
   const element = dataPeople[index];
   peopleAnchors[index].href = element.link;
   peopleImages[index].src = element.src;
   peopleImages[index].alt = element.alt;
+  peopleText[index].innerHTML = element.hover;
+}
+
+for (let index = 0; index < dataNature.length; index++) {
+  const element = dataNature[index];
+  natureAnchors[index].href = element.link;
+  natureImages[index].src = element.src;
+  natureImages[index].alt = element.alt;
+  natureText[index].innerHTML = element.hover;
+}
+
+for (let index = 0; index < dataHistory.length; index++) {
+  const element = dataHistory[index];
+  historyAnchors[index].href = element.link;
+  historyImages[index].src = element.src;
+  historyImages[index].alt = element.alt;
+  historyText[index].innerHTML = element.hover;
 }
