@@ -25,7 +25,7 @@ body {
   justify-content: space-between;
   box-sizing: content-box;
   padding: 10%;
-  overflow: hidden;
+  min-width: 543px;
   border-radius: 15px;
   background-color: #ffffff;
   box-shadow: -20px -20px 1px 5px #b9c7ef61;
@@ -46,6 +46,7 @@ h1 {
   height: 4rem;
   border-radius: 50px;
   display: flex;
+  justify-content: space-evenly;
   flex-basis: 50%;
 }
 
