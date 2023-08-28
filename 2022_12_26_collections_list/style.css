@@ -5,8 +5,8 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: #e0e0e0;
-  color: #14143b;
+  background-color: #d9dae3;
+  color: black;
   font-size: 18px;
 }
 
@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 100lvh;
-  width: 70lvw;
+  width: 100lvw;
 }
 
 .form {
@@ -26,6 +26,100 @@ body {
   min-width: 504px;
   border-radius: 10px;
   padding: 3%;
-  background-color: #fffbf3;
+  background-color: #eff1f3;
   box-shadow: 0 10px 20px 4px rgba(152, 185, 189, 0.437);
+}
+
+header {
+  align-self: flex-start;
+  width: 100%;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+article {
+  width: 32%;
+  background-color: #ffffff;
+  padding: 2%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  width: 100%;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.images {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
+  margin-bottom: 2%;
+}
+
+.images a {
+  width: 31%;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info p {
+  margin-bottom: 0;
+}
+.info p:first-child {
+  font-weight: bold;
+}
+
+.container {
+  flex-basis: 25%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.container p {
+  margin-left: 8%;
+}
+
+button {
+  height: 2rem;
+  border-radius: 5px;
+  background-color: #fffffe;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #d9dae3;
+}
+
+.logo {
+  color: rgb(71, 71, 168);
 }
