@@ -43,12 +43,10 @@ body {
 }
 
 .form {
-  position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap;
-  min-width: 230px;
+  min-width: 580px;
   border-radius: 10px;
   background-color: var(--semi-transparent);
   box-shadow: 0 0 0 20px var(--white),
@@ -57,8 +55,11 @@ body {
 
 section {
   min-width: 225px;
-  flex-basis: 28%;
+  flex-basis: 30%;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h3 {
@@ -85,6 +86,7 @@ p {
 }
 
 button {
+  flex-basis: 15%;
   padding: 16px 24px;
   border-radius: 10px;
   border: none;
@@ -107,4 +109,24 @@ button:hover {
 
 .yellow {
   background-color: var(--yellow);
+}
+
+@media (max-width: 800px) {
+  .center {
+    height: 80%;
+    width: 100%;
+  }
+
+  .form {
+    flex-direction: column;
+    box-shadow: none;
+    min-width: 230px;
+  }
+
+  section {
+    width: 80%;
+    border-radius: 15px;
+    border: 5px solid var(--white);
+    margin: 10px;
+  }
 }
