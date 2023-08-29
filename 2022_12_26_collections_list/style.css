@@ -19,6 +19,7 @@ body {
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -207,4 +208,26 @@ a:hover .middle {
   .images .middle {
     top: 30%;
   }
+}
+
+.circle {
+  background-color: #e6e8f0;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  z-index: -1;
+}
+
+.top {
+  position: absolute;
+  top: -150px;
+  left: 60%;
+  right: 0;
+  bottom: 0;
+}
+
+.bottom {
+  position: absolute;
+  right: 60%;
+  bottom: -150px;
 }
