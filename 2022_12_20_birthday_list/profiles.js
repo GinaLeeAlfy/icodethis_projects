@@ -4,10 +4,10 @@ const data = [
   { name: "Larry Little", age: 36 },
   { name: "Sean Walsh", age: 34 },
   { name: "Lola Gardner", age: 29 },
-  { name: "Ipsum Loren", age: 24 },
-  { name: "Ipsum Loren", age: 41 },
-  { name: "Ipsum Loren", age: 28 },
-  { name: "Ipsum Loren", age: 37 },
+  { name: "First Last", age: 24 },
+  { name: "Name End", age: 41 },
+  { name: "Begin Name", age: 28 },
+  { name: "First End", age: 37 },
 ];
 
 const total = document.querySelector("h1");
