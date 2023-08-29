@@ -23,7 +23,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-width: 504px;
   border-radius: 10px;
   padding: 3%;
   background-color: #eff1f3;
@@ -167,4 +166,44 @@ button:hover {
 
 a:hover .middle {
   opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .middle {
+    top: 60%;
+  }
+
+  .images .middle {
+    top: 30%;
+  }
+}
+
+@media (max-width: 800px) {
+  .center {
+    height: 100%;
+  }
+  .form {
+    height: 100%;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  header {
+    flex-basis: 20%;
+  }
+  article {
+    width: 95%;
+  }
+
+  .middle {
+    top: 60%;
+  }
+
+  .images .middle {
+    top: 30%;
+  }
 }
