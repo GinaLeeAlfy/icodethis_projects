@@ -45,6 +45,13 @@ body {
   width: 70lvw;
 }
 
+.flex-even-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .container {
   width: 80%;
   position: relative;
@@ -57,29 +64,39 @@ body {
   width: 100%;
   height: 15px;
   border-radius: 5px;
-  background: #d3d3d3;
+  background: transparent;
   outline: none;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .slider::-webkit-slider-thumb {
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: #04aa6d;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: #04aa6d;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
+}
+
+.slider-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d3d3d3;
+  border-radius: 5px;
 }
 
 .progress {
@@ -88,5 +105,15 @@ body {
   left: 0;
   height: 15px;
   background-color: #04aa6d;
+  border-radius: 5px;
+}
+
+.value-display {
+  position: absolute;
+  top: -600%;
+  left: 42.5%;
+  padding: 16px 20px;
+  background-color: white;
+  box-shadow: 0 3px 3px 2px rgb(205, 205, 205);
   border-radius: 5px;
 }

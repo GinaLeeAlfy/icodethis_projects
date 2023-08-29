@@ -9,16 +9,21 @@
   <body>
     <div class="center">
       <div></div>
-      <p>$0</p>
-      <div class="container">
-        <input
-          type="range"
-          min="0"
-          max="500"
-          class="slider"
-          oninput="adjustProgress()"
-        />
-        <div class="progress"></div>
+      <div class="flex-even-row">
+        <p>$0</p>
+        <div class="container">
+          <input
+            type="range"
+            min="0"
+            max="1500"
+            class="slider"
+            oninput="adjustProgress()"
+          />
+          <div class="slider-container"></div>
+          <div class="progress"></div>
+          <div class="value-display"></div>
+        </div>
+        <p>$1500</p>
       </div>
     </div>
     <script src="script.js"></script>
