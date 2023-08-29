@@ -1,0 +1,110 @@
+:root {
+  --off-gray: #f6f8ff;
+  --purple: #ecbdfe;
+  --blue: #aff2f7;
+  --yellow: #ffddb7;
+  --transparent: transparent;
+  --semi-transparent: #eff1f385;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(
+      circle closest-side at 25% 70%,
+      var(--purple),
+      var(--transparent)
+    ),
+    radial-gradient(
+      circle closest-side at 40% 20%,
+      var(--blue),
+      var(--transparent)
+    ),
+    radial-gradient(
+      circle closest-side at 80% 35%,
+      var(--yellow),
+      var(--off-gray)
+    );
+
+  font-size: 18px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 70lvw;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 230px;
+  border-radius: 10px;
+  background-color: var(--semi-transparent);
+  box-shadow: 0 0 0 20px var(--white),
+    0 10px 20px 4px rgba(152, 185, 189, 0.437);
+}
+
+section {
+  min-width: 225px;
+  flex-basis: 28%;
+  padding: 50px;
+}
+
+h3 {
+  font-size: 26px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: bolder;
+  margin: 0;
+}
+span {
+  font-size: 30px;
+}
+
+p {
+  margin: 28px 0;
+}
+
+.small {
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+button {
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: var(--blue);
+  margin-top: 10px;
+}
+
+button:hover {
+  /* margin: 0 0 0 -10px;
+  padding: 16px 14px;
+  border: 10px solid var(--white); */
+  box-shadow: 0 0 0 10px var(--white);
+}
+
+.purple {
+  background-color: var(--purple);
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
