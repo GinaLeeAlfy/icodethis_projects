@@ -9,11 +9,16 @@
   <body>
     <div class="center">
       <div></div>
-      <div class="slider-container">
-        <div class="slider">
-          <div class="progress"></div>
-          <div class="thumb"></div>
-        </div>
+      <p>$0</p>
+      <div class="container">
+        <input
+          type="range"
+          min="0"
+          max="500"
+          class="slider"
+          oninput="adjustProgress()"
+        />
+        <div class="progress"></div>
       </div>
     </div>
     <script src="script.js"></script>
