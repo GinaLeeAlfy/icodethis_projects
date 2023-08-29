@@ -8,13 +8,3 @@ progress.style.width = `${(slider.value / slider.max) * 100}%`;
 function adjustProgress() {
   progress.style.width = `${(slider.value / slider.max) * 100}%`;
 }
-
-// thumb.addEventListener("mousedown", beginDragging());
-
-// function beginDragging(event) {
-//   event.preventDefault();
-//   isDragging = true;
-//   document.addEventListener("mousedown", dragHandler(event));
-// }
-
-// function dragHandler(event) {}
