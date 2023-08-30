@@ -12,7 +12,7 @@ function adjustProgress() {
 
   progress.style.width = `${percentage}%`;
   valueDisplay.innerHTML = `$${slider.value}`;
-  valueDisplay.style.left = `${percentage - 7}%`;
+  valueDisplay.style.left = `${percentage - 4}%`;
 }
 
 const progressBar = document.querySelector(".progress-bar");
