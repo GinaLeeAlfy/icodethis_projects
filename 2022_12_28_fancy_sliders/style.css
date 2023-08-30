@@ -1,13 +1,3 @@
-:root {
-  --off-gray: #f6f8ff;
-  --purple: #ecbdfe;
-  --blue: #aff2f7;
-  --yellow: #ffddb7;
-  --transparent: transparent;
-  --semi-transparent: #eff1f385;
-  --white: #ffffff;
-}
-
 * {
   box-sizing: border-box;
 }
