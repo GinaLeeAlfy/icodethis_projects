@@ -102,17 +102,20 @@ input[type="radio"] {
 }
 
 a {
-  padding: 16px 0px;
+  padding: 16px 3px;
   text-decoration: none;
   color: var(--white);
+  border-radius: 5px;
 }
 
 a:hover {
   text-decoration: underline;
+  background-color: var(--light-blue);
+  color: black;
 }
 
 a:hover i {
-  color: var(--light-blue);
+  color: black;
 }
 
 .fifty {
