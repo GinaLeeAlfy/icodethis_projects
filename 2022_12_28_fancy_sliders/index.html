@@ -11,7 +11,8 @@
       <div class="canvas-wrapper">
         <canvas id="myChart" style="width: 600px; height: 400px"></canvas>
         <div class="canvas-buttons flex-even-row">
-          <button>left</button> <button>right</button>
+          <button onclick="moveScrollLeft()">left</button>
+          <button onclick="moveScrollRight()">right</button>
         </div>
       </div>
 
@@ -38,7 +39,7 @@
             <div class="percentage-display">0%</div>
           </div>
         </div>
-        <button>Start Progress Bar</button>
+        <button class="start-button">Start Progress Bar</button>
       </div>
       <div class="container">
         <div class="flex-col">

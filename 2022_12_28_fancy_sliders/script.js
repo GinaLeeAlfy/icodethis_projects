@@ -90,7 +90,7 @@ const yValues = [
 ];
 const barColors = "#BACEFB";
 
-new Chart("myChart", {
+const myChart = new Chart("myChart", {
   type: "bar",
   data: {
     labels: xValues,
@@ -129,16 +129,24 @@ new Chart("myChart", {
   },
 });
 
-function moveScroll() {
-  const {
-    ctx,
-    canvas,
-    chartArea: { left, right, top, bottom, width, height },
-  } = myChart;
+function moveScrollRight() {
+  if (myChart.options.scales.x.max == xValues.length) {
+    return;
+  } else {
+    myChart.options.scales.x.min = myChart.options.scales.x.min + 10;
+    myChart.options.scales.x.max = myChart.options.scales.x.max + 10;
+    myChart.update();
+  }
+}
 
-  myChart.options.scales.x.min = myChart.options.scales.x.min + 10;
-  myChart.options.scales.x.max = myChart.options.scales.x.max + 10;
-  myChart.update();
+function moveScrollLeft() {
+  if (myChart.options.scales.x.min <= 0) {
+    return;
+  } else {
+    myChart.options.scales.x.min = myChart.options.scales.x.min - 10;
+    myChart.options.scales.x.max = myChart.options.scales.x.max - 10;
+    myChart.update();
+  }
 }
 
 // slider
@@ -164,7 +172,7 @@ function adjustProgress() {
 
 const progressBar = document.querySelector(".progress-bar");
 const percentageDisplay = document.querySelector(".percentage-display");
-const progressButton = document.querySelector("button");
+const progressButton = document.querySelector(".start-button");
 let isFinished = true;
 
 function startProgress() {
