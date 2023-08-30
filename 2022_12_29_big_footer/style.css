@@ -33,7 +33,7 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   padding: 3%;
-  min-width: 580px;
+  min-width: 750px;
   border-radius: 10px;
   background-color: var(--dark-blue);
   box-shadow: 0 10px 20px -8px var(--dark-blue);
@@ -43,7 +43,6 @@ section {
   display: flex;
   flex-direction: column;
   flex-basis: 30%;
-  max-height: ;
 }
 
 .buttons {
@@ -56,16 +55,18 @@ section {
 .flex-row-even {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .wrap {
   flex-wrap: wrap;
-  columns: 3;
+  align-items: center;
 }
 
 .button {
   position: relative;
-  padding: 18px 48px;
+  height: 3rem;
+  width: 6rem;
   border-radius: 5px;
   background-color: var(--transparent);
   cursor: pointer;
@@ -89,7 +90,8 @@ section {
 }
 
 input[type="radio"] {
-  opacity: 0.011;
+  margin: 0;
+  opacity: 0;
   z-index: 100;
 }
 
@@ -100,11 +102,23 @@ input[type="radio"] {
 }
 
 a {
-  padding: 16px 24px;
+  padding: 16px 0px;
   text-decoration: none;
   color: var(--white);
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a:hover i {
+  color: var(--light-blue);
+}
+
+.fifty {
+  width: 50%;
+}
+
+.fifty a {
+  padding: 16px 10px;
 }
