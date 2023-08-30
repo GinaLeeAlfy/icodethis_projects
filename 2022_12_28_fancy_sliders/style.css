@@ -15,21 +15,7 @@
 body {
   display: flex;
   justify-content: center;
-  background-image: radial-gradient(
-      circle closest-side at 25% 70%,
-      var(--purple),
-      var(--transparent)
-    ),
-    radial-gradient(
-      circle closest-side at 40% 20%,
-      var(--blue),
-      var(--transparent)
-    ),
-    radial-gradient(
-      circle closest-side at 80% 35%,
-      var(--yellow),
-      var(--off-gray)
-    );
+  background-color: #f9fbfc;
 
   font-size: 18px;
 }
@@ -75,7 +61,15 @@ body {
   position: absolute;
   top: 90%;
   bottom: 0;
-  background-color: #04aa6d;
+  background-color: #dee0f6;
+  border-radius: 5px;
+}
+
+.canvas-buttons button {
+  font-size: 18px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }
 
 /* slider */
