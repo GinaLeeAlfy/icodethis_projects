@@ -203,9 +203,9 @@ function startProgress() {
     } else {
       isFinished = false;
       width++;
-      if (100 - width >= 83) {
-        percentageDisplay.style.right = "83%";
-        progressBar.style.width = "17%";
+      if (width <= 7) {
+        percentageDisplay.style.right = "93%";
+        progressBar.style.width = "7%";
       } else {
         percentageDisplay.style.right = 100 - width + "%";
         progressBar.style.width = width + "%";
