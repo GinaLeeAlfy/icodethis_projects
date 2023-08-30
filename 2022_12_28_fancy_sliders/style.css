@@ -175,14 +175,15 @@ button:hover {
 .small {
   border: none;
   height: 1rem;
+  background-image: none;
 }
 
 .forty {
+  background-color: #141d4c;
   width: 40%;
 }
 
 .eighty {
-  background-image: none;
   background-color: #e77278;
   width: 80%;
 }
