@@ -14,3 +14,37 @@ function adjustProgress() {
   valueDisplay.innerHTML = `$${slider.value}`;
   valueDisplay.style.left = `${percentage - 7}%`;
 }
+
+const progressBar = document.querySelector(".progress-bar");
+const percentageDisplay = document.querySelector(".percentage-display");
+const progressButton = document.querySelector("button");
+let isFinished = true;
+
+function startProgress() {
+  let width = 0;
+  let time = setInterval(frame, 100);
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(time);
+      isFinished = true;
+    } else {
+      isFinished = false;
+      width++;
+      if (100 - width >= 83) {
+        percentageDisplay.style.right = "83%";
+        progressBar.style.width = "17%";
+      } else {
+        percentageDisplay.style.right = 100 - width + "%";
+        progressBar.style.width = width + "%";
+      }
+      percentageDisplay.innerHTML = width + "%";
+    }
+  }
+}
+
+progressButton.addEventListener("click", (event) => {
+  if (isFinished) {
+    startProgress();
+  }
+});
