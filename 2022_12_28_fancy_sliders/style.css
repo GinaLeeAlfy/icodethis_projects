@@ -181,6 +181,12 @@ button:hover {
   width: 40%;
 }
 
+.eighty {
+  background-image: none;
+  background-color: #e77278;
+  width: 80%;
+}
+
 .gigs {
   position: absolute;
   top: -200%;
