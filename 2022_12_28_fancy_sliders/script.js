@@ -1,3 +1,148 @@
+//graph
+
+const xValues = [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+];
+const yValues = [
+  6, 8, 6.5, 7, 6.8, 5, 7.5, 5.8, 8, 6.4, 6, 8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8,
+  6, 8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8, 6,
+  8, 6.5, 7, 6.8, 5, 7.5, 5.8, 8, 6.4, 6, 8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8, 6,
+  8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8, 6, 8, 6.5, 7, 6.8,
+];
+const barColors = "#BACEFB";
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [
+      {
+        label: "",
+        backgroundColor: barColors,
+        data: yValues,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+        display: false,
+      },
+      x: {
+        min: 0,
+        max: 10,
+        grid: {
+          display: false,
+        },
+        border: {
+          color: "#DEE0F6",
+          width: 10,
+          z: 2,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  },
+});
+
+function moveScroll() {
+  const {
+    ctx,
+    canvas,
+    chartArea: { left, right, top, bottom, width, height },
+  } = myChart;
+
+  myChart.options.scales.x.min = myChart.options.scales.x.min + 10;
+  myChart.options.scales.x.max = myChart.options.scales.x.max + 10;
+  myChart.update();
+}
+
+// slider
+
 const slider = document.querySelector(".slider");
 const progress = document.querySelector(".progress");
 const valueDisplay = document.querySelector(".value-display");
@@ -14,6 +159,8 @@ function adjustProgress() {
   valueDisplay.innerHTML = `$${slider.value}`;
   valueDisplay.style.left = `${percentage - 4}%`;
 }
+
+// progress bar
 
 const progressBar = document.querySelector(".progress-bar");
 const percentageDisplay = document.querySelector(".percentage-display");

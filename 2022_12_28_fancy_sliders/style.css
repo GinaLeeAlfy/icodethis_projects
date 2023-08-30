@@ -64,6 +64,22 @@ body {
   align-items: center;
 }
 
+/* graph */
+
+.canvas-wrapper {
+  position: relative;
+  width: 600px;
+}
+
+.canvas-buttons {
+  position: absolute;
+  top: 90%;
+  bottom: 0;
+  background-color: #04aa6d;
+}
+
+/* slider */
+
 .slider {
   appearance: none;
   width: 100%;
@@ -124,6 +140,8 @@ body {
   border-radius: 5px;
 }
 
+/* progress bar and some of the smaller ones */
+
 .border {
   position: relative;
   width: 100%;
@@ -171,6 +189,8 @@ button:hover {
   background-color: #2c398e;
   font-weight: bolder;
 }
+
+/* smaller progress bar */
 
 .small {
   border: none;
