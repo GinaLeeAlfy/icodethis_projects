@@ -1,0 +1,110 @@
+:root {
+  --blue: #3a4e7b;
+  --dark-blue: #1e3061;
+  --light-blue: #58c3d8;
+  --semi-transparent: #eff1f385;
+  --white: #ffffff;
+  --transparent: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--blue);
+  font-size: 18px;
+  color: var(--white);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 100lvw;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3%;
+  min-width: 580px;
+  border-radius: 10px;
+  background-color: var(--dark-blue);
+  box-shadow: 0 10px 20px -8px var(--dark-blue);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  max-height: ;
+}
+
+.buttons {
+  flex-basis: 70%;
+}
+
+.button {
+  margin: 3px;
+}
+.flex-row-even {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  columns: 3;
+}
+
+.button {
+  position: relative;
+  padding: 18px 48px;
+  border-radius: 5px;
+  background-color: var(--transparent);
+  cursor: pointer;
+}
+
+.button input,
+.button label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--blue);
+}
+
+input[type="radio"] {
+  opacity: 0.011;
+  z-index: 100;
+}
+
+.button input[type="radio"]:checked + label {
+  background-color: var(--light-blue);
+  color: black;
+  border-radius: 5px;
+}
+
+a {
+  padding: 16px 24px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+a:hover {
+  text-decoration: underline;
+}
