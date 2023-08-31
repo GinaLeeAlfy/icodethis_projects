@@ -1,8 +1,5 @@
 :root {
   --light-gray: #f2f5ff;
-  --dark-blue: #1e3061;
-  --light-blue: #58c3d8;
-  --semi-transparent: #eff1f385;
   --white: #ffffff;
   --transparent: transparent;
   --gray: #9ea0a6;
@@ -47,10 +44,6 @@ header {
   align-items: center;
   margin: 5%;
 }
-/* 
-header a {
-  text-align: left;
-} */
 
 section {
   width: 100%;
