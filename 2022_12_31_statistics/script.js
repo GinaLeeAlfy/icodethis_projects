@@ -4,18 +4,18 @@ const DATA_COUNT = 39;
 const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 996 };
 
 const xValues = [
-  29, 31, 46, 49, 82, 142, 184, 216, 279, 346, 384, 418, 440, 457, 466, 468,
-  475, 502, 523, 528, 530, 547, 565, 572, 572, 579, 579, 603, 648, 696, 724,
-  757, 775, 803, 834, 884, 899, 909, 995,
+  15, 31, 46, 50, 82, 142, 184, 216, 279, 346, 384, 418, 440, 470, 490, 501,
+  509, 514, 523, 540, 556, 572, 586, 597, 608, 620, 643, 661, 678, 696, 724,
+  757, 775, 803, 834, 884, 899, 954, 995,
 ];
 
 const yValues = [
-  78, 61, 213, 138, 134, 220, 201, 195, 17, 74, 145, 85, 39, 36, 60, 66, 131,
-  35, 161, 0, 9, 191, 77, 216, 67, 75, 118, 66, 134, 150, 9, 31, 163, 135, 188,
-  16, 133, 36, 105,
+  0, 225, 100, 158, 67, 79, 20, 154, 42, 83, 45, 201, 130, 156, 59, 212, 34, 86,
+  9, 5, 66, 105, 76, 199, 40, 206, 0, 78, 37, 150, 77, 154, 58, 63, 0, 82, 0,
+  34, 0,
 ];
 
-const barColors = "#BACEFB";
+const barColors = "#7E83F1";
 
 const myChart = new Chart("myChart", {
   type: "scatter",
@@ -28,6 +28,7 @@ const myChart = new Chart("myChart", {
         borderColor: barColors,
         data: yValues,
         showLine: true,
+        pointStyle: false,
       },
     ],
   },
@@ -69,19 +70,22 @@ const myChart = new Chart("myChart", {
       },
 
       tooltip: {
+        enabled: true,
+        displayColors: false,
+        usePointStyle: true,
         callbacks: {
           label: function (context) {
-            let label = context.dataset.label || "";
-
-            if (label) {
-              label += ": ";
-            }
-            if (context.parsed.y !== null) {
-              label += context.parsed.y + "%";
-            }
+            label = context.parsed.y + "%";
             return label;
           },
+          title: function () {
+            return "Fri, April 10, 7:51 PM";
+          },
         },
+      },
+
+      interaction: {
+        mode: "y",
       },
     },
   },
