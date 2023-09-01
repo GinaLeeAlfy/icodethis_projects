@@ -29,7 +29,7 @@ const myChart = new Chart("myChart", {
         data: yValues,
         showLine: true,
         pointStyle: "circle",
-        hitRadius: 2,
+        hitRadius: 3,
         pointRadius: 1,
         pointHoverRadius: 5,
         pointHoverBorderWidth: 4,

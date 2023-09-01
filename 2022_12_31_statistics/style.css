@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -13,8 +14,29 @@ body {
 .center {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 100lvh;
-  width: 70lvw;
+  width: 60lvw;
+}
+
+header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 20px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 24px;
+  border-radius: 15px;
+}
+
+section:hover {
+  background-color: #7e83f1;
+  color: white;
 }
