@@ -5,28 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Field</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="content">
+    <div class="center">
       <form action="">
         <h1>Enter your password</h1>
         <div class="profile">
-          <img src="" alt="" />
+          <img
+            src="https://images.unsplash.com/photo-1589483536280-82022bdec286?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
+            alt="woman in coat, hat, and sunglasses wearing all black"
+          />
           <div class="info">
             <p>Business Account</p>
             <h3>Sarah Bills</h3>
           </div>
         </div>
-        <input
-          type="password"
-          minlength="8"
-          autocomplete="current-password"
-          required
-          id="pass"
-          name="password"
-        />
-        <label for="pass"></label>
+        <label for="pass">Password (8 character minimum):</label>
+        <div class="flex">
+          <div class="password-outline">
+            <input
+              type="password"
+              minlength="8"
+              autocomplete="current-password"
+              required
+              id="pass"
+              name="password"
+            />
+            <span><i class="fa-solid fa-lock fa-lg"></i></span>
+          </div>
+          <button type="button" onclick="displayText()">
+            <i class="fa-regular fa-eye-slash fa-xl"></i>
+          </button>
+        </div>
+        <div class="buttons">
+          <div>
+            <button type="button" class="stay" id="save">
+              <i class="fa-solid fa-circle fa-xl"></i>
+            </button>
+            <label for="save">Stay signed in</label>
+          </div>
+          <input type="submit" value="Continue" />
+        </div>
+
+        <a href="">Reset password</a>
       </form>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
