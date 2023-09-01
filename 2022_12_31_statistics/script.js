@@ -30,6 +30,7 @@ const myChart = new Chart("myChart", {
         showLine: true,
         pointStyle: "circle",
         hitRadius: 2,
+        pointRadius: 1,
         pointHoverRadius: 5,
         pointHoverBorderWidth: 4,
         pointHoverBackgroundColor: "white",
@@ -92,21 +93,6 @@ const myChart = new Chart("myChart", {
           },
         },
       },
-      //   afterDraw: chart => {
-      //     if (chart.tooltip?._active?.length) {
-      //         let x = chart.tooltip._active[0].element.x;
-      //         let yAxis = chart.scales.y;
-      //         let ctx = chart.ctx;
-      //         ctx.save();
-      //         ctx.beginPath();
-      //         ctx.moveTo(x, yAxis.top);
-      //         ctx.lineTo(x, yAxis.bottom);
-      //         ctx.lineWidth = 1;
-      //         ctx.strokeStyle = '#ff0000';
-      //         ctx.stroke();
-      //         ctx.restore();
-      //     }
-      // }
     },
   },
 });
