@@ -5,17 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Article Page</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
       <header class="header">
         <div>
-          <button>Product</button>
-          <a href="">Pricing</a>
-          <button>Use Cases</button>
-          <a href="">Blog</a>
+          <button>Product <i class="fa-solid fa-angle-down fa-lg"></i></button>
+          <div class="links">
+            <div class="column">
+              <a href="#editData">Edit Data</a>
+              <a href="#streaks">Streaks</a>
+              <a href="#friends">Friends</a>
+            </div>
+          </div>
+          <button>Pricing</button>
+          <button>
+            Use Cases <i class="fa-solid fa-angle-down fa-lg"></i>
+          </button>
+          <div class="links">
+            <div class="column">
+              <a href="#editData">Edit Data</a>
+              <a href="#streaks">Streaks</a>
+              <a href="#friends">Friends</a>
+            </div>
+          </div>
+          <button>Blog</button>
         </div>
-        <div>
+        <div class="rounded">
           <button>Log In</button>
           <button>Get started</button>
         </div>
@@ -29,7 +49,9 @@
       </div>
       <div class="search">
         <input type="text" name="search" id="bar" />
-        <label for="bar">icon</label>
+        <label for="bar"
+          ><i class="fa-solid fa-magnifying-glass fa-lg"></i
+        ></label>
       </div>
       <section class="main">
         <h1>Productivity</h1>
