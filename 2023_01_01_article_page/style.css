@@ -3,6 +3,7 @@
   --white: #ffffff;
   --transparent: transparent;
   --dark-blue: #0f172f;
+  --blue: #213369;
 }
 
 * {
@@ -162,14 +163,27 @@ button:hover {
 
 .column {
   position: absolute;
+  top: 100;
+  left: 0;
+  right: 0;
+  bottom: -100;
 }
 
 a {
-  color: white;
-  background-color: #009ce6;
+  color: var(--dark-blue);
+  background-color: var(--light-gray);
   border: 1px solid white;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
+  border-radius: 10px;
   display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.menu {
+  position: relative;
 }
