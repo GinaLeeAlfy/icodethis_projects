@@ -114,11 +114,22 @@ article p {
 @media (max-width: 800px) {
   .blog {
     grid-template-columns: 1fr;
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 30% 60%;
   }
 
   img {
     width: 100%;
+  }
+  article {
+    height: 20rem;
+  }
+
+  article p {
+    padding-bottom: 18rem;
+  }
+
+  section:last-of-type:after {
+    height: 15%;
   }
 }
 
