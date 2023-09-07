@@ -52,16 +52,15 @@ img {
 
 .icon {
   position: absolute;
+  top: 50px;
 }
 
 .back {
-  top: 5%;
-  left: 10%;
+  left: 50px;
   color: var(--white);
 }
 .save {
-  top: 5%;
-  right: 10%;
+  right: 50px;
   color: #c0d6df;
 }
 
