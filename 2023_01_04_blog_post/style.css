@@ -75,22 +75,18 @@ section p {
 }
 
 article {
-  position: relative;
-}
-
-article p {
-  height: 11em;
   overflow-y: scroll;
   scrollbar-width: none;
-  color: rgb(10, 87, 77);
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
 }
 
-article p::-webkit-scrollbar {
+article::-webkit-scrollbar {
   display: none;
 }
 
-article p::after {
+section:last-of-type:after {
   content: "";
   position: absolute;
   left: 0px;
@@ -103,4 +99,14 @@ article p::after {
     rgba(255, 255, 255, 1) 100%
   );
   pointer-events: none;
+}
+article p {
+  color: rgb(10, 87, 77);
+  margin: 0;
+}
+
+.space {
+  background-color: white;
+  color: white;
+  visibility: hidden;
 }
