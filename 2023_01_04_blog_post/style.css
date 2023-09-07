@@ -39,7 +39,7 @@ body {
 section {
   position: relative;
   overflow: hidden;
-  padding: 15%;
+  padding: 50px;
 }
 
 img {
@@ -76,24 +76,22 @@ section p {
 }
 
 article {
-  height: 12rem;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  border: 1px solid rebeccapurple;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 article p {
+  height: 11em;
+  overflow-y: scroll;
+  scrollbar-width: none;
   color: rgb(10, 87, 77);
-  margin: 0;
+  margin-bottom: 0;
 }
 
-article::-webkit-scrollbar {
+article p::-webkit-scrollbar {
   display: none;
 }
 
-article::after {
+article p::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -106,10 +104,4 @@ article::after {
     rgba(255, 255, 255, 1) 100%
   );
   pointer-events: none;
-}
-
-.space {
-  content: "";
-  height: 25%;
-  width: 100%;
 }
