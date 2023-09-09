@@ -1,0 +1,122 @@
+:root {
+  --light-gray: #eff1f7;
+  --blue: #0091eb;
+  --gray: #56616a;
+  --white: #ffffff;
+  --transparent-gray: #82909ba5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(
+      circle closest-side at 70% 95%,
+      #96dfd3,
+      transparent
+    ),
+    radial-gradient(circle closest-side at 65% 90%, #51a6d7b5, transparent),
+    radial-gradient(circle closest-side at 75% 92%, #0091eb, transparent),
+    linear-gradient(45deg, var(--white) 50%, var(--blue) 50% 100%);
+  font-size: 22px;
+  color: var(--gray);
+}
+
+/* .decor { */
+/* position: absolute;
+  top: 90%;
+  left: 60%;
+  right: 30%;
+  bottom: 0;
+  width: 200px;
+  height: 200px; */
+/* background: radial-gradient(circle closest-side 50% 80%, #96dfd3, transparent),
+    radial-gradient(circle closest-side 45% 85%, #51a6d7b5 transparent);
+} */
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 40lvw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--light-gray);
+  box-shadow: 0 50px 100px 10px var(--transparent-gray);
+}
+
+form > * {
+  padding: 20px 50px;
+}
+
+h1 {
+  color: var(--blue);
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+textarea {
+  font-size: 24px;
+  width: 100%;
+  resize: none;
+  border: none;
+}
+
+input[type="submit"] {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  width: 90%;
+  align-self: center;
+  margin-bottom: 60px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  outline: 3px solid var(--gray);
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+input[type="radio"] {
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .center {
+    width: 100%;
+    align-items: center;
+  }
+
+  form {
+    height: 95%;
+    width: 95%;
+  }
+
+  form > * {
+    padding: 2% 5%;
+  }
+}

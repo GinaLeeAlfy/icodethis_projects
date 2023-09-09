@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <form action="" name="feedback">
+        <h1>Send us some feedback!</h1>
+        <p>
+          Do you have a suggestion or found some bug? Let us know in the field
+          below.
+        </p>
+        <textarea
+          placeholder="Describe your issue or idea..."
+          rows="7"
+        ></textarea>
+        <fieldset>
+          <div>
+            <input type="radio" name="type" id="bug" value="bug" />
+            <label for="bug">Bug</label>
+          </div>
+          <div>
+            <input type="radio" name="type" id="comment" value="comment" />
+            <label for="comment">Comment</label>
+          </div>
+          <div>
+            <input type="radio" name="type" id="other" value="other" />
+            <label for="other">Other</label>
+          </div>
+        </fieldset>
+        <input
+          type="submit"
+          name="feedback"
+          id="submit"
+          value="Send Feedback"
+        />
+      </form>
+    </div>
+    <div class="decor"></div>
+  </body>
+</html>
