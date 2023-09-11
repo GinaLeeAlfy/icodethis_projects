@@ -1,9 +1,11 @@
 :root {
   --light-gray: #f3f6fa;
   --blue: #5c8aa0;
+  --med-gray: #b7bebe;
   --gray: #475e6e;
   --off-black: #21222b;
   --white: #ffffff;
+  --pink: #f23f78;
   --transparent-gray: #82909ba5;
 }
 
@@ -42,13 +44,49 @@ header p {
 
 ol {
   list-style-type: upper-alpha;
-  color: #b7bebe;
+  color: var(--med-gray);
 }
 
 ul {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+}
+li {
+  position: relative;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  z-index: 100;
+}
+
+label {
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--blue);
+}
+
+li input {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+li input[type="checkbox"]:checked + label {
+  color: var(--pink);
+}
+
+li input[type="checkbox"]:disabled + label {
+  color: var(--med-gray);
+}
+
+li input[type="checkbox"]:disabled {
+  cursor: not-allowed;
 }
 
 .center {
@@ -79,8 +117,4 @@ ul {
   flex-direction: column;
   justify-content: flex-end;
   margin-top: 80px;
-}
-
-.fa-couch {
-  color: var(--blue);
 }
