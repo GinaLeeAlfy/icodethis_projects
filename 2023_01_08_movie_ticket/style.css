@@ -145,7 +145,7 @@ li input[type="checkbox"]:disabled {
   justify-content: center;
   align-items: center;
   height: 100lvh;
-  width: 70lvw;
+  width: 50lvw;
 }
 
 .ticket {
@@ -209,6 +209,12 @@ li input[type="checkbox"]:disabled {
 
 .titles {
   padding: 3%;
+}
+
+@media (max-width: 1100px) {
+  .center {
+    width: 70lvw;
+  }
 }
 
 @media (max-width: 750px) {
