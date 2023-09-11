@@ -1,0 +1,154 @@
+:root {
+  --light-gray: #f3f6fa;
+  --blue: #0091eb;
+  --gray: #56616a;
+  --off-black: #21222b;
+  --white: #ffffff;
+  --transparent-gray: #82909ba5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--light-gray);
+  color: var(--off-black);
+  font-size: 22px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  color: var(--blue);
+  font-weight: bolder;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+button {
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  background-color: var(--white);
+}
+
+button p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  list-style-type: none;
+  font-weight: bolder;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  padding-left: 0;
+}
+
+li a {
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  padding: 5px;
+  padding-left: 0;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+.center {
+  width: 95%;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10%;
+  background-color: var(--white);
+  box-shadow: 0 50px 100px 10px var(--transparent-gray);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.decor {
+  text-decoration: underline;
+}
+
+.decor:hover {
+  text-decoration: none;
+}
+
+.trailer {
+  border: none;
+  align-self: flex-end;
+  background-color: var(--off-black);
+  color: var(--white);
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon {
+  border-radius: 50%;
+  padding: 5px 9px;
+  margin-left: 10px;
+  background-color: var(--white);
+  color: var(--off-black);
+  font-size: 22px;
+}
+
+@media (min-width: 800px) {
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100lvh;
+    width: 40lvw;
+  }
+}
