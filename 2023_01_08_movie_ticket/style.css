@@ -113,8 +113,8 @@ input[type="checkbox"] {
 
 label {
   display: inline-block;
-  padding: 10px 10px;
   color: var(--blue);
+  padding: 10px 0;
 }
 
 li input {
@@ -209,6 +209,13 @@ li input[type="checkbox"]:disabled {
 
 .titles {
   padding: 3%;
+}
+
+.grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 5%;
 }
 
 @media (max-width: 1100px) {
