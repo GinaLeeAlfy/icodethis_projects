@@ -45,3 +45,12 @@ nav {
   border-radius: 25px;
   background-color: var(--transparent);
 }
+
+.hidden {
+  display: none;
+}
+
+.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
