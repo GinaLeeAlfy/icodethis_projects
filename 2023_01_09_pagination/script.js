@@ -54,11 +54,40 @@ const setCurrentPage = (pageNum) => {
 };
 
 function handleActivePageNumber() {
+  //nav-bars without ... spacers
   document.querySelectorAll(".pagination-number").forEach((button) => {
     button.classList.remove("active");
     button.classList.add("hidden");
 
     const pageIndex = Number(button.getAttribute("page-index"));
+
+    if (pageIndex == currentPage) {
+      button.classList.add("active");
+    }
+
+    //always show 5
+    if (currentPage == pageCount || currentPage == pageCount - 1) {
+      if (pageIndex <= pageCount && pageIndex > pageCount - 5) {
+        button.classList.remove("hidden");
+      }
+    } else if (currentPage == 1 || currentPage == 2) {
+      if (pageIndex >= 1 && pageIndex < 6) {
+        button.classList.remove("hidden");
+      }
+    } else {
+      if (pageIndex >= currentPage - 2 && pageIndex <= currentPage + 2) {
+        button.classList.remove("hidden");
+      }
+    }
+  });
+
+  //nav bars with ... spacers
+  document.querySelectorAll(".spacer .pagination-number").forEach((button) => {
+    button.classList.remove("active");
+    button.classList.add("hidden");
+
+    const pageIndex = Number(button.getAttribute("page-index"));
+
     if (pageIndex == currentPage) {
       button.classList.add("active");
     }
