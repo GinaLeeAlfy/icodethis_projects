@@ -65,7 +65,7 @@ function handleActivePageNumber() {
       button.classList.add("active");
     }
 
-    //always show 5
+    //always show 7
     if (currentPage >= pageCount - 2) {
       if (pageIndex > pageCount - 7) {
         button.classList.remove("hidden");
