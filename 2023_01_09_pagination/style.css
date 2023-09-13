@@ -122,4 +122,24 @@ button {
   body {
     font-size: 14px;
   }
+
+  button {
+    margin: 5px;
+    font-size: 14px;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .prev-button,
+  .next-button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  button {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 3px;
+  }
 }
