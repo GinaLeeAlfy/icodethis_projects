@@ -30,6 +30,7 @@ const setCurrentPage = (pageNum) => {
   currentPage = pageNum;
 
   handleActivePageNumber();
+  handlePageButtonsStatus();
 
   const prevRange = (pageNum - 1) * PAGINATION_LIMIT;
   const currRange = pageNum * PAGINATION_LIMIT;
@@ -45,17 +46,87 @@ const setCurrentPage = (pageNum) => {
 function handleActivePageNumber() {
   document.querySelectorAll(".pagination-number").forEach((button) => {
     button.classList.remove("active");
+    button.classList.add("hidden");
 
     const pageIndex = Number(button.getAttribute("page-index"));
     if (pageIndex == currentPage) {
       button.classList.add("active");
     }
+
+    if (pageIndex == 1) {
+      button.classList.remove("hidden");
+    }
+
+    if (pageIndex == pageCount) {
+      button.classList.remove("hidden");
+    }
+
+    if (currentPage == pageCount || currentPage == pageCount - 1) {
+      if (pageIndex <= currentPage && pageIndex > pageCount - 4) {
+        button.classList.remove("hidden");
+      }
+    } else if (currentPage == 1 || currentPage == 2) {
+      if (pageIndex >= 1 && pageIndex < 5) {
+        button.classList.remove("hidden");
+      }
+    } else {
+      if (pageIndex >= currentPage - 1 && pageIndex <= currentPage + 1) {
+        button.classList.remove("hidden");
+      }
+    }
   });
 }
+
+const disableButtons = (buttons) => {
+  buttons.forEach((button) => {
+    button.setAttribute("disabled", true);
+    button.classList.add("disabled");
+  });
+};
+
+const hideButtons = (buttons) => {
+  buttons[0].classList.add("hiding");
+};
+
+const enableButtons = (buttons) => {
+  buttons.forEach((button) => {
+    button.removeAttribute("disabled");
+    button.classList.remove("disabled");
+    button.classList.remove("hiding");
+  });
+};
+
+const handlePageButtonsStatus = () => {
+  if (currentPage === 1) {
+    disableButtons(prevButtons);
+    hideButtons(prevButtons);
+  } else {
+    enableButtons(prevButtons);
+  }
+
+  if (pageCount === currentPage) {
+    disableButtons(nextButtons);
+    hideButtons(nextButtons);
+  } else {
+    enableButtons(nextButtons);
+  }
+};
 
 window.addEventListener("load", (event) => {
   getPaginationNumbers();
   setCurrentPage(1);
+
+  prevButtons.forEach((element) => {
+    element.addEventListener("click", (event) => {
+      setCurrentPage(currentPage - 1);
+    });
+  });
+
+  nextButtons.forEach((element) => {
+    element.addEventListener("click", (event) => {
+      setCurrentPage(currentPage + 1);
+    });
+  });
 
   document.querySelectorAll(".pagination-number").forEach((button) => {
     const pageIndex = Number(button.getAttribute("page-index"));
