@@ -3,6 +3,8 @@ const paginatedList = document.querySelector("#paginated-list");
 const listItems = document.querySelectorAll("li");
 const prevButtons = document.querySelectorAll(".prev-button");
 const nextButtons = document.querySelectorAll(".next-button");
+const frontSpacers = document.querySelectorAll(".front-spacer");
+const backSpacers = document.querySelectorAll(".back-spacer");
 
 const PAGINATION_LIMIT = 10;
 const pageCount = Math.ceil(listItems.length / PAGINATION_LIMIT);
@@ -23,6 +25,14 @@ function appendPageNumber(index) {
 function getPaginationNumbers() {
   for (let index = 1; index <= pageCount; index++) {
     appendPageNumber(index);
+  }
+}
+
+function setPageButtonsOrder() {
+  const pageButtons = document.querySelectorAll(".pagination-number");
+  for (let index = 0; index < pageButtons.length; index++) {
+    const element = pageButtons[index];
+    element.style.order = element.getAttribute("page-index");
   }
 }
 
@@ -53,14 +63,17 @@ function handleActivePageNumber() {
       button.classList.add("active");
     }
 
+    //always show page button 1
     if (pageIndex == 1) {
       button.classList.remove("hidden");
     }
 
+    //always show last page button
     if (pageIndex == pageCount) {
       button.classList.remove("hidden");
     }
 
+    //always display at least 5 page buttons
     if (currentPage == pageCount || currentPage == pageCount - 1) {
       if (pageIndex <= currentPage && pageIndex > pageCount - 4) {
         button.classList.remove("hidden");
@@ -75,6 +88,26 @@ function handleActivePageNumber() {
       }
     }
   });
+
+  if (currentPage >= 4) {
+    frontSpacers.forEach((element) => {
+      element.classList.remove("hidden");
+    });
+  } else {
+    frontSpacers.forEach((element) => {
+      element.classList.add("hidden");
+    });
+  }
+  if (currentPage <= pageCount - 3) {
+    backSpacers.forEach((element) => {
+      element.classList.remove("hidden");
+      element.style.order = pageCount - 1;
+    });
+  } else {
+    backSpacers.forEach((element) => {
+      element.classList.add("hidden");
+    });
+  }
 }
 
 const disableButtons = (buttons) => {
@@ -114,6 +147,7 @@ const handlePageButtonsStatus = () => {
 
 window.addEventListener("load", (event) => {
   getPaginationNumbers();
+  setPageButtonsOrder();
   setCurrentPage(1);
 
   prevButtons.forEach((element) => {

@@ -55,7 +55,6 @@ nav {
 }
 
 .nav-bars-container {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -64,11 +63,16 @@ nav {
 }
 
 .bar {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
 }
 
 button {
@@ -98,8 +102,14 @@ button {
   background-color: var(--transparent);
 }
 
+.four > button {
+  background-color: var(--white);
+  outline: 2px solid gray;
+}
+
 .one .active,
-.two .active {
+.two .active,
+.four .active {
   background-color: var(--dark-blue);
   color: var(--white);
   outline: none;
@@ -112,4 +122,13 @@ button {
 .three .active {
   background-color: var(--dark-blue);
   color: var(--white);
+}
+
+.front-spacer {
+  order: 2;
+  cursor: default;
+}
+
+.back-spacer {
+  cursor: default;
 }
