@@ -11,42 +11,24 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
   background-color: var(--light-gray);
   font-size: 18px;
   color: var(--dark-blue);
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100lvh;
-  width: 90lvw;
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 5%;
-  border-radius: 25px;
-  background-color: var(--transparent);
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 .hidden {
@@ -58,11 +40,9 @@ nav {
 }
 
 .nav-bars-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  position: relative;
-  bottom: 0;
+  width: 90%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .bar {
@@ -74,8 +54,10 @@ nav {
 }
 
 .pagination-numbers {
-  display: flex;
-  align-items: center;
+  align-self: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(7, 1fr);
 }
 
 button {
@@ -134,4 +116,10 @@ button {
 
 .back-spacer {
   cursor: default;
+}
+
+@media (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
 }

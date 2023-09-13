@@ -103,12 +103,12 @@ function handleActivePageNumber() {
     }
 
     //always display at least 5 page buttons
-    if (currentPage == pageCount || currentPage == pageCount - 1) {
-      if (pageIndex <= currentPage && pageIndex > pageCount - 4) {
+    if (currentPage >= pageCount - 2) {
+      if (pageIndex > pageCount - 5) {
         button.classList.remove("hidden");
       }
-    } else if (currentPage == 1 || currentPage == 2) {
-      if (pageIndex >= 1 && pageIndex < 5) {
+    } else if (currentPage <= 3) {
+      if (pageIndex >= 1 && pageIndex < 6) {
         button.classList.remove("hidden");
       }
     } else {
