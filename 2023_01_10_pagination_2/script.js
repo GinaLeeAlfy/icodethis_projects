@@ -63,25 +63,30 @@ function handleActivePageNumber() {
       button.classList.add("active");
     }
 
-    //always show page button 1
-    if (pageIndex == 1) {
+    //always show page button 1-3
+    if (pageIndex <= 3) {
       button.classList.remove("hidden");
     }
 
-    //always show last page button
-    if (pageIndex == pageCount) {
+    //always show last 3 pages button
+    if (pageIndex >= pageCount - 2) {
       button.classList.remove("hidden");
     }
 
     //always display at least 5 page buttons
-    if (currentPage >= pageCount - 2) {
-      if (pageIndex > pageCount - 5) {
+    //last 5 pages
+    if (currentPage >= pageCount - 4) {
+      //display last 6 pages
+      if (pageIndex >= pageCount - 6) {
         button.classList.remove("hidden");
       }
-    } else if (currentPage <= 3) {
-      if (pageIndex >= 1 && pageIndex < 6) {
+      //first 4 pages
+    } else if (currentPage <= 5) {
+      //display first 6 pages
+      if (pageIndex >= 1 && pageIndex <= 7) {
         button.classList.remove("hidden");
       }
+      //display +/-1 from current page
     } else {
       if (pageIndex >= currentPage - 1 && pageIndex <= currentPage + 1) {
         button.classList.remove("hidden");
@@ -89,14 +94,14 @@ function handleActivePageNumber() {
     }
   });
 
-  if (currentPage >= 4) {
+  if (currentPage >= 6) {
     frontSpacer.classList.remove("hidden");
   } else {
     frontSpacer.classList.add("hidden");
   }
-  if (currentPage <= pageCount - 3) {
+  if (currentPage <= pageCount - 5) {
     backSpacer.classList.remove("hidden");
-    backSpacer.style.order = pageCount - 1;
+    backSpacer.style.order = pageCount - 2;
   } else {
     backSpacer.classList.add("hidden");
   }

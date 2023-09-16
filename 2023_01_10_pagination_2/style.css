@@ -30,8 +30,12 @@ ul {
 
 nav {
   display: grid;
+  grid-template-columns: 1fr 11fr 1fr;
   grid-template-rows: 1fr;
   background-color: var(--dark-blue);
+  margin: 20px;
+  padding: 10px;
+  align-items: center;
 }
 
 p {
@@ -46,19 +50,12 @@ p {
   visibility: hidden;
 }
 
-.bar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
 .pagination-numbers {
   align-self: center;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(11, 1fr);
+  align-items: center;
 }
 
 button {
@@ -91,7 +88,7 @@ button {
 
 .front-spacer {
   font-size: 32px;
-  order: 2;
+  order: 4;
   cursor: default;
 }
 
@@ -100,12 +97,12 @@ button {
   cursor: default;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   body {
     font-size: 14px;
   }
 
-  button {
+  .buttons > button {
     margin: 5px;
     font-size: 14px;
     height: 2rem;
@@ -120,10 +117,26 @@ button {
   }
 }
 
-@media (max-width: 400px) {
-  button {
-    height: 1.5rem;
-    width: 1.5rem;
+@media (max-width: 780px) {
+  .buttons > button {
     margin: 3px;
+  }
+
+  .prev-button,
+  .next-button,
+  .front-spacer,
+  .back-spacer {
+    font-size: 16px;
+  }
+  nav {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .pagination-numbers {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
