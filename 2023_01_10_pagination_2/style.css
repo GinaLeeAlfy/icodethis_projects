@@ -1,0 +1,129 @@
+:root {
+  --light-gray: #7690a5;
+  --white: #ffffff;
+  --transparent: transparent;
+  --dark-blue: #0a2135;
+  --pink: #b14b84;
+  --mid-blue: #1b3246;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--mid-blue);
+  font-size: 18px;
+  color: var(--light-gray);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin: 20%;
+}
+
+nav {
+  display: grid;
+  grid-template-rows: 1fr;
+  background-color: var(--dark-blue);
+}
+
+p {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.hiding {
+  visibility: hidden;
+}
+
+.bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.pagination-numbers {
+  align-self: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+button {
+  margin: 10px;
+  border: none;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--light-gray);
+}
+
+.prev-button,
+.next-button {
+  color: var(--pink);
+  font-size: 32px;
+  background-color: var(--transparent);
+}
+
+.buttons > button {
+  background-color: var(--transparent);
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+}
+
+.buttons .active {
+  outline: 2px solid var(--pink);
+  color: var(--pink);
+}
+
+.front-spacer {
+  font-size: 32px;
+  order: 2;
+  cursor: default;
+}
+
+.back-spacer {
+  font-size: 32px;
+  cursor: default;
+}
+
+@media (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+
+  button {
+    margin: 5px;
+    font-size: 14px;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .prev-button,
+  .next-button,
+  .front-spacer,
+  .back-spacer {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  button {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 3px;
+  }
+}
