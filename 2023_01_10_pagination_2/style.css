@@ -4,6 +4,7 @@
   --transparent: transparent;
   --dark-blue: #0a2135;
   --pink: #b14b84;
+  --pink-transparent: #b14b854b;
   --mid-blue: #1b3246;
 }
 
@@ -17,15 +18,22 @@ body {
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--mid-blue);
+  background-image: radial-gradient(
+    circle at 99% 99%,
+    var(--pink-transparent),
+    var(--mid-blue) 50%,
+    var(--transparent)
+  );
   font-size: 18px;
   color: var(--light-gray);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 ul {
   display: flex;
   flex-direction: column;
-  margin: 20%;
+  margin: 15%;
 }
 
 nav {
@@ -40,6 +48,14 @@ nav {
 
 p {
   margin: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100lvh;
+  width: 90lvw;
 }
 
 .hidden {
@@ -82,7 +98,7 @@ button {
 }
 
 .buttons .active {
-  outline: 2px solid var(--pink);
+  outline: 2px inset var(--pink);
   color: var(--pink);
 }
 
