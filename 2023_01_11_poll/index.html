@@ -18,45 +18,46 @@
         <fieldset>
           <section>
             <div class="flex-center input">
-              <input type="checkbox" name="poll" id="success" />
+              <input type="radio" name="poll" id="success" />
               <label for="success">Definitely a success.</label>
             </div>
-            <div class="flex-center">
+            <div class="flex-center bar-display">
               <div class="border">
-                <div class="percentage-display"></div>
+                <div class="percentage-display green"></div>
               </div>
               <div class="percentage">X%</div>
             </div>
           </section>
           <section>
             <div class="flex-center input">
-              <input type="checkbox" name="poll" id="no" />
+              <input type="radio" name="poll" id="no" />
               <label for="no">No.</label>
             </div>
-            <div class="flex-center">
+            <div class="flex-center bar-display">
               <div class="border">
-                <div class="percentage-display"></div>
+                <div class="percentage-display red"></div>
               </div>
               <div class="percentage">X%</div>
             </div>
           </section>
           <section>
             <div class="flex-center input">
-              <input type="checkbox" name="poll" id="maybe" />
+              <input type="radio" name="poll" id="maybe" />
               <label for="maybe"
                 >Only if it's in the How To section of the library.</label
               >
             </div>
-            <div class="flex-center">
+            <div class="flex-center bar-display">
               <div class="border">
-                <div class="percentage-display"></div>
+                <div class="percentage-display orange"></div>
               </div>
               <div class="percentage">X%</div>
             </div>
           </section>
         </fieldset>
-        <input type="submit" value="Submit" />
+        <button type="submit">Submit</button>
       </form>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

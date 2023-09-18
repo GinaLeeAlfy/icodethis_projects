@@ -1,3 +1,15 @@
+:root {
+  --light-gray: #7690a5;
+  --white: #ffffff;
+  --transparent: transparent;
+  --teal: #356068;
+  --blue: #06b4d6;
+  --green: #98ec72;
+  --red: #ff6058;
+  --orange: #ff9a4f;
+  --light-blue: #dcf4fc;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,9 +17,10 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: #e0efff;
+  background-color: var(--teal);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
+  color: var(--teal);
 }
 
 .center {
@@ -24,31 +37,66 @@ form {
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 10px 20px 4px rgba(152, 185, 189, 0.437);
+  background-color: var(--white);
+  box-shadow: 0 10px 20px 4px rgba(99, 117, 119, 0.437);
+  overflow: hidden;
 }
 
 legend {
   padding: 40px 25%;
   text-align: center;
+  background-color: var(--light-blue);
 }
 
-input[type="checkbox"] {
-  min-height: 1.5rem;
-  min-width: 1.5rem;
+input[type="radio"] {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 5px;
   margin-right: 10px;
+  margin-top: 0;
   cursor: pointer;
+  appearance: none;
+  border: 1px solid var(--light-gray);
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--blue);
+}
+
+input[type="radio"]:checked::before {
+  color: var(--white);
+  content: "\00A0\2713\00A0";
+  font-weight: bolder;
+  font-size: 18px;
 }
 
 label {
   cursor: pointer;
 }
 
-input[type="submit"] {
-  padding: 16px 32px;
+input[type="radio"]:disabled,
+input[type="radio"]:disabled + label,
+button:disabled {
+  cursor: not-allowed;
+}
+
+button {
+  padding: 16px 48px;
   margin: 40px;
   font-size: 18px;
   border-radius: 10px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px 4px rgba(189, 235, 240, 0.437);
+}
+
+button:hover:enabled {
+  background-color: var(--light-blue);
+  color: var(--teal);
+  outline: 2px solid var(--teal);
 }
 
 fieldset {
@@ -62,7 +110,7 @@ fieldset {
 section {
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .border {
@@ -75,10 +123,20 @@ section {
 }
 
 .percentage-display {
-  background-color: #141d4c;
-  width: 40%;
   height: 100%;
   border-radius: 50px;
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.red {
+  background-color: var(--red);
+}
+
+.orange {
+  background-color: var(--orange);
 }
 
 .flex-center {
@@ -91,4 +149,17 @@ section {
 .input {
   padding-top: 20px;
   padding-bottom: 0;
+}
+
+.bar-display {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.percentage {
+  font-size: 24px;
+  font-weight: bold;
 }
