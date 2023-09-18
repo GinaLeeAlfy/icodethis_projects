@@ -1,0 +1,129 @@
+:root {
+  --light-gray: #b8b1b3;
+  --white: #ffffff;
+  --transparent: transparent;
+  --teal: #356068;
+  --blue: #06b4d6;
+  --green: #98ec72;
+  --red: #b0272f;
+  --orange: #ff9a4f;
+  --light-blue: #dcf4fc;
+  --black: #23161b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--red);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: var(--light-gray);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100lvh;
+  width: 70lvw;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  background-color: var(--black);
+  box-shadow: 0 20px 20px -10px rgb(31, 27, 27);
+  padding: 10%;
+}
+
+section {
+  min-width: 102px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  margin: 10px;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+p:first-of-type {
+  font-size: larger;
+  margin-top: 20px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 60px 0;
+}
+
+button {
+  cursor: pointer;
+  padding: 16px 32px;
+  font-size: 16px;
+  background-color: var(--red);
+  color: var(--white);
+  border: 2px solid var(--red);
+}
+
+button:hover {
+  background-color: var(--transparent);
+  color: var(--red);
+}
+
+.start {
+  background-color: var(--transparent);
+  color: var(--red);
+}
+
+.start:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.line {
+  height: 100%;
+  width: 1px;
+  background-color: #2e1f25;
+}
+
+.circle {
+  position: absolute;
+  top: 85%;
+  left: -15%;
+  right: -15%;
+  bottom: -15%;
+  background-color: #a11e25;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@media (max-width: 819px) {
+  .center {
+    width: 100%;
+    height: 100%;
+  }
+
+  .line {
+    height: 1px;
+    width: 100%;
+  }
+
+  section {
+    margin-bottom: 40px;
+  }
+}
