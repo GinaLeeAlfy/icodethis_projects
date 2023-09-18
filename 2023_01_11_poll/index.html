@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <form action="">
+        <legend>
+          <p>
+            If you write a book about failure, and it doesn't sell, is it called
+            success?
+          </p>
+        </legend>
+        <fieldset>
+          <section>
+            <div class="flex-center input">
+              <input type="checkbox" name="poll" id="success" />
+              <label for="success">Definitely a success.</label>
+            </div>
+            <div class="flex-center">
+              <div class="border">
+                <div class="percentage-display"></div>
+              </div>
+              <div class="percentage">X%</div>
+            </div>
+          </section>
+          <section>
+            <div class="flex-center input">
+              <input type="checkbox" name="poll" id="no" />
+              <label for="no">No.</label>
+            </div>
+            <div class="flex-center">
+              <div class="border">
+                <div class="percentage-display"></div>
+              </div>
+              <div class="percentage">X%</div>
+            </div>
+          </section>
+          <section>
+            <div class="flex-center input">
+              <input type="checkbox" name="poll" id="maybe" />
+              <label for="maybe"
+                >Only if it's in the How To section of the library.</label
+              >
+            </div>
+            <div class="flex-center">
+              <div class="border">
+                <div class="percentage-display"></div>
+              </div>
+              <div class="percentage">X%</div>
+            </div>
+          </section>
+        </fieldset>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
