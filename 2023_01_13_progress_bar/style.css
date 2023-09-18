@@ -2,12 +2,11 @@
   --light-gray: #b8b1b3;
   --white: #ffffff;
   --transparent: transparent;
-  --teal: #356068;
-  --blue: #06b4d6;
-  --green: #98ec72;
-  --red: #b0272f;
-  --orange: #ff9a4f;
-  --light-blue: #dcf4fc;
+  --teal: #00a1a9;
+  --dark-teal: #036873;
+  --blue: #005262;
+  --green: #60efca;
+  --light-blue: #67c6ee;
   --black: #23161b;
 }
 
@@ -18,7 +17,7 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: var(--red);
+  background: radial-gradient(var(--teal), var(--dark-teal));
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: var(--light-gray);
@@ -32,14 +31,73 @@ body {
   width: 70lvw;
 }
 
-.card {
+.widget {
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   border-radius: 10px;
-  background-color: var(--black);
-  box-shadow: 0 20px 20px -10px rgb(31, 27, 27);
+  background-color: var(--transparent);
   padding: 10%;
+}
+
+.border {
+  width: 100%;
+  height: 20px;
+  border-radius: 25px;
+  background-color: var(--blue);
+  box-shadow: inset 0 8px 20px -10px rgb(31, 27, 27);
+}
+
+.percentage-display {
+  position: relative;
+  width: 0%;
+  height: 100%;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, var(--light-blue), var(--green));
+  box-shadow: 0 10px 20px -6px rgba(31, 27, 27, 0.639);
+}
+
+.percentage-box {
+  position: absolute;
+  top: 160%;
+  right: -37px;
+  padding: 10px 20px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.arrow {
+  position: absolute;
+  top: 60%;
+  right: -15px;
+  background-color: var(--transparent);
+  color: var(--blue);
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+button {
+  background-color: var(--blue);
+  color: var(--white);
+  margin: 70px;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover:enabled {
+  background-image: linear-gradient(to right, var(--light-blue), var(--green));
+  color: var(--black);
+}
+
+button:disabled {
+  background-color: var(--light-blue);
+  color: var(--black);
+  cursor: not-allowed;
 }
