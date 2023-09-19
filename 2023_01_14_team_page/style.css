@@ -1,0 +1,27 @@
+:root {
+  --light-gray: #f8f9fd;
+  --white: #ffffff;
+  --transparent: transparent;
+  --dark-blue: #162240;
+  --blue: #606078;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  height: 100lvh;
+  width: 100lvw;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
