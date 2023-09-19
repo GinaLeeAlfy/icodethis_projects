@@ -12,15 +12,14 @@
 
 body {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
-  grid-gap: 50px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--blue);
   color: var(--white);
   height: 100lvh;
-  width: 100lvw;
+  width: 90lvw;
 }
 
 section {
@@ -29,6 +28,7 @@ section {
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 1fr 1fr;
   background-color: var(--dark-blue);
+  margin: 15px;
 }
 
 /* .grid {
