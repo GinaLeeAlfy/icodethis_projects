@@ -2,8 +2,8 @@
   --light-gray: #f8f9fd;
   --white: #ffffff;
   --transparent: transparent;
-  --dark-blue: #162240;
-  --blue: #606078;
+  --blue: #162240;
+  --dark-blue: #0f172b;
 }
 
 * {
@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   color: var(--white);
   height: 100lvh;
   width: 100lvw;
@@ -23,5 +23,24 @@ body {
 section {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 2fr 1fr 1fr;
+  background-color: var(--dark-blue);
+}
+
+img {
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+  grid-gap: 50px;
+  justify-content: space-evenly;
+}
+
+.add {
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
 }
