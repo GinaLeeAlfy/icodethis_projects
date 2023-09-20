@@ -6,21 +6,31 @@ const secondTexts = document.querySelectorAll(".second-text");
 const thirdTexts = document.querySelectorAll(".third-text");
 const percentageDisplays = document.querySelectorAll(".percentage-display");
 
+let isFinished = true;
+
 function startProgress() {
   let width = 0;
   let time = setInterval(frame, 100);
 
   review.addEventListener("click", () => {
-    width = 100;
-    secondSteps.forEach((element) => {
-      element.classList.add("active");
-    });
-    secondSteps[2].innerHTML = "&check;";
-    thirdSteps.forEach((element) => {
-      element.classList.remove("active");
-    });
-    thirdSteps[2].innerHTML = "";
-    reviewProgress();
+    if (isFinished) {
+      width = 100;
+      secondSteps.forEach((element) => {
+        element.classList.add("active");
+      });
+      secondSteps[2].innerHTML = "&check;";
+      thirdSteps.forEach((element) => {
+        element.classList.remove("active");
+      });
+      thirdSteps[2].innerHTML = "";
+      secondTexts.forEach((element) => {
+        element.classList.add("active-text");
+      });
+      thirdTexts.forEach((element) => {
+        element.classList.remove("active-text");
+      });
+      reviewProgress();
+    }
   });
 
   function frame() {
@@ -52,6 +62,9 @@ function reviewProgress() {
       element.classList.add("active");
     });
     thirdTexts.forEach((element) => {
+      element.classList.add("active-text");
+    });
+    thirdTexts.forEach((element) => {
       element.innerHTML = "Approved";
     });
     thirdSteps[2].innerHTML = "&check;";
@@ -60,7 +73,11 @@ function reviewProgress() {
   function frame() {
     if (width >= 200) {
       clearInterval(time);
+      isFinished = true;
+      review.removeAttribute("disabled");
     } else {
+      isFinished = false;
+      review.setAttribute("disabled", true);
       width++;
       percentageDisplays.forEach((element) => {
         element.style.width = width / 2 + "%";

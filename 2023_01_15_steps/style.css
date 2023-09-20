@@ -2,12 +2,8 @@
   --light-gray: #f0f3fb;
   --white: #ffffff;
   --transparent: transparent;
-  --teal: #00a1a9;
-  --dark-teal: #036873;
-  --blue: #005262;
-  --green: #60efca;
-  --light-blue: #67c6ee;
   --black: #10182e;
+  --black-transparent: #10182e7c;
 }
 
 * {
@@ -58,6 +54,12 @@ body {
 
 .three {
   background-color: var(--light-gray);
+  height: 6px;
+}
+
+.four {
+  background-color: var(--light-gray);
+  height: 3px;
 }
 
 .percentage-display {
@@ -82,6 +84,14 @@ body {
   color: var(--black);
   outline: 2px solid var(--light-gray);
 }
+.three .step {
+  top: -400%;
+}
+
+.four .step {
+  top: -700%;
+  box-shadow: inset 0 0 0 3px var(--black), 0 0 0 10px var(--white);
+}
 
 .outline {
   box-shadow: inset 0 0 0 5px var(--light-gray);
@@ -89,6 +99,7 @@ body {
 
 .dark-outline {
   box-shadow: inset 0 0 0 10px var(--black);
+  outline: none;
 }
 
 .active {
@@ -96,6 +107,13 @@ body {
   color: var(--white);
   outline: none;
   box-shadow: 0 10px 20px -6px rgba(31, 27, 27, 0.639);
+}
+
+.four .active {
+  background-color: var(--black);
+  color: var(--white);
+  outline: none;
+  box-shadow: 0 10px 20px -6px rgba(31, 27, 27, 0.639), 0 0 0 10px var(--white);
 }
 
 .first {
@@ -112,35 +130,58 @@ body {
 
 .first-text {
   position: absolute;
-  top: 280%;
+  top: 350%;
   left: -60px;
   text-wrap: nowrap;
   background-color: var(--transparent);
-  color: var(--blue);
+  color: var(--black-transparent);
 }
 
 .second-text {
   position: absolute;
-  top: 280%;
+  top: 350%;
   left: 46%;
   text-wrap: nowrap;
   background-color: var(--transparent);
-  color: var(--blue);
+  color: var(--black-transparent);
 }
 
 .third-text {
   position: absolute;
-  top: 280%;
+  top: 350%;
   right: -50px;
   text-wrap: nowrap;
   background-color: var(--transparent);
-  color: var(--blue);
+  color: var(--black-transparent);
+}
+
+.three .first-text,
+.three .second-text,
+.three .third-text {
+  top: 600%;
+}
+
+.four .first-text,
+.four .second-text,
+.four .third-text {
+  top: 50px;
+}
+
+.active-text {
+  color: var(--black);
+}
+
+footer {
+  width: 100%;
+  padding-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". second third";
+  column-gap: 20px;
 }
 
 button {
-  position: absolute;
-  bottom: 10px;
-  background-color: var(--blue);
+  background-color: var(--black);
   color: var(--white);
   border: none;
   padding: 16px 32px;
@@ -150,20 +191,57 @@ button {
 }
 
 button:hover:enabled {
-  background-image: linear-gradient(to right, var(--light-blue), var(--green));
+  background-color: var(--white);
   color: var(--black);
+  outline: 3px solid var(--black);
 }
 
 button:disabled {
-  background-color: var(--light-blue);
+  background-color: var(--light-gray);
   color: var(--black);
   cursor: not-allowed;
 }
 
 .mid {
-  left: 45%;
+  grid-area: second;
 }
 
 .end {
-  right: 10px;
+  grid-area: third;
+}
+
+@media (max-width: 870px) {
+  .center {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  button {
+    padding: 8px 16px;
+  }
+  button,
+  .first-text,
+  .second-text,
+  .third-text {
+    font-size: 12px;
+    text-wrap: wrap;
+  }
+  .first-text {
+    left: -10px;
+  }
+  .second-text {
+    left: 40%;
+  }
+
+  .third-text {
+    right: -10px;
+  }
+}
+
+@media (max-width: 340px) {
+  button {
+    padding: 3px 6px;
+  }
 }
