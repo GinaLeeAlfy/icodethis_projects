@@ -45,7 +45,8 @@ body {
   border-radius: 25px;
   background-color: var(--white);
   outline: 2px solid var(--light-gray);
-  margin: 100px 0;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .two {
@@ -71,8 +72,6 @@ body {
 }
 
 .step {
-  position: absolute;
-  top: -175%;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
@@ -84,12 +83,8 @@ body {
   color: var(--black);
   outline: 2px solid var(--light-gray);
 }
-.three .step {
-  top: -400%;
-}
 
 .four .step {
-  top: -700%;
   box-shadow: inset 0 0 0 3px var(--black), 0 0 0 10px var(--white);
 }
 
@@ -116,55 +111,22 @@ body {
   box-shadow: 0 10px 20px -6px rgba(31, 27, 27, 0.639), 0 0 0 10px var(--white);
 }
 
-.first {
-  left: -37px;
+.flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.second {
-  left: 47%;
-}
-
-.third {
-  right: -37px;
-}
-
-.first-text {
+.absolute {
   position: absolute;
-  top: 350%;
-  left: -60px;
-  text-wrap: nowrap;
-  background-color: var(--transparent);
+  top: -20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.text {
   color: var(--black-transparent);
-}
-
-.second-text {
-  position: absolute;
-  top: 350%;
-  left: 46%;
-  text-wrap: nowrap;
-  background-color: var(--transparent);
-  color: var(--black-transparent);
-}
-
-.third-text {
-  position: absolute;
-  top: 350%;
-  right: -50px;
-  text-wrap: nowrap;
-  background-color: var(--transparent);
-  color: var(--black-transparent);
-}
-
-.three .first-text,
-.three .second-text,
-.three .third-text {
-  top: 600%;
-}
-
-.four .first-text,
-.four .second-text,
-.four .third-text {
-  top: 50px;
 }
 
 .active-text {
@@ -222,21 +184,9 @@ button:disabled {
     padding: 8px 16px;
   }
   button,
-  .first-text,
-  .second-text,
-  .third-text {
+  .text {
     font-size: 12px;
     text-wrap: wrap;
-  }
-  .first-text {
-    left: -10px;
-  }
-  .second-text {
-    left: 40%;
-  }
-
-  .third-text {
-    right: -10px;
   }
 }
 
