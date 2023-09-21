@@ -35,7 +35,7 @@ submit.addEventListener("click", (event) => {
     //don't let them keep voting
     submit.setAttribute("disabled", true);
 
-    //add the appropiate vote
+    //add the appropriate vote
     switch (vote) {
       case "success":
         successVotes++;
