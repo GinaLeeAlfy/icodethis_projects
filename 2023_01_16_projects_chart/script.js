@@ -1,3 +1,9 @@
+const dataValues = document.querySelectorAll(".data");
+const labelNames = document.querySelectorAll(".label");
+const circles = document.querySelectorAll(".circle");
+const total = document.querySelector(".total");
+let tooltipEl = document.getElementById("chartjs-tooltip");
+
 const data = {
   labels: ["Completed", "Overdue", "In Progress"],
   datasets: [
@@ -15,45 +21,26 @@ const myChart = new Chart("myChart", {
   type: "doughnut",
   data: data,
   options: {
+    tooltip: {
+      backgroundColor: "black",
+    },
+    borderWidth: 0,
+    cutout: 95,
     plugins: {
       legend: {
-        position: "bottom",
-        onHover: handleHover,
-        onLeave: handleLeave,
-        labels: {
-          usePointStyle: true,
-          generateLabels: (chart) => {
-            const datasets = chart.data.datasets;
-            return datasets[0].data.map((data, i) => ({
-              text: ` ${data} ${chart.data.labels[i]}`,
-              fillStyle: datasets[0].backgroundColor[i],
-              index: i,
-              fontColor: "white",
-            }));
-          },
-        },
+        display: false,
       },
     },
   },
 });
 
-// Append '4d' to the colors (alpha channel), except for the hovered index
-function handleHover(evt, item, legend) {
-  legend.chart.data.datasets[0].backgroundColor.forEach(
-    (color, index, colors) => {
-      colors[index] =
-        index === item.index || color.length === 9 ? color : color + "4D";
-    }
-  );
-  legend.chart.update();
+for (let index = 0; index < labelNames.length; index++) {
+  const label = labelNames[index];
+  const value = dataValues[index];
+  const color = circles[index];
+  label.innerHTML = data.labels[index];
+  value.innerHTML = data.datasets[0].data[index];
+  color.style.backgroundColor = data.datasets[0].backgroundColor[index];
 }
 
-// Removes the alpha channel from background colors
-function handleLeave(evt, item, legend) {
-  legend.chart.data.datasets[0].backgroundColor.forEach(
-    (color, index, colors) => {
-      colors[index] = color.length === 9 ? color.slice(0, -2) : color;
-    }
-  );
-  legend.chart.update();
-}
+total.innerHTML = data.datasets[0].data.reduce((a, b) => a + b, 0);
