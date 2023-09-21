@@ -33,9 +33,9 @@ body {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
   border-radius: 10px;
   background-color: var(--white);
   box-shadow: 0 10px 20px 4px rgba(99, 117, 119, 0.437);
@@ -102,6 +102,17 @@ img {
   border-radius: 25px;
   background-color: var(--black);
   box-shadow: 0 10px 20px -6px rgba(31, 27, 27, 0.639);
+}
+
+.percentage-number {
+  margin-left: 10px;
+}
+
+.percentage-grid {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
 }
 
 .container {
