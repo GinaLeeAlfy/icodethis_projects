@@ -190,3 +190,7 @@ a {
 .arrow:hover {
   display: flex;
 }
+
+.active {
+  display: flex;
+}
