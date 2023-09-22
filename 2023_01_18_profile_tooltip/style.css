@@ -44,19 +44,17 @@ body {
 
 .profile-image {
   position: relative;
+  cursor: pointer;
+  border: 10px solid var(--light-purple);
+  margin: 50px;
+  border-radius: 50%;
 }
 
 .image-container {
   height: 110px;
   width: 110px;
-  margin: 50px;
   border-radius: 50%;
   overflow: hidden;
-}
-
-.click {
-  cursor: pointer;
-  border: 10px solid var(--light-purple);
 }
 
 img {
@@ -94,28 +92,28 @@ img {
 
 .down {
   color: var(--white);
-  bottom: 80%;
-  left: 40%;
+  bottom: 115%;
+  left: 35%;
 }
 
 .right {
   color: var(--black);
-  bottom: 30%;
-  right: 79%;
+  bottom: 15%;
+  right: 113%;
 }
 
 .up {
-  bottom: 85%;
-  left: -50%;
-  right: -50%;
+  bottom: 125%;
+  left: -150%;
+  right: -150%;
   background-color: var(--white);
   color: var(--black);
 }
 
 .left {
-  right: 85%;
-  left: -140%;
-  bottom: -40%;
+  right: 125%;
+  left: -225%;
+  bottom: -140%;
 }
 
 .profile {
