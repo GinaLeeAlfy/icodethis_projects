@@ -65,7 +65,7 @@ img {
 
 .tooltip {
   position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -75,9 +75,17 @@ img {
   z-index: 1;
 }
 
-/* .hidden {
-  visibility: hidden;
-} */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 125%;
+  height: 115%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
 
 .tooltip .image-container {
   margin: 25px;
@@ -87,23 +95,28 @@ img {
 
 .arrow {
   position: absolute;
+  display: none;
   font-size: 72px;
+  width: 100%;
 }
 
 .down {
+  justify-content: center;
   color: var(--white);
-  bottom: 115%;
-  left: 35%;
+  bottom: 110%;
+  left: 0;
+  right: 0;
 }
 
 .right {
+  justify-content: end;
   color: var(--black);
   bottom: 15%;
   right: 113%;
 }
 
 .up {
-  bottom: 125%;
+  bottom: 120%;
   left: -150%;
   right: -150%;
   background-color: var(--white);
@@ -112,8 +125,8 @@ img {
 
 .left {
   right: 125%;
-  left: -225%;
-  bottom: -140%;
+  left: -250%;
+  bottom: -110%;
 }
 
 .profile {
@@ -169,4 +182,11 @@ button:hover {
 a {
   color: var(--purple);
   text-decoration: none;
+}
+
+.profile-image:hover .tooltip,
+.profile-image:hover .arrow,
+.tooltip:hover,
+.arrow:hover {
+  display: flex;
 }
