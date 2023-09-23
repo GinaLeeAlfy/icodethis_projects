@@ -250,4 +250,9 @@ a {
     left: 0;
     right: 0;
   }
+
+  .profile-image:last-of-type {
+    align-self: center;
+    margin-top: 250px;
+  }
 }
