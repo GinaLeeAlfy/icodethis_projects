@@ -194,3 +194,47 @@ a {
 .active {
   display: flex;
 }
+
+@media (max-width: 680px) {
+  .center {
+    width: 100%;
+  }
+
+  .profiles-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image:last-of-type {
+    margin-top: 200px;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    font-size: 14px;
+  }
+  .center {
+    height: 100%;
+  }
+
+  .profile-image:first-of-type {
+    margin-top: 400px;
+  }
+
+  .tooltip .image-container {
+    margin: 5px;
+    height: 80px;
+    width: 80px;
+  }
+  button {
+    padding: 5px 15px;
+  }
+  .up {
+    left: -70%;
+    right: -70%;
+  }
+}
