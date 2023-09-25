@@ -1,13 +1,9 @@
 :root {
   --light-gray: #eff3ff;
   --white: #ffffff;
-  --transparent: transparent;
   --blue: #4c4ae8;
   --gray: #c2cee1;
   --black: black;
-  --pink: #e43070;
-  --yellow: #fec400;
-  --light-blue: #272b4a;
 }
 
 * {
