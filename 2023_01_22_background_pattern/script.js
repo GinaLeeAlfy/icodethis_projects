@@ -14,12 +14,11 @@ function randomDot() {
 
 function calcLocation(element) {
   let randomSpot = Math.round((element * Math.random()) / 40) * 40;
-  console.log(randomSpot);
 
-  if (randomSpot < element - 24) {
-    randomSpot = `${randomSpot + 24}px`;
+  if (randomSpot < element - 88) {
+    randomSpot = `${randomSpot + 16}px`;
   } else {
-    randomSpot = `${randomSpot - 24}px`;
+    randomSpot = `${randomSpot - 64}px`;
   }
   return randomSpot;
 }
@@ -48,6 +47,12 @@ function removeDots() {
     document.body.removeChild(dots.pop());
   }
 }
+
+// function addListenerOnDots() {
+//     dots.forEach(element => {
+//         element.addEventListener
+//     });
+// }
 
 window.addEventListener("load", () => {
   addDots();
