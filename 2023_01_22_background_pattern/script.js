@@ -5,13 +5,23 @@ let waiting;
 function randomDot() {
   const dot = document.createElement("span");
   dot.classList.add("dot");
-  dot.style.top =
-    Math.round((window.innerHeight * Math.random()) / 40) * 40 + 24 + "px";
-  dot.style.left =
-    Math.round((window.innerWidth * Math.random()) / 40) * 40 + 24 + "px";
+  dot.style.top = calcLocation(window.innerHeight);
+  dot.style.left = calcLocation(window.innerWidth);
 
   document.body.appendChild(dot);
   return dot;
+}
+
+function calcLocation(element) {
+  let randomSpot = Math.round((element * Math.random()) / 40) * 40;
+  console.log(randomSpot);
+
+  if (randomSpot < element - 24) {
+    randomSpot = `${randomSpot + 24}px`;
+  } else {
+    randomSpot = `${randomSpot - 24}px`;
+  }
+  return randomSpot;
 }
 function calcDots() {
   amountDots = Math.round(
