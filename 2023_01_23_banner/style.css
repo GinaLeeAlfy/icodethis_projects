@@ -1,0 +1,95 @@
+:root {
+  --light-gray: #eff3ff;
+  --white: #ffffff;
+  --blue: #4c4ae8;
+  --gray: #c2cee1;
+  --black: black;
+  --red: #e30a15;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: url(https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); Change the color and opacity as needed */
+  backdrop-filter: brightness(10%);
+}
+
+section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+  box-shadow: 0 0 50px 4px rgba(45, 50, 66, 0.437);
+  padding: 50px;
+  z-index: 1;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+button {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  width: 80svw;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: var(--gray);
+}
