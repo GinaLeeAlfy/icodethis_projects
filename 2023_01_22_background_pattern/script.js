@@ -1,6 +1,7 @@
 let amountDots;
 let dots = [];
 let waiting;
+let isDotsAdded;
 
 function randomDot() {
   const dot = document.createElement("span");
@@ -34,12 +35,16 @@ function addDots() {
   for (let index = 0; index < amountDots; index++) {
     dots.push(randomDot());
   }
+  addListenerOnDots();
+  isDotsAdded = true;
 }
 
 function waitAddDots() {
-  waiting = setTimeout(() => {
-    addDots();
-  }, 1000);
+  if (isDotsAdded == true) {
+    waiting = setTimeout(() => {
+      addDots();
+    }, 1000);
+  }
 }
 
 function removeDots() {
@@ -48,11 +53,14 @@ function removeDots() {
   }
 }
 
-// function addListenerOnDots() {
-//     dots.forEach(element => {
-//         element.addEventListener
-//     });
-// }
+function addListenerOnDots() {
+  dots.forEach((element) => {
+    element.addEventListener("click", () => {
+      waitAddDots();
+      isDotsAdded = false;
+    });
+  });
+}
 
 window.addEventListener("load", () => {
   addDots();
