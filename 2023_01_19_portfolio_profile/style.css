@@ -1,0 +1,128 @@
+:root {
+  --light-gray: #c0c3cc;
+  --white: #ffffff;
+  --transparent: transparent;
+  --blue: #1d2333;
+  --dark-blue: #1f223c;
+  --black: black;
+  --pink: #e43070;
+  --yellow: #fec400;
+  --light-blue: #272b4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: var(--blue);
+  padding: 100px;
+}
+
+.profile {
+  height: 100svh;
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23% 5%;
+  grid-template-rows: 10% 30% 50% 10%;
+  grid-template-areas:
+    "profile-pic intro     icons     follow    nav"
+    "profile-pic about     about     skills    nav"
+    "portfolio   portfolio portfolio portfolio ."
+    "footer      footer    footer    footer    .";
+}
+
+.profile > * {
+  background-color: var(--white);
+}
+
+.profile-pic {
+  position: relative;
+  grid-area: profile-pic;
+  display: flex;
+  padding-top: 75px;
+  padding-left: 75px;
+}
+
+.intro {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid var(--light-gray);
+  padding-top: 75px;
+}
+
+.icons {
+  grid-area: icons;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 2px solid var(--light-gray);
+  padding-top: 75px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.follow {
+  grid-area: follow;
+  border-bottom: 2px solid var(--light-gray);
+  padding-top: 75px;
+}
+
+.profile nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--light-gray);
+  padding: 0;
+}
+
+.about {
+  grid-area: about;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-container {
+  grid-area: skills;
+}
+
+.skill {
+  display: flex;
+}
+
+.portfolio {
+  grid-area: portfolio;
+  display: grid;
+  padding: 0 75px;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 75px;
+}
+
+img {
+  position: absolute;
+  object-fit: cover;
+  top: -25px;
+  left: 75px;
+  right: 75px;
+  bottom: 25px;
+  height: 100%;
+  width: 80%;
+  box-shadow: 0 10px 20px -4px gray;
+}
+
+button {
+  padding: 1rem 2rem;
+}
