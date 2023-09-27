@@ -6,7 +6,7 @@
   --dark-blue: #1f223c;
   --black: black;
   --pink: #e43070;
-  --yellow: #fec400;
+  --yellow: #ffb700;
   --light-blue: #272b4a;
 }
 
@@ -19,13 +19,13 @@ body {
   font-size: 16px;
   background-color: var(--blue);
   padding: 100px;
+  padding-right: 50px;
 }
 
 .profile {
   height: 100svh;
   display: grid;
-  grid-template-columns: 94% 5%;
-  grid-template-rows: 30% 60% 10%;
+  grid-template-columns: 1fr 50px;
   grid-template-areas:
     "header    nav"
     "portfolio ."
@@ -101,6 +101,8 @@ header {
 }
 
 .profile nav {
+  position: sticky;
+  top: 0;
   grid-area: nav;
   display: flex;
   flex-direction: column;
@@ -108,6 +110,20 @@ header {
   align-items: center;
   background-color: var(--light-gray);
   padding: 0;
+  width: 50px;
+  height: 300px;
+}
+
+nav span {
+  text-align: center;
+  width: 100%;
+  padding: 25px 0;
+  cursor: pointer;
+}
+
+nav span:hover {
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
 
 .about {
@@ -139,8 +155,65 @@ header {
 
 .portfolio {
   grid-area: portfolio;
-  display: grid;
   padding: 0 75px;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: 32% 37% 30%;
+  grid-template-areas: "column-one column-two column-three";
+  column-gap: 10px;
+}
+
+.column-one {
+  grid-area: column-one;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40% 59%;
+  row-gap: 10px;
+}
+
+.column-two {
+  grid-area: column-two;
+  display: grid;
+  grid-template-columns: 57% 40%;
+  grid-template-rows: 30% 48% 20%;
+  grid-template-areas:
+    "first first"
+    "second third"
+    "fourth third";
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.first {
+  grid-area: first;
+}
+
+.second {
+  grid-area: second;
+}
+
+.third {
+  grid-area: third;
+}
+
+.fourth {
+  grid-area: fourth;
+}
+
+.column-three {
+  grid-area: column-three;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35% 65%;
+  row-gap: 10px;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -148,18 +221,35 @@ footer {
   display: flex;
   justify-content: end;
   align-items: center;
-  padding-right: 75px;
+  padding: 25px 75px;
 }
 
-img {
-  object-fit: cover;
-  height: 100%;
+.profile-pic img {
   width: 90%;
   box-shadow: 0 10px 20px -4px gray;
 }
 
 button {
   padding: 1rem 2rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--light-gray);
+  color: var(--blue);
+}
+
+button:hover {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.follow button {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.follow button:hover {
+  background-color: var(--light-gray);
+  color: var(--blue);
 }
 
 .border {
@@ -202,4 +292,161 @@ button {
 
 .retouching {
   width: 90%;
+}
+
+.fa-heart:hover {
+  cursor: pointer;
+  color: var(--pink);
+}
+
+@media (max-width: 1190px) {
+  body {
+    padding: 50px;
+    padding-right: 25px;
+  }
+  header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .portfolio {
+    padding: 0 25px;
+  }
+
+  footer {
+    padding-right: 25px;
+  }
+}
+
+@media (max-width: 965px) {
+  .profile {
+    height: 100%;
+    grid-template-columns: 1fr 50px;
+    grid-template-areas:
+      "header    nav"
+      "portfolio ."
+      "footer    .";
+  }
+
+  header {
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "profile-pic intro follow"
+      "profile-pic icons icons"
+      "about about skills ";
+  }
+
+  .icons {
+    border: none;
+    padding-top: 25px;
+    border-bottom: 2px solid var(--light-gray);
+  }
+
+  .intro {
+    border-right: 2px solid var(--light-gray);
+  }
+  .skills-container {
+    margin-left: -20px;
+  }
+
+  .portfolio-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "column-one column-two"
+      "column-three column-three";
+    row-gap: 10px;
+  }
+
+  .column-three {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 10px;
+  }
+}
+
+@media (max-width: 690px) {
+  body {
+    padding: 10px;
+    padding-right: 0;
+  }
+  header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 2fr;
+    grid-template-areas:
+      "profile-pic intro"
+      "follow icons"
+      "about about"
+      "skills skills";
+  }
+
+  .intro {
+    border: none;
+    border-bottom: 2px solid var(--light-gray);
+  }
+  .skills-container {
+    border-top: 2px solid var(--light-gray);
+  }
+
+  .skills-container {
+    margin-left: 10px;
+  }
+
+  .portfolio-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "column-one"
+      "column-two"
+      "column-three";
+    row-gap: 10px;
+  }
+
+  .column-three {
+    grid-template-columns: 1fr;
+    grid-template-rows: 35% 65%;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "portfolio"
+      "footer";
+  }
+
+  .profile nav {
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+  }
+  header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "profile-pic"
+      "intro"
+      "follow"
+      "icons"
+      "about"
+      "skills";
+    padding-top: 20px;
+  }
+
+  .profile-pic {
+    position: relative;
+    top: 20px;
+    bottom: 50px;
+  }
+
+  .profile-pic img {
+    width: 100%;
+    height: 90%;
+  }
+
+  .follow {
+    padding: 20px 0;
+  }
 }
