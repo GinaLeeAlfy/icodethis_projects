@@ -137,26 +137,27 @@ button:disabled {
   position: relative;
   margin: 0;
   padding: 0;
-  .stars-filled {
-    color: var(--yellow);
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+}
 
-    /* Allows us to grab the width of the span elements */
-    span {
-      display: inline-block;
-    }
+.stars-filled {
+  color: var(--yellow);
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  /* Allows us to grab the width of the span elements */
+  span {
+    display: inline-block;
   }
-  .stars-empty {
-    padding: 0;
-    display: block;
-    z-index: 0;
-  }
+}
+.stars-empty {
+  padding: 0;
+  display: block;
+  z-index: 0;
 }
 
 .grid .percentage-number {
