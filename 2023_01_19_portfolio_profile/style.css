@@ -24,53 +24,80 @@ body {
 .profile {
   height: 100svh;
   display: grid;
-  grid-template-columns: 23% 23% 23% 23% 5%;
-  grid-template-rows: 10% 30% 50% 10%;
+  grid-template-columns: 94% 5%;
+  grid-template-rows: 30% 60% 10%;
   grid-template-areas:
-    "profile-pic intro     icons     follow    nav"
-    "profile-pic about     about     skills    nav"
-    "portfolio   portfolio portfolio portfolio ."
-    "footer      footer    footer    footer    .";
+    "header    nav"
+    "portfolio ."
+    "footer    .";
 }
 
 .profile > * {
   background-color: var(--white);
 }
 
-.profile-pic {
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 30% 22% 24% 24%;
+  grid-template-rows: 25% 75%;
+  grid-template-areas:
+    "profile-pic intro icons follow"
+    "profile-pic about about skills";
+  padding-top: 25px;
+  padding-left: 75px;
+  padding-right: 75px;
   position: relative;
+}
+
+.profile-pic {
+  position: absolute;
   grid-area: profile-pic;
   display: flex;
-  padding-top: 75px;
-  padding-left: 75px;
+  top: -50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .intro {
   grid-area: intro;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border-bottom: 2px solid var(--light-gray);
-  padding-top: 75px;
+  padding-left: 10px;
+}
+.intro h2 {
+  margin: 0;
+}
+
+.intro p {
+  margin-top: 0;
 }
 
 .icons {
   grid-area: icons;
   display: flex;
   justify-content: space-evenly;
+  border-left: 2px solid var(--light-gray);
+  border-right: 2px solid var(--light-gray);
   border-bottom: 2px solid var(--light-gray);
-  padding-top: 75px;
 }
 
 .icon-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .follow {
   grid-area: follow;
   border-bottom: 2px solid var(--light-gray);
-  padding-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile nav {
@@ -87,14 +114,27 @@ body {
   grid-area: about;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+  width: 80%;
 }
 
 .skills-container {
   grid-area: skills;
+  margin-left: 20px;
+}
+
+.skill-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 1fr;
+  grid-template-areas: "skill borders";
+  justify-items: center;
+  align-items: center;
 }
 
 .skill {
-  display: flex;
+  grid-area: skill;
+  font-size: 14px;
 }
 
 .portfolio {
@@ -112,17 +152,54 @@ footer {
 }
 
 img {
-  position: absolute;
   object-fit: cover;
-  top: -25px;
-  left: 75px;
-  right: 75px;
-  bottom: 25px;
   height: 100%;
-  width: 80%;
+  width: 90%;
   box-shadow: 0 10px 20px -4px gray;
 }
 
 button {
   padding: 1rem 2rem;
+}
+
+.border {
+  grid-area: borders;
+  width: 70%;
+  height: 3px;
+  border-radius: 25px;
+  background-color: var(--light-gray);
+}
+
+.percentage-display {
+  position: relative;
+  height: 100%;
+  border-radius: 25px;
+  background-color: var(--dark-blue);
+  box-shadow: 0 10px 20px -6px rgba(31, 27, 27, 0.639);
+}
+
+.circle {
+  position: absolute;
+  top: -4.5px;
+  right: -6px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: var(--dark-blue);
+}
+
+.equipment {
+  width: 75%;
+}
+
+.editing {
+  width: 55%;
+}
+
+.marketing {
+  width: 35%;
+}
+
+.retouching {
+  width: 90%;
 }
