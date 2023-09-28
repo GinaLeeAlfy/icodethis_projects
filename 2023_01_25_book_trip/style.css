@@ -66,8 +66,8 @@ img {
 
 .images-button {
   position: absolute;
-  right: 10%;
-  bottom: 5%;
+  right: 30px;
+  bottom: 20px;
   padding: 1rem 2rem;
   background-color: rgba(255, 255, 255, 0.207);
   border: none;
@@ -146,4 +146,55 @@ section button:hover {
 
 button {
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .center {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .users {
+    flex-wrap: wrap;
+  }
+
+  .flex-col {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 460px) {
+  .center {
+    height: 100%;
+  }
+
+  .profile-pic {
+    height: 60px;
+    width: 60px;
+  }
+
+  header {
+    padding: 20px 0;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 340px) {
+  h1 {
+    font-size: 18px;
+  }
+  span {
+    font-size: 12px;
+  }
+  .users-pics {
+    flex-wrap: wrap;
+  }
+
+  .profile-pic {
+    height: 70px;
+    width: 70px;
+  }
 }
