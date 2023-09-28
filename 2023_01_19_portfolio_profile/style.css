@@ -299,6 +299,27 @@ button:hover {
   color: var(--pink);
 }
 
+.image-container {
+  position: relative;
+}
+
+.likes {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.likes p {
+  margin: 5px 10px;
+  font-size: 12px;
+}
+
+.likes .fa-heart {
+  color: var(--pink);
+}
+
 @media (max-width: 1190px) {
   body {
     padding: 50px;
