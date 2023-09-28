@@ -40,7 +40,7 @@ body {
 }
 
 .alert {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   background-color: var(--white);
@@ -48,6 +48,10 @@ body {
   font-weight: bold;
   margin: 50px 0;
   box-shadow: 0 0 50px 4px rgba(45, 50, 66, 0.437);
+}
+
+.active {
+  display: flex;
 }
 
 .alert:last-of-type {
@@ -95,6 +99,18 @@ button:hover {
 
 .alert:last-of-type button:hover {
   color: var(--orange);
+}
+
+.create {
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 5px;
+}
+
+.create:hover {
+  background-color: var(--teal);
+  border: 10px double var(--white);
+  color: var(--white);
 }
 
 @media (max-width: 400px) {
