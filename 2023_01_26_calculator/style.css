@@ -75,6 +75,7 @@ header {
 }
 
 .operator:nth-child(-n + 3) {
+  border-bottom: none;
   border-right: 2px solid var(--white);
   margin-right: -2px;
 }
