@@ -102,7 +102,7 @@ function handleOperator(operator) {
       }
       break;
     case "=":
-      currentNumber = total;
+      currentNumber = total.toString();
       pastInfoDisplay = "";
       numbers = [];
       operators = [];
