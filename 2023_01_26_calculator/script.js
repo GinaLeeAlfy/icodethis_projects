@@ -64,7 +64,7 @@ function handleOperator(operator) {
         }
       }
 
-      if (numbers.length < 1) {
+      if ((numbers.length <= 1 && currentNumber == "") || numbers.length == 0) {
         totalScreen.innerHTML = "";
       } else {
         calcTotal();
