@@ -14,6 +14,7 @@ buttons.forEach((element) => {
   element.addEventListener("click", () => {
     if (isNaN(element.innerHTML)) {
       handleOperator(element.innerHTML);
+      console.log(element.innerHTML);
     } else {
       handleNumber(element.innerHTML);
     }
@@ -34,8 +35,12 @@ function handleOperator(operator) {
   switch (operator) {
     case "CE":
       currentNumber = "";
-      calcTotal();
-      displayTotalScreen();
+      if ((numbers.length <= 1 && currentNumber == "") || numbers.length == 0) {
+        totalScreen.innerHTML = "";
+      } else {
+        calcTotal();
+        displayTotalScreen();
+      }
       return currentNumber;
     case "C":
       currentNumber = "";
@@ -83,11 +88,11 @@ function handleOperator(operator) {
     case "+":
       handleCalculation("+", "+");
       break;
-    case "()":
-      if (total != "") {
-        total = total * -1;
-        displayTotalScreen();
+    case "π":
+      if (currentNumber != "") {
+        handleCalculation("*", "×");
       }
+      handleNumber(Math.PI);
       break;
     case ".":
       if (currentNumber == "") {
