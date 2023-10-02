@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <div class="calculator">
+        <header>
+          <h1>Mortgage Calculator</h1>
+        </header>
+        <section>
+          <div class="inputs">
+            <div class="value-display">
+              <p>Purchase price:</p>
+              <p class="purchase value">$450,000</p>
+            </div>
+
+            <div class="container">
+              <input
+                type="range"
+                min="0"
+                max="1000000"
+                class="slider"
+                oninput="adjustProgress()"
+              />
+              <div class="slider-container"></div>
+              <div class="progress"></div>
+            </div>
+          </div>
+          <div class="inputs">
+            <div class="value-display">
+              <p>Equity:</p>
+              <p class="equity value">$135,000</p>
+            </div>
+
+            <div class="container">
+              <input
+                type="range"
+                min="0"
+                max="1000000"
+                class="slider"
+                oninput="adjustProgress()"
+              />
+              <div class="slider-container"></div>
+              <div class="progress"></div>
+            </div>
+          </div>
+          <div class="inputs">
+            <div class="value-display">
+              <p>Repayment time:</p>
+              <p class="time value">25 years</p>
+            </div>
+
+            <div class="container">
+              <input
+                type="range"
+                min="0"
+                max="40"
+                class="slider"
+                oninput="adjustProgress()"
+              />
+              <div class="slider-container"></div>
+              <div class="progress"></div>
+            </div>
+          </div>
+        </section>
+        <section class="middle">
+          <div class="inputs">
+            <p>Loan amount</p>
+            <p class="loan">$315,000</p>
+          </div>
+          <div class="inputs">
+            <p>Estimated per month:</p>
+            <p class="estimated">$1,300</p>
+            <p>interest rate</p>
+          </div>
+        </section>
+        <section>
+          <button>Get a mortgage quote</button>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
