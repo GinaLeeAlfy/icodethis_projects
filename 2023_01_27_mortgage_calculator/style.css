@@ -156,3 +156,24 @@ button:hover {
   font-size: 12px;
   color: var(--gray);
 }
+
+@media (max-width: 950px) {
+  .center {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .center {
+    height: 100%;
+  }
+
+  .calculator {
+    padding: 10px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+}
