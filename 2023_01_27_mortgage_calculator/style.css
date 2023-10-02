@@ -2,7 +2,7 @@
   --light-gray: #edeef7;
   --white: #ffffff;
   --transparent: transparent;
-  --gray: #77919d;
+  --gray: #70848d;
   --light-blue: #919cff;
   --black: #25283a;
   --blue: #5766fe;
@@ -37,6 +37,7 @@ body {
   justify-content: space-evenly;
   background-color: var(--light-gray);
   border: 10px solid var(--white);
+  border-radius: 15px;
   padding: 50px;
   box-shadow: 0 10px 40px -3px rgba(112, 112, 112, 0.606);
 }
@@ -146,7 +147,12 @@ button:hover {
 }
 
 .loan,
-.estimated,
+.estimate,
 .value {
   font-weight: bold;
+}
+
+.interest {
+  font-size: 12px;
+  color: var(--gray);
 }

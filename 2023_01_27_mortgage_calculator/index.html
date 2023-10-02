@@ -16,16 +16,17 @@
           <div class="inputs">
             <div class="value-display">
               <p>Purchase price:</p>
-              <p class="purchase value">$450,000</p>
+              <p class="purchase-display value">$450,000</p>
             </div>
 
-            <div class="container">
+            <div class="container purchase">
               <input
                 type="range"
-                min="0"
+                min="5000"
                 max="1000000"
+                step="5000"
                 class="slider"
-                oninput="adjustProgress()"
+                oninput="adjustProgress(purchaseSlider, purchaseProgress, purchaseValue); setEquityMax()"
               />
               <div class="slider-container"></div>
               <div class="progress"></div>
@@ -34,16 +35,17 @@
           <div class="inputs">
             <div class="value-display">
               <p>Equity:</p>
-              <p class="equity value">$135,000</p>
+              <p class="equity-display value">$135,000</p>
             </div>
 
-            <div class="container">
+            <div class="container equity">
               <input
                 type="range"
                 min="0"
                 max="1000000"
+                step="5000"
                 class="slider"
-                oninput="adjustProgress()"
+                oninput="adjustProgress(equitySlider, equityProgress, equityValue)"
               />
               <div class="slider-container"></div>
               <div class="progress"></div>
@@ -52,16 +54,17 @@
           <div class="inputs">
             <div class="value-display">
               <p>Repayment time:</p>
-              <p class="time value">25 years</p>
+              <p class="time-display value">25 years</p>
             </div>
 
-            <div class="container">
+            <div class="container time">
               <input
                 type="range"
                 min="0"
                 max="40"
+                step="5"
                 class="slider"
-                oninput="adjustProgress()"
+                oninput="adjustProgress(timeSlider, timeProgress, timeValue, true)"
               />
               <div class="slider-container"></div>
               <div class="progress"></div>
@@ -75,8 +78,8 @@
           </div>
           <div class="inputs">
             <p>Estimated per month:</p>
-            <p class="estimated">$1,300</p>
-            <p>interest rate</p>
+            <p class="estimate">$1,300</p>
+            <p class="interest">interest rate</p>
           </div>
         </section>
         <section>
@@ -84,5 +87,6 @@
         </section>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
