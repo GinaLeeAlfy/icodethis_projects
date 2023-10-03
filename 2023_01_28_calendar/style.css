@@ -124,3 +124,23 @@ input {
   background-color: var(--blue);
   color: var(--gray);
 }
+
+@media (max-width: 500px) {
+  .center {
+    width: 100%;
+  }
+}
+
+@media (max-width: 340px) {
+  body {
+    font-size: 16px;
+  }
+
+  li {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  input {
+    font-size: 16px;
+  }
+}
