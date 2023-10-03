@@ -11,10 +11,13 @@
       <div class="calendar">
         <header>
           <button>&#10094;</button>
-          <div class="flex">
-            <p>Month</p>
-            <p>Year</p>
-          </div>
+          <input
+            type="month"
+            id="month"
+            name="month"
+            required
+            pattern="[0-9]{4}-[0-9]{2}"
+          />
           <button>&#10095;</button>
         </header>
         <section>
