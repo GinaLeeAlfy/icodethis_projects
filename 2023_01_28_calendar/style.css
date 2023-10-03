@@ -64,7 +64,7 @@ section:last-of-type {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 5px;
+  gap: 10px;
   color: var(--blue);
 }
 
@@ -72,7 +72,7 @@ section:last-of-type {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 5px;
+  gap: 10px;
 }
 
 ol {
@@ -81,13 +81,20 @@ ol {
 }
 
 li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   list-style-type: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
 }
 
-.dates li {
+/* for future update */
+/* .dates li {
   cursor: pointer;
-}
+} */
 
 button {
   background-color: var(--transparent);
@@ -107,4 +114,13 @@ input {
   color: var(--white);
   border: none;
   font-size: 20px;
+}
+
+.inactive {
+  color: var(--light-gray);
+}
+
+.today {
+  background-color: var(--blue);
+  color: var(--gray);
 }
