@@ -1,0 +1,158 @@
+:root {
+  --light-gray: #85868f;
+  --white: #ffffff;
+  --transparent-gray: #85868f77;
+  --transparent: transparent;
+  --gray: #3a4851;
+  --light-blue: #919cff;
+  --black: #25283a;
+  --blue: #54c4f7;
+  --pink: #6f475b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(45deg, var(--pink), var(--gray));
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100lvh;
+  width: 70lvw;
+}
+
+.calendar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--transparent-gray);
+  border-radius: 15px;
+  box-shadow: 0 10px 40px -3px rgba(72, 72, 72, 0.439);
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-gray);
+  padding: 20px;
+  gap: 5px;
+}
+
+section {
+  padding: 20px;
+}
+
+.dates-container {
+  padding-top: 0;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  color: var(--blue);
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  list-style-type: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+
+.events li {
+  height: auto;
+  width: auto;
+  border-radius: 0;
+}
+
+/* for future update */
+/* .dates li {
+    cursor: pointer;
+  } */
+
+button {
+  background-color: var(--transparent);
+  color: var(--white);
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+}
+
+button:hover {
+  color: var(--blue);
+}
+
+input {
+  background-color: var(--transparent);
+  color: var(--white);
+  border: none;
+  font-size: 20px;
+}
+
+.inactive {
+  color: var(--light-gray);
+}
+
+.today {
+  background-color: var(--blue);
+  color: var(--gray);
+}
+
+@media (max-width: 500px) {
+  .center {
+    width: 100%;
+  }
+}
+
+@media (max-width: 340px) {
+  body {
+    font-size: 16px;
+  }
+
+  li {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  input {
+    font-size: 16px;
+  }
+}

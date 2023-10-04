@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <div class="calendar">
+        <header>
+          <button>&#10094;</button>
+          <input
+            type="month"
+            id="month"
+            name="month"
+            pattern="[0-9]{4}-[0-9]{2}"
+            oninput="populateCalendar(value)"
+          />
+          <button>&#10095;</button>
+        </header>
+        <section>
+          <ol class="days">
+            <li>Su</li>
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+          </ol>
+        </section>
+        <section class="dates-container">
+          <ol class="dates">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </section>
+        <section class="events">
+          <ol>
+            <li>
+              <button>No</button>
+              <div class="flex-col">
+                <h2>Meeting with my accountant</h2>
+                <p class="time">13:00</p>
+              </div>
+            </li>
+            <li>
+              <button>No</button>
+              <div class="flex-col">
+                <h2>Meeting with my accountant</h2>
+                <p class="time">13:00</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+        <footer>
+          <button>+</button>
+        </footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
