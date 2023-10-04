@@ -3,6 +3,9 @@ const monthInput = document.querySelector("input");
 const dates = document.querySelectorAll(".dates li");
 const prevButton = document.querySelector("button:first-of-type");
 const nextButton = document.querySelector("button:last-of-type");
+const eventButton = document.querySelector("footer button");
+const calendar = document.querySelector(".calendar");
+const form = document.querySelector("form");
 
 //my variables
 const date = new Date();
@@ -10,13 +13,27 @@ const month = date.getMonth() + 1;
 const year = date.getFullYear();
 const today = date.getDate();
 const todayDayOne = new Date(year, month - 1, 1).getDay();
+let dayOne;
+let dateSelected;
+let selectedYear;
+let selectedMonth;
+let fullDateSelected;
 
 if (month < 10) {
   month = `0${month}`;
 }
 
+//display this month
 monthInput.value = `${year}-${month}`;
 
+const eventDates = [
+  {
+    fullDateSelected: `${selectedYear}/${selectedMonth}/${dateSelected}`,
+    events: [
+      { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
+    ],
+  },
+];
 function populateCalendar(value) {
   for (let index = 0; index < dates.length; index++) {
     const element = dates[index];
@@ -28,7 +45,7 @@ function populateCalendar(value) {
   let currMonth = currData[1] - 1;
 
   //day of the first of month
-  let dayOne = new Date(currYear, currMonth, 1).getDay();
+  dayOne = new Date(currYear, currMonth, 1).getDay();
   //number of dates in month
   let lastDate = new Date(currYear, currMonth + 1, 0).getDate();
   // day of last date in month
@@ -59,18 +76,14 @@ function populateCalendar(value) {
   } else {
     dates[today + todayDayOne - 1].classList.remove("today");
   }
+
+  //set selected day
+  if (currMonth == selectedMonth && currYear == selectedYear) {
+    setSelectedDate();
+  }
 }
 
-populateCalendar(`${year}-${month}`);
-
-//todo
-dates.forEach((element) => {
-  element.addEventListener("click", () => {
-    //give option to add/remove events for day
-  });
-});
-
-prevButton.addEventListener("click", () => {
+function prevMonth() {
   let value = monthInput.value;
   let currData = value.split("-");
   let currYear = currData[0];
@@ -85,9 +98,9 @@ prevButton.addEventListener("click", () => {
   populateCalendar(`${currYear}-${currMonth}`);
 
   monthInput.value = `${currYear}-${currMonth}`;
-});
+}
 
-nextButton.addEventListener("click", () => {
+function nextMonth() {
   let value = monthInput.value;
   let currData = value.split("-");
   let currYear = Number(currData[0]);
@@ -102,4 +115,60 @@ nextButton.addEventListener("click", () => {
   populateCalendar(`${currYear}-${currMonth}`);
 
   monthInput.value = `${currYear}-${currMonth}`;
+}
+
+function setSelectedDate() {
+  //set selected day
+  if (dateSelected != undefined) {
+    dates[dayOne + dateSelected - 1].classList.add("selected");
+  }
+}
+
+function clearSelectedDate() {
+  dates.forEach((el) => {
+    el.classList.remove("selected");
+  });
+}
+
+populateCalendar(`${year}-${month}`);
+
+//event listeners on the dates
+for (let index = 0; index < dates.length; index++) {
+  const element = dates[index];
+  element.addEventListener("click", () => {
+    clearSelectedDate();
+
+    dateSelected = Number(element.innerHTML);
+
+    //move the calendar if date of different month
+    if (element.classList.contains("inactive")) {
+      if (index <= 7) {
+        prevMonth();
+      } else {
+        nextMonth();
+      }
+    }
+
+    let value = monthInput.value;
+    let selectedData = value.split("-");
+    selectedYear = selectedData[0];
+    selectedMonth = selectedData[1] - 1;
+
+    setSelectedDate();
+  });
+}
+
+prevButton.addEventListener("click", () => {
+  clearSelectedDate();
+  prevMonth();
+});
+
+nextButton.addEventListener("click", () => {
+  clearSelectedDate();
+  nextMonth();
+});
+
+eventButton.addEventListener("click", () => {
+  calendar.style.display = "none";
+  form.style.display = "flex";
 });

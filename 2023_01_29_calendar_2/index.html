@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendar</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="center">
@@ -80,25 +84,35 @@
         <section class="events">
           <ol>
             <li>
-              <button>No</button>
+              <button><i class="fa-regular fa-circle-xmark fa-2xl"></i></button>
               <div class="flex-col">
-                <h2>Meeting with my accountant</h2>
+                <h3>Meeting with my accountant</h3>
                 <p class="time">13:00</p>
               </div>
             </li>
             <li>
-              <button>No</button>
+              <button><i class="fa-regular fa-circle-check fa-2xl"></i></button>
               <div class="flex-col">
-                <h2>Meeting with my accountant</h2>
+                <h3>Meeting with my accountant</h3>
                 <p class="time">13:00</p>
               </div>
             </li>
           </ol>
         </section>
         <footer>
-          <button>+</button>
+          <button><i class="fa-solid fa-plus fa-2xl"></i></button>
         </footer>
       </div>
+      <form action="">
+        <label for="description">Event Description:</label>
+        <input type="text" name="description" id="description" />
+        <label for="time">Time of Event:</label>
+        <input type="time" name="time" id="time" />
+        <footer>
+          <input type="reset" value="Cancel" />
+          <input type="submit" value="Add Event" />
+        </footer>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>
