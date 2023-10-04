@@ -34,6 +34,7 @@ body {
 
 .calendar {
   width: 100%;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -66,6 +67,7 @@ section:last-of-type {
   grid-template-rows: 1fr;
   gap: 10px;
   color: var(--blue);
+  justify-items: center;
 }
 
 .dates {
@@ -73,6 +75,7 @@ section:last-of-type {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
+  justify-items: center;
 }
 
 ol {
