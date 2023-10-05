@@ -22,6 +22,8 @@ let dateSelected;
 let selectedYear;
 let selectedMonth;
 let fullDateSelected;
+let dateIndex;
+let isInside = false;
 
 if (month < 10) {
   month = `0${month}`;
@@ -133,12 +135,36 @@ function setSelectedDate() {
   if (dateSelected != undefined) {
     dates[dayOne + dateSelected - 1].classList.add("selected");
   }
+
+  // const eventContainer = document.querySelector(".events ol");
+  // let eventsDisplayed = document.querySelectorAll(".events ol li");
+  // const eventTemplate = document.querySelector(".clone");
+  // let eventClone = eventTemplate.cloneNode(true);
+
+  // while(eventsDisplayed.length < eventDates.length)
 }
 
 function clearSelectedDate() {
   dates.forEach((el) => {
     el.classList.remove("selected");
   });
+}
+
+function findSelectedDateIndex() {
+  isInside = false;
+  dateIndex = -1;
+
+  for (let index = 0; index < eventDates.length; index++) {
+    const element = eventDates[index];
+    if (
+      element.fullDate.includes(
+        `${selectedYear}/${selectedMonth}/${dateSelected}`
+      )
+    ) {
+      isInside = true;
+      dateIndex = index;
+    }
+  }
 }
 
 populateCalendar(`${year}-${month}`);
@@ -234,20 +260,7 @@ submit.addEventListener("click", (event) => {
   selectedMonth = splitDate[1];
   dateSelected = splitDate[2];
 
-  let isInside = false;
-  let dateIndex;
-
-  for (let index = 0; index < eventDates.length; index++) {
-    const element = eventDates[index];
-    if (
-      element.fullDate.includes(
-        `${selectedYear}/${selectedMonth}/${dateSelected}`
-      )
-    ) {
-      isInside = true;
-      dateIndex = index;
-    }
-  }
+  findSelectedDateIndex();
 
   if (isInside == true) {
     eventDates[dateIndex].events.push({
