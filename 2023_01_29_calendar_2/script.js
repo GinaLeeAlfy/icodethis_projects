@@ -42,7 +42,7 @@ const eventDates = [
   {
     fullDate: "2023/10/18",
     events: [
-      { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
+      { eventTime: "13:00", eventDescription: "Different my accountant" },
     ],
   },
 ];
@@ -165,6 +165,11 @@ function findSelectedDateIndex() {
 
 function showSelectedDateEvents() {
   const eventContainer = document.querySelector(".events ol");
+
+  while (eventContainer.children.length > 1) {
+    eventContainer.removeChild(eventContainer.lastChild);
+  }
+
   let eventsDisplayed = document.querySelectorAll(".events ol li");
   const eventTemplate = document.querySelector(".clone");
   let eventClone = eventTemplate.cloneNode(true);
@@ -192,6 +197,12 @@ function showSelectedDateEvents() {
         times[index].innerHTML = element.eventTime;
       }
     }
+  } else {
+    const descriptions = document.querySelectorAll(".event-description");
+    const times = document.querySelectorAll(".event-time");
+
+    descriptions[0].innerHTML = "";
+    times[0].innerHTML = "";
   }
 }
 
