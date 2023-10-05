@@ -161,7 +161,7 @@ button {
   color: var(--gray);
 }
 
-button:hover {
+button:hover:not(li button, footer button) {
   color: var(--blue);
 }
 
@@ -169,10 +169,6 @@ li button {
   background-color: var(--lighter-gray);
   padding: 2rem;
   margin-right: 10px;
-}
-
-li button:hover {
-  color: var(--blue);
 }
 
 input[type="month"] {
@@ -288,13 +284,8 @@ label {
   color: var(--green);
 }
 
-.active {
-  visibility: visible;
-  cursor: pointer;
-}
-
-button:hover .fa-circle-check {
-  color: var(--gray);
+.events ol li .hidden {
+  visibility: hidden;
 }
 
 @media (max-width: 500px) {

@@ -205,6 +205,7 @@ function showSelectedDateEvents() {
         index++
       ) {
         const element = eventDates[dateIndex].events[index];
+        eventsDisplayed[index].classList.remove("hidden");
         descriptions[index].innerHTML = element.eventDescription;
         times[index].innerHTML = element.eventTime;
         buttons[index].style.visibility = "visible";
@@ -220,6 +221,7 @@ function showSelectedDateEvents() {
     const times = document.querySelectorAll(".event-time");
     const buttons = document.querySelectorAll(".events li button");
 
+    eventsDisplayed[0].classList.add("hidden");
     descriptions[0].innerHTML = "";
     times[0].innerHTML = "";
     buttons[0].style.visibility = "hidden";
@@ -383,6 +385,16 @@ submit.addEventListener("click", (event) => {
   selectedYear = splitDate[0];
   selectedMonth = splitDate[1];
   dateSelected = splitDate[2];
+
+  if (
+    selectedYear == undefined ||
+    selectedMonth == undefined ||
+    dateSelected == undefined ||
+    time == undefined
+  ) {
+    alert("Please add date/time.");
+    return;
+  }
 
   findSelectedDateIndex();
 
