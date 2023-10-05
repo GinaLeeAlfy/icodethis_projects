@@ -32,11 +32,16 @@ monthInput.value = `${year}-${month}`;
 
 const eventDates = [
   {
-    "2023/10/17": {
-      events: [
-        { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
-      ],
-    },
+    fullDate: "2023/10/17",
+    events: [
+      { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
+    ],
+  },
+  {
+    fullDate: "2023/10/18",
+    events: [
+      { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
+    ],
   },
 ];
 
@@ -214,10 +219,8 @@ reset.addEventListener("click", () => {
   form.style.display = "none";
 });
 
-submit.addEventListener("click", () => {
-  calendar.style.display = "flex";
-  form.style.display = "none";
-
+submit.addEventListener("click", (event) => {
+  event.preventDefault();
   let description = descriptionInput.value;
 
   let value = timeInput.value;
@@ -231,23 +234,35 @@ submit.addEventListener("click", () => {
   selectedMonth = splitDate[1];
   dateSelected = splitDate[2];
 
-  if (
-    !eventDates.includes(`${selectedYear}/${selectedMonth}/${dateSelected}`)
-  ) {
-    eventDates.push({
-      fullDateSelected: `${selectedYear}/${selectedMonth}/${dateSelected}`,
-      events: [{ eventTime: `${time}`, eventDescription: `${description}` }],
-    });
-  } else {
-    let index = indexOf(
-      eventDates.fullDateSelected.contains(
+  let isInside = false;
+  let dateIndex;
+
+  for (let index = 0; index < eventDates.length; index++) {
+    const element = eventDates[index];
+    if (
+      element.fullDate.includes(
         `${selectedYear}/${selectedMonth}/${dateSelected}`
       )
-    );
+    ) {
+      isInside = true;
+      dateIndex = index;
+    }
+  }
 
-    eventDates[index].events.push({
+  if (isInside == true) {
+    eventDates[dateIndex].events.push({
       eventTime: `${time}`,
       eventDescription: `${description}`,
     });
+  } else {
+    eventDates.push({
+      fullDate: `${selectedYear}/${selectedMonth}/${dateSelected}`,
+      events: [{ eventTime: `${time}`, eventDescription: `${description}` }],
+    });
   }
+
+  calendar.style.display = "flex";
+  form.style.display = "none";
+
+  return eventDates;
 });
