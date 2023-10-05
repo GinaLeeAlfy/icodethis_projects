@@ -132,6 +132,10 @@ li {
   text-align: start;
 }
 
+.events li:not(.hidden) {
+  cursor: pointer;
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;
