@@ -206,7 +206,7 @@ form footer {
 }
 
 input[type="text"],
-input[type="time"] {
+input[type="datetime-local"] {
   padding: 1rem;
   font-size: 18px;
   width: 90%;
