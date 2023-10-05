@@ -136,29 +136,35 @@ function setSelectedDate() {
     dates[dayOne + dateSelected - 1].classList.add("selected");
   }
 
-  // const eventContainer = document.querySelector(".events ol");
-  // let eventsDisplayed = document.querySelectorAll(".events ol li");
-  // const eventTemplate = document.querySelector(".clone");
-  // let eventClone = eventTemplate.cloneNode(true);
+  const eventContainer = document.querySelector(".events ol");
+  let eventsDisplayed = document.querySelectorAll(".events ol li");
+  const eventTemplate = document.querySelector(".clone");
+  let eventClone = eventTemplate.cloneNode(true);
 
-  // findSelectedDateIndex();
+  findSelectedDateIndex();
 
-  // while (eventsDisplayed.length < eventDates[dateIndex].events.length) {
-  //   eventClone = eventTemplate.cloneNode(true);
-  //   eventContainer.appendChild(eventClone);
-  //   eventsDisplayed = document.querySelectorAll(".events ol li");
-  // }
+  if (isInside == true) {
+    while (eventsDisplayed.length < eventDates[dateIndex].events.length) {
+      eventClone = eventTemplate.cloneNode(true);
+      eventContainer.appendChild(eventClone);
+      eventsDisplayed = document.querySelectorAll(".events ol li");
+    }
 
-  // if (eventsDisplayed.length == eventDates[dateIndex].events.length) {
-  //   const descriptions = document.querySelectorAll(".event-description");
-  //   const times = document.querySelectorAll(".event-time");
+    if (eventsDisplayed.length == eventDates[dateIndex].events.length) {
+      const descriptions = document.querySelectorAll(".event-description");
+      const times = document.querySelectorAll(".event-time");
 
-  //   for (let index = 0; index < eventDates[dateIndex].events.length; index++) {
-  //     const element = eventDates[dateIndex].events[index];
-  //     descriptions[index].innerHTML = element.eventDescription;
-  //     times[index].innerHTML = element.eventTime;
-  //   }
-  // }
+      for (
+        let index = 0;
+        index < eventDates[dateIndex].events.length;
+        index++
+      ) {
+        const element = eventDates[dateIndex].events[index];
+        descriptions[index].innerHTML = element.eventDescription;
+        times[index].innerHTML = element.eventTime;
+      }
+    }
+  }
 }
 
 function clearSelectedDate() {
@@ -181,7 +187,6 @@ function findSelectedDateIndex() {
       isInside = true;
       dateIndex = index;
     }
-    return dateIndex, isInside;
   }
 }
 
