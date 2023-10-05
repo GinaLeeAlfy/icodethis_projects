@@ -36,7 +36,7 @@ const eventDates = [
   {
     fullDate: "2023/10/17",
     events: [
-      { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
+      { eventTime: "10:00", eventDescription: "Meeting with my accountant" },
     ],
   },
   {
@@ -91,7 +91,7 @@ function populateCalendar(value) {
   }
 
   //set selected day
-  if (currMonth == selectedMonth && currYear == selectedYear) {
+  if (currMonth == selectedMonth - 1 && currYear == selectedYear) {
     setSelectedDate();
   }
 }
@@ -141,7 +141,24 @@ function setSelectedDate() {
   // const eventTemplate = document.querySelector(".clone");
   // let eventClone = eventTemplate.cloneNode(true);
 
-  // while(eventsDisplayed.length < eventDates.length)
+  // findSelectedDateIndex();
+
+  // while (eventsDisplayed.length < eventDates[dateIndex].events.length) {
+  //   eventClone = eventTemplate.cloneNode(true);
+  //   eventContainer.appendChild(eventClone);
+  //   eventsDisplayed = document.querySelectorAll(".events ol li");
+  // }
+
+  // if (eventsDisplayed.length == eventDates[dateIndex].events.length) {
+  //   const descriptions = document.querySelectorAll(".event-description");
+  //   const times = document.querySelectorAll(".event-time");
+
+  //   for (let index = 0; index < eventDates[dateIndex].events.length; index++) {
+  //     const element = eventDates[dateIndex].events[index];
+  //     descriptions[index].innerHTML = element.eventDescription;
+  //     times[index].innerHTML = element.eventTime;
+  //   }
+  // }
 }
 
 function clearSelectedDate() {
@@ -164,6 +181,7 @@ function findSelectedDateIndex() {
       isInside = true;
       dateIndex = index;
     }
+    return dateIndex, isInside;
   }
 }
 
@@ -189,7 +207,7 @@ for (let index = 0; index < dates.length; index++) {
     let value = monthInput.value;
     let selectedData = value.split("-");
     selectedYear = selectedData[0];
-    selectedMonth = selectedData[1] - 1;
+    selectedMonth = selectedData[1];
 
     setSelectedDate();
   });
