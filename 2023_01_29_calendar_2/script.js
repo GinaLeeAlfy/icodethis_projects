@@ -32,12 +32,14 @@ monthInput.value = `${year}-${month}`;
 
 const eventDates = [
   {
-    fullDateSelected: `${selectedYear}/${selectedMonth}/${dateSelected}`,
-    events: [
-      { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
-    ],
+    "2023/10/17": {
+      events: [
+        { eventTime: "13:00", eventDescription: "Meeting with my accountant" },
+      ],
+    },
   },
 ];
+
 function populateCalendar(value) {
   for (let index = 0; index < dates.length; index++) {
     const element = dates[index];
@@ -216,6 +218,8 @@ submit.addEventListener("click", () => {
   calendar.style.display = "flex";
   form.style.display = "none";
 
+  let description = descriptionInput.value;
+
   let value = timeInput.value;
   let selectedData = value.split("T");
   let unsplitDate = selectedData[0];
@@ -228,9 +232,7 @@ submit.addEventListener("click", () => {
   dateSelected = splitDate[2];
 
   if (
-    !eventDates.fullDateSelected.contains(
-      `${selectedYear}/${selectedMonth}/${dateSelected}`
-    )
+    !eventDates.includes(`${selectedYear}/${selectedMonth}/${dateSelected}`)
   ) {
     eventDates.push({
       fullDateSelected: `${selectedYear}/${selectedMonth}/${dateSelected}`,
