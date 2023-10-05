@@ -36,7 +36,11 @@ const eventDates = [
   {
     fullDate: "2023/10/17",
     events: [
-      { eventTime: "10:00", eventDescription: "Meeting with my accountant" },
+      {
+        eventTime: "10:00",
+        eventDescription: "Meeting with my accountant",
+        hasAlarm: true,
+      },
     ],
   },
   {
@@ -186,6 +190,7 @@ function showSelectedDateEvents() {
     if (eventsDisplayed.length == eventDates[dateIndex].events.length) {
       const descriptions = document.querySelectorAll(".event-description");
       const times = document.querySelectorAll(".event-time");
+      const buttons = document.querySelectorAll(".events li button");
 
       for (
         let index = 0;
@@ -195,14 +200,27 @@ function showSelectedDateEvents() {
         const element = eventDates[dateIndex].events[index];
         descriptions[index].innerHTML = element.eventDescription;
         times[index].innerHTML = element.eventTime;
+        buttons[index].style.backgroundColor = "var(--lighter-gray)";
+        if (element.hasAlarm) {
+          buttons[
+            index
+          ].innerHTML = `<i class="fa-regular fa-circle-check fa-2xl"></i>`;
+        } else {
+          buttons[
+            index
+          ].innerHTML = `<i class="fa-regular fa-circle-xmark fa-2xl"></i>`;
+        }
       }
     }
   } else {
     const descriptions = document.querySelectorAll(".event-description");
     const times = document.querySelectorAll(".event-time");
+    const buttons = document.querySelectorAll(".events li button");
 
     descriptions[0].innerHTML = "";
     times[0].innerHTML = "";
+    buttons[0].innerHTML = "";
+    buttons[0].style.backgroundColor = "var(--white)";
   }
 }
 
