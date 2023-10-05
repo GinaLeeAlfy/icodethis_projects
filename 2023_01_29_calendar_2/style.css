@@ -171,6 +171,10 @@ li button {
   margin-right: 10px;
 }
 
+li button:hover {
+  color: var(--blue);
+}
+
 input[type="month"] {
   background-color: var(--transparent);
   color: var(--gray);
@@ -280,8 +284,13 @@ label {
   color: var(--gray);
 }
 
-.fa-circle-check {
+.has-alarm {
   color: var(--green);
+}
+
+.active {
+  visibility: visible;
+  cursor: pointer;
 }
 
 button:hover .fa-circle-check {

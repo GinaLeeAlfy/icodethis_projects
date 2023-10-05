@@ -47,7 +47,11 @@ const eventDates = [
   {
     fullDate: "2023/10/18",
     events: [
-      { eventTime: "13:00", eventDescription: "Different my accountant" },
+      {
+        eventTime: "13:00",
+        eventDescription: "Different my accountant",
+        hasAlarm: "false",
+      },
     ],
   },
 ];
@@ -99,6 +103,8 @@ function populateCalendar(value) {
   if (currMonth == selectedMonth - 1 && currYear == selectedYear) {
     setSelectedDate();
   }
+
+  showSelectedDateEvents();
 }
 
 function prevMonth() {
@@ -201,15 +207,11 @@ function showSelectedDateEvents() {
         const element = eventDates[dateIndex].events[index];
         descriptions[index].innerHTML = element.eventDescription;
         times[index].innerHTML = element.eventTime;
-        buttons[index].style.backgroundColor = "var(--lighter-gray)";
-        if (element.hasAlarm == "true") {
-          buttons[
-            index
-          ].innerHTML = `<i class="fa-regular fa-circle-check fa-2xl"></i>`;
-        } else if (element.hasAlarm == "false") {
-          buttons[
-            index
-          ].innerHTML = `<i class="fa-regular fa-circle-xmark fa-2xl"></i>`;
+        buttons[index].style.visibility = "visible";
+        if (element.hasAlarm === "true") {
+          buttons[index].classList.add("has-alarm");
+        } else {
+          buttons[index].classList.remove("has-alarm");
         }
       }
     }
@@ -220,8 +222,71 @@ function showSelectedDateEvents() {
 
     descriptions[0].innerHTML = "";
     times[0].innerHTML = "";
-    buttons[0].innerHTML = "";
-    buttons[0].style.backgroundColor = "var(--white)";
+    buttons[0].style.visibility = "hidden";
+  }
+  editEvent();
+}
+
+//edit event
+function editEvent() {
+  let eventsDisplayed = document.querySelectorAll(".events ol li");
+  let descriptions = document.querySelectorAll(".event-description");
+  let times = document.querySelectorAll(".event-time");
+  let buttons = document.querySelectorAll(".events li button");
+
+  for (let index = 0; index < eventsDisplayed.length; index++) {
+    const element = eventsDisplayed[index];
+
+    element.addEventListener("click", () => {
+      let currentTime = times[index].innerHTML;
+      let splitCurrentTime = currentTime.split(":");
+      let currentDescription = descriptions[index].innerHTML;
+      let currentHasAlarm = buttons[index].classList.contains("has-alarm");
+
+      findSelectedDateIndex();
+      if (dateIndex >= 0) {
+        eventDates[dateIndex].events.splice(index, 1);
+
+        if (eventDates[dateIndex].events.length == 0) {
+          eventDates.splice(dateIndex, 1);
+        }
+
+        let hour = splitCurrentTime[0];
+        let minute = splitCurrentTime[1];
+
+        //format the values
+        if (hour < 10) {
+          hour = `0${hour}`;
+        }
+
+        if (minute < 10 && minute != "00") {
+          minute = `0${minute}`;
+        }
+
+        if (selectedMonth < 10) {
+          selectedMonth = `0${selectedMonth}`;
+        }
+
+        if (dateSelected < 10) {
+          dateSelected = `0${dateSelected}`;
+        }
+
+        if (today < 10) {
+          today = `0${today}`;
+        }
+
+        calendar.style.display = "none";
+        form.style.display = "flex";
+        if (selectedMonth == undefined) {
+          timeInput.value = `${year}-${month}-${today}T${hour}:${minute}`;
+        } else {
+          timeInput.value = `${selectedYear}-${selectedMonth}-${dateSelected}T${hour}:${minute}`;
+        }
+
+        descriptionInput.value = currentDescription;
+        alarmInput.checked = currentHasAlarm;
+      }
+    });
   }
 }
 
@@ -300,6 +365,7 @@ eventButton.addEventListener("click", () => {
 reset.addEventListener("click", () => {
   calendar.style.display = "flex";
   form.style.display = "none";
+  showSelectedDateEvents();
 });
 
 submit.addEventListener("click", (event) => {
