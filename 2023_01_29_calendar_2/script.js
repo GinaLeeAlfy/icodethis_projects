@@ -131,11 +131,39 @@ function nextMonth() {
 }
 
 function setSelectedDate() {
+  clearSelectedDate();
   //set selected day
   if (dateSelected != undefined) {
     dates[dayOne + dateSelected - 1].classList.add("selected");
   }
 
+  showSelectedDateEvents();
+}
+
+function clearSelectedDate() {
+  dates.forEach((el) => {
+    el.classList.remove("selected");
+  });
+}
+
+function findSelectedDateIndex() {
+  isInside = false;
+  dateIndex = -1;
+
+  for (let index = 0; index < eventDates.length; index++) {
+    const element = eventDates[index];
+    if (
+      element.fullDate.includes(
+        `${selectedYear}/${selectedMonth}/${dateSelected}`
+      )
+    ) {
+      isInside = true;
+      dateIndex = index;
+    }
+  }
+}
+
+function showSelectedDateEvents() {
   const eventContainer = document.querySelector(".events ol");
   let eventsDisplayed = document.querySelectorAll(".events ol li");
   const eventTemplate = document.querySelector(".clone");
@@ -163,29 +191,6 @@ function setSelectedDate() {
         descriptions[index].innerHTML = element.eventDescription;
         times[index].innerHTML = element.eventTime;
       }
-    }
-  }
-}
-
-function clearSelectedDate() {
-  dates.forEach((el) => {
-    el.classList.remove("selected");
-  });
-}
-
-function findSelectedDateIndex() {
-  isInside = false;
-  dateIndex = -1;
-
-  for (let index = 0; index < eventDates.length; index++) {
-    const element = eventDates[index];
-    if (
-      element.fullDate.includes(
-        `${selectedYear}/${selectedMonth}/${dateSelected}`
-      )
-    ) {
-      isInside = true;
-      dateIndex = index;
     }
   }
 }
@@ -298,6 +303,8 @@ submit.addEventListener("click", (event) => {
 
   calendar.style.display = "flex";
   form.style.display = "none";
+
+  setSelectedDate();
 
   return eventDates;
 });
