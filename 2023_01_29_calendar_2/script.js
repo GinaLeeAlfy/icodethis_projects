@@ -404,6 +404,14 @@ submit.addEventListener("click", (event) => {
       eventDescription: `${description}`,
       hasAlarm: `${hasAlarm}`,
     });
+
+    function getNumber(string) {
+      return string.replace(":", "");
+    }
+
+    eventDates[dateIndex].events.sort(
+      ({ eventTime: a }, { eventTime: b }) => getNumber(a) - getNumber(b)
+    );
   } else {
     eventDates.push({
       fullDate: `${selectedYear}/${selectedMonth}/${dateSelected}`,
