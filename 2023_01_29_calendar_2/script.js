@@ -226,7 +226,6 @@ nextButton.addEventListener("click", () => {
 eventButton.addEventListener("click", () => {
   let hour = date.getHours();
   let minute = date.getMinutes();
-  let formatSelectedMonth = selectedMonth + 1;
 
   //format the values
   if (hour < 10) {
@@ -237,8 +236,8 @@ eventButton.addEventListener("click", () => {
     minute = `0${minute}`;
   }
 
-  if (formatSelectedMonth < 10) {
-    formatSelectedMonth = `0${formatSelectedMonth}`;
+  if (selectedMonth < 10) {
+    selectedMonth = `0${selectedMonth}`;
   }
 
   if (dateSelected < 10) {
@@ -254,7 +253,7 @@ eventButton.addEventListener("click", () => {
   if (selectedMonth == undefined) {
     timeInput.value = `${year}-${month}-${today}T${hour}:${minute}`;
   } else {
-    timeInput.value = `${selectedYear}-${formatSelectedMonth}-${dateSelected}T${hour}:${minute}`;
+    timeInput.value = `${selectedYear}-${selectedMonth}-${dateSelected}T${hour}:${minute}`;
   }
 });
 
