@@ -10,6 +10,7 @@ const reset = document.querySelector("#reset");
 const submit = document.querySelector("#submit");
 const timeInput = document.querySelector("#time");
 const descriptionInput = document.querySelector("#description");
+const alarmInput = document.querySelector("#alarm");
 
 //my variables
 const date = new Date();
@@ -39,7 +40,7 @@ const eventDates = [
       {
         eventTime: "10:00",
         eventDescription: "Meeting with my accountant",
-        hasAlarm: true,
+        hasAlarm: "true",
       },
     ],
   },
@@ -201,11 +202,11 @@ function showSelectedDateEvents() {
         descriptions[index].innerHTML = element.eventDescription;
         times[index].innerHTML = element.eventTime;
         buttons[index].style.backgroundColor = "var(--lighter-gray)";
-        if (element.hasAlarm) {
+        if (element.hasAlarm == "true") {
           buttons[
             index
           ].innerHTML = `<i class="fa-regular fa-circle-check fa-2xl"></i>`;
-        } else {
+        } else if (element.hasAlarm == "false") {
           buttons[
             index
           ].innerHTML = `<i class="fa-regular fa-circle-xmark fa-2xl"></i>`;
@@ -304,6 +305,7 @@ reset.addEventListener("click", () => {
 submit.addEventListener("click", (event) => {
   event.preventDefault();
   let description = descriptionInput.value;
+  let hasAlarm = alarmInput.checked;
 
   let value = timeInput.value;
   let selectedData = value.split("T");
@@ -322,11 +324,18 @@ submit.addEventListener("click", (event) => {
     eventDates[dateIndex].events.push({
       eventTime: `${time}`,
       eventDescription: `${description}`,
+      hasAlarm: `${hasAlarm}`,
     });
   } else {
     eventDates.push({
       fullDate: `${selectedYear}/${selectedMonth}/${dateSelected}`,
-      events: [{ eventTime: `${time}`, eventDescription: `${description}` }],
+      events: [
+        {
+          eventTime: `${time}`,
+          eventDescription: `${description}`,
+          hasAlarm: `${hasAlarm}`,
+        },
+      ],
     });
   }
 

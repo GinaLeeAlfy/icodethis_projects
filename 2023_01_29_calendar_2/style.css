@@ -245,9 +245,25 @@ input[type="submit"]:hover {
   outline: 2px solid var(--blue);
 }
 
+input[type="checkbox"] {
+  height: 1.5rem;
+  width: 1.5rem;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+}
+
 label {
   margin-top: 10px;
   margin-bottom: 5px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 .inactive {
