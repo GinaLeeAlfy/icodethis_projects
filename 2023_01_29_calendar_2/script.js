@@ -6,12 +6,16 @@ const nextButton = document.querySelector("button:last-of-type");
 const eventButton = document.querySelector("footer button");
 const calendar = document.querySelector(".calendar");
 const form = document.querySelector("form");
+const reset = document.querySelector("#reset");
+const submit = document.querySelector("#submit");
+const timeInput = document.querySelector("#time");
+const descriptionInput = document.querySelector("#description");
 
 //my variables
 const date = new Date();
 const month = date.getMonth() + 1;
 const year = date.getFullYear();
-const today = date.getDate();
+let today = date.getDate();
 const todayDayOne = new Date(year, month - 1, 1).getDay();
 let dayOne;
 let dateSelected;
@@ -169,6 +173,79 @@ nextButton.addEventListener("click", () => {
 });
 
 eventButton.addEventListener("click", () => {
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let formatSelectedMonth = selectedMonth + 1;
+
+  //format the values
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+
+  if (formatSelectedMonth < 10) {
+    formatSelectedMonth = `0${formatSelectedMonth}`;
+  }
+
+  if (dateSelected < 10) {
+    dateSelected = `0${dateSelected}`;
+  }
+
+  if (today < 10) {
+    today = `0${today}`;
+  }
+
   calendar.style.display = "none";
   form.style.display = "flex";
+  if (selectedMonth == undefined) {
+    timeInput.value = `${year}-${month}-${today}T${hour}:${minute}`;
+  } else {
+    timeInput.value = `${selectedYear}-${formatSelectedMonth}-${dateSelected}T${hour}:${minute}`;
+  }
+});
+
+reset.addEventListener("click", () => {
+  calendar.style.display = "flex";
+  form.style.display = "none";
+});
+
+submit.addEventListener("click", () => {
+  calendar.style.display = "flex";
+  form.style.display = "none";
+
+  let value = timeInput.value;
+  let selectedData = value.split("T");
+  let unsplitDate = selectedData[0];
+  let time = selectedData[1];
+
+  let splitDate = unsplitDate.split("-");
+
+  selectedYear = splitDate[0];
+  selectedMonth = splitDate[1];
+  dateSelected = splitDate[2];
+
+  if (
+    !eventDates.fullDateSelected.contains(
+      `${selectedYear}/${selectedMonth}/${dateSelected}`
+    )
+  ) {
+    eventDates.push({
+      fullDateSelected: `${selectedYear}/${selectedMonth}/${dateSelected}`,
+      events: [{ eventTime: `${time}`, eventDescription: `${description}` }],
+    });
+  } else {
+    let index = indexOf(
+      eventDates.fullDateSelected.contains(
+        `${selectedYear}/${selectedMonth}/${dateSelected}`
+      )
+    );
+
+    eventDates[index].events.push({
+      eventTime: `${time}`,
+      eventDescription: `${description}`,
+    });
+  }
 });
