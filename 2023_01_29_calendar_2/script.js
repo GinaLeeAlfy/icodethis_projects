@@ -85,9 +85,9 @@ function populateCalendar(value) {
 
   //set today if in this month/year
   if (currMonth + 1 == month && currYear == year) {
-    dates[today + todayDayOne - 1].classList.add("today");
+    dates[Number(today) + todayDayOne - 1].classList.add("today");
   } else {
-    dates[today + todayDayOne - 1].classList.remove("today");
+    dates[Number(today) + todayDayOne - 1].classList.remove("today");
   }
 
   //set selected day
