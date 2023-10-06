@@ -7,6 +7,7 @@
   --blue: #4e81f2;
   --dark-blue: #3d6ed8;
   --black: #10182f;
+  --off-black: #171f36;
   --light-gray: #a9aab4;
 }
 
@@ -134,4 +135,30 @@ footer button:hover {
 
 button {
   cursor: pointer;
+}
+
+.dark-mode {
+  background-color: var(--off-black);
+}
+
+.dark-mode .card {
+  background-color: var(--black);
+  color: var(--off-white);
+  box-shadow: 0 10px 40px -3px rgba(45, 45, 45, 0.439);
+}
+
+.dark-mode a {
+  color: var(--off-white);
+}
+
+.dark-mode footer button {
+  color: var(--off-white);
+}
+
+.dark-mode header button {
+  color: var(--black);
+}
+
+.dark-mode header button:hover {
+  color: var(--white);
 }
