@@ -1,10 +1,11 @@
 :root {
-  --lighter-gray: #f1f4f5;
+  --off-white: #f8f9fd;
   --white: #ffffff;
   --transparent-gray: #85868f77;
   --transparent: transparent;
   --gray: #686a6b;
   --blue: #4e81f2;
+  --dark-blue: #3d6ed8;
   --black: #10182f;
   --light-gray: #a9aab4;
 }
@@ -14,7 +15,7 @@
 }
 
 body {
-  background-color: var(--black);
+  background-color: var(--off-white);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: var(--white);
@@ -54,11 +55,31 @@ header {
 
 header button {
   align-self: end;
+  background-color: var(--transparent);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: none;
+}
+
+header button:hover {
+  color: var(--black);
+}
+
+span {
+  margin: 20px;
+  font-size: 30px;
 }
 
 h1,
-h2 {
+h4 {
   margin: 0;
+}
+
+h4 {
+  background-color: var(--dark-blue);
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .flex {
@@ -90,5 +111,27 @@ a:hover {
 }
 
 footer {
-  padding: 10px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+footer button {
+  width: 80%;
+  padding: 1rem 2rem;
+  font-size: 18px;
+  background-color: var(--transparent);
+  border: 2px solid var(--light-gray);
+  border-radius: 5px;
+}
+
+footer button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+button {
+  cursor: pointer;
 }
