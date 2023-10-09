@@ -169,3 +169,23 @@ section button:hover,
 .name {
   font-weight: bold;
 }
+
+@media (max-width: 700px) {
+  .center {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+  .img-container {
+    height: 70px;
+    width: 70px;
+  }
+  button {
+    font-size: 14px;
+    padding: 1rem 1rem;
+  }
+}
