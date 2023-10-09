@@ -8,6 +8,8 @@
   --blue: #297aff;
   --dark-blue: #1049a7;
   --light-blue: #a5c2f6;
+  --darker-blue: #1049a7;
+  --medium-blue: #1b66dc;
 }
 
 * {
@@ -33,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100lvh;
-  width: 80lvw;
+  width: 60lvw;
 }
 
 .container {
@@ -51,12 +53,13 @@ header {
   color: var(--white);
   background-image: repeating-linear-gradient(
     to right,
-    var(--dark-blue),
-    var(--blue)
+    var(--darker-blue),
+    var(--medium-blue)
   );
 }
 
 .flex {
+  width: 100%;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 3fr 1fr;
@@ -66,16 +69,29 @@ h1 {
   justify-self: center;
 }
 
-input {
+.input-container {
+  position: relative;
   width: 90%;
-  padding: 1rem 3rem;
+}
+
+input {
+  width: 100%;
+  padding: 1.5rem 4rem;
   background-color: #bdbfc22f;
   color: var(--off-white);
-  border-radius: 25px;
+  border-radius: 50px;
   margin: 15px 0;
   border: none;
+  font-size: 16px;
 }
 input::placeholder {
+  color: var(--light-blue);
+}
+
+span {
+  position: absolute;
+  top: 40%;
+  left: 1.5rem;
   color: var(--light-blue);
 }
 
@@ -90,6 +106,7 @@ section {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 2fr 2fr;
   align-items: center;
+  padding: 15px;
 }
 
 .img-container {
@@ -108,10 +125,21 @@ img {
 button {
   padding: 1rem 2rem;
   border-radius: 25px;
+  border: none;
+  color: var(--white);
+}
+
+section button {
   background-image: repeating-linear-gradient(
     to right,
-    var(--dark-blue),
+    var(--darker-blue),
     var(--blue)
   );
-  color: var(--white);
+  box-shadow: 0 10px 40px -10px var(--darker-blue);
+}
+
+.flex button {
+  background-color: transparent;
+  justify-self: start;
+  margin: 10px;
 }
