@@ -18,7 +18,7 @@
 
 body {
   background-image: repeating-linear-gradient(
-    to right,
+    to left,
     var(--dark-blue),
     var(--blue)
   );
@@ -106,6 +106,7 @@ section {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 2fr 2fr;
   align-items: center;
+  gap: 10px;
   padding: 15px;
 }
 
@@ -114,11 +115,12 @@ section {
   width: 100px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--light-blue);
+  border: 7px solid var(--light-blue);
 }
 
 img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -131,7 +133,8 @@ button {
   cursor: pointer;
 }
 
-section button {
+section button,
+.following:hover {
   background-image: repeating-linear-gradient(
     to right,
     var(--darker-blue),
@@ -139,13 +142,17 @@ section button {
   );
   box-shadow: 0 10px 40px -10px var(--darker-blue);
   font-weight: bold;
+  color: var(--white);
+  outline: none;
 }
 
-section button:hover {
+section button:hover,
+.following {
   background-color: var(--off-white);
   background-image: none;
   color: var(--dark-blue);
   outline: 1px solid var(--dark-blue);
+  box-shadow: none;
 }
 
 .flex button {
@@ -157,4 +164,8 @@ section button:hover {
 
 .flex button:hover {
   outline: 3px solid var(--white);
+}
+
+.name {
+  font-weight: bold;
 }
