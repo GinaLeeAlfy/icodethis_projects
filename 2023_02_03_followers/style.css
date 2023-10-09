@@ -24,7 +24,7 @@ body {
   );
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  color: var(--dark-blue);
+  color: var(--darker-blue);
   display: flex;
   justify-content: center;
 }
@@ -78,7 +78,7 @@ input {
   width: 100%;
   padding: 1.5rem 4rem;
   background-color: #bdbfc22f;
-  color: var(--off-white);
+  color: var(--white);
   border-radius: 50px;
   margin: 15px 0;
   border: none;
@@ -127,6 +127,8 @@ button {
   border-radius: 25px;
   border: none;
   color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
 }
 
 section button {
@@ -136,10 +138,23 @@ section button {
     var(--blue)
   );
   box-shadow: 0 10px 40px -10px var(--darker-blue);
+  font-weight: bold;
+}
+
+section button:hover {
+  background-color: var(--off-white);
+  background-image: none;
+  color: var(--dark-blue);
+  outline: 1px solid var(--dark-blue);
 }
 
 .flex button {
-  background-color: transparent;
+  background-color: var(--transparent);
   justify-self: start;
   margin: 10px;
+  border-radius: 50%;
+}
+
+.flex button:hover {
+  outline: 3px solid var(--white);
 }
