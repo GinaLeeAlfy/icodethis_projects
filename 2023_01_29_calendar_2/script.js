@@ -241,6 +241,7 @@ function editEvent() {
   let times = document.querySelectorAll(".event-time");
   let buttons = document.querySelectorAll(".events li button");
 
+  //todo bug here when you click on eventsDisplayed[0] it runs through whole for loop and deletes all events for that day
   for (let index = 0; index < eventsDisplayed.length; index++) {
     const element = eventsDisplayed[index];
 
