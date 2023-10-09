@@ -69,3 +69,7 @@ button {
 .response {
   display: none;
 }
+
+.open {
+  display: block;
+}
