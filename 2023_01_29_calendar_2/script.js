@@ -148,6 +148,11 @@ function setSelectedDate() {
     dates[dayOne + dateSelected - 1].classList.add("selected");
   }
 
+  dateSelected = dateSelected.toString();
+  if (dateSelected.length == 1 && dateSelected < 10) {
+    dateSelected = `0${dateSelected}`;
+  }
+
   showSelectedDateEvents();
 }
 
@@ -257,23 +262,27 @@ function editEvent() {
         let minute = splitCurrentTime[1];
 
         //format the values
-        if (hour < 10) {
+        if (hour < 10 && hour.length == 1) {
           hour = `0${hour}`;
         }
 
-        if (minute < 10 && minute != "00") {
+        if (minute < 10 && minute != "00" && minute.length == 1) {
           minute = `0${minute}`;
         }
 
-        if (selectedMonth < 10) {
+        if (selectedMonth < 10 && selectedMonth.length == 1) {
           selectedMonth = `0${selectedMonth}`;
         }
 
-        if (dateSelected < 10) {
+        if (
+          dateSelected.length == 1 &&
+          dateSelected < 10 &&
+          dateSelected.length == 1
+        ) {
           dateSelected = `0${dateSelected}`;
         }
 
-        if (today < 10) {
+        if (today < 10 && today.length == 1) {
           today = `0${today}`;
         }
 
@@ -333,6 +342,7 @@ nextButton.addEventListener("click", () => {
 eventButton.addEventListener("click", () => {
   let hour = date.getHours();
   let minute = date.getMinutes();
+  dateSelected = dateSelected.toString();
 
   //format the values
   if (hour < 10) {
@@ -343,15 +353,15 @@ eventButton.addEventListener("click", () => {
     minute = `0${minute}`;
   }
 
-  if (selectedMonth < 10) {
+  if (selectedMonth < 10 && selectedMonth.length == 1) {
     selectedMonth = `0${selectedMonth}`;
   }
 
-  if (dateSelected < 10) {
+  if (dateSelected.length == 1 && dateSelected < 10) {
     dateSelected = `0${dateSelected}`;
   }
 
-  if (today < 10) {
+  if (today < 10 && today.length == 1) {
     today = `0${today}`;
   }
 
