@@ -52,6 +52,7 @@ header {
 header button {
   padding: 1rem;
 }
+
 button {
   background-color: var(--transparent);
   color: var(--gray);
@@ -59,10 +60,18 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  color: var(--green);
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h2 {
+  margin: 0;
 }
 
 section {
@@ -73,6 +82,10 @@ section {
 
 section:last-of-type {
   overflow-y: scroll;
+}
+
+section:last-of-type::-webkit-scrollbar {
+  display: none;
 }
 
 .img-container {
@@ -107,6 +120,7 @@ img {
 .flex-between {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .controls {
@@ -133,8 +147,27 @@ ul {
   list-style-type: none;
 }
 
-li {
+li div {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  padding: 0 1rem;
+  border-radius: 10px;
+}
+
+li div:hover {
+  background-color: var(--green);
+}
+
+.playing {
+  position: relative;
+  font-weight: bold;
+}
+
+.playing::after {
+  position: absolute;
+  top: 25%;
+  content: "\2022";
+  color: var(--green);
+  font-weight: bolder;
 }
