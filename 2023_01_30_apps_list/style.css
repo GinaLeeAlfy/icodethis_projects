@@ -115,7 +115,7 @@ button:hover {
   background-color: var(--green);
 }
 
-h3 {
+span {
   position: relative;
 }
 
@@ -131,7 +131,7 @@ h3 {
   border-radius: 10px;
   z-index: 1;
   bottom: 170%;
-  left: 91px;
+  left: -54px;
 }
 
 .tooltip p {
@@ -152,8 +152,8 @@ h3 {
   z-index: -1;
 }
 
-h3:hover .tooltip,
-h3:hover .arrow,
+span:hover .tooltip,
+span:hover .arrow,
 .tooltip:hover,
 .arrow:hover {
   display: flex;
@@ -165,7 +165,7 @@ h3:hover .arrow,
   }
 
   .tooltip {
-    left: 67px;
+    left: -49px;
   }
 }
 
@@ -207,7 +207,7 @@ h3:hover .arrow,
 
   .tooltip {
     bottom: 180%;
-    left: 55px;
+    left: -47px;
   }
 
   .arrow {
