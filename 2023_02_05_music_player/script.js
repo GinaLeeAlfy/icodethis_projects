@@ -115,6 +115,7 @@ const playButton = document.querySelector(".play");
 const currentTimeDisplay = document.querySelector(".current-time");
 const totalTimeDisplay = document.querySelector(".total-time");
 const backButton = document.querySelector(".back");
+const repeatButton = document.querySelector(".repeat");
 const slider = document.querySelector(".slider");
 const songTitleDisplay = document.querySelector(".current-song");
 const artistDisplay = document.querySelector(".artist");
@@ -135,6 +136,7 @@ let isFinished = true;
 let isPaused = false;
 let isNeedClear = false;
 let isTimerStarted = false;
+let isRepeating = false;
 
 slider.oninput = function adjustProgress() {
   songTime = slider.value;
@@ -142,11 +144,18 @@ slider.oninput = function adjustProgress() {
 };
 
 function setCurrentlyPlayingSongDisplay() {
+  songsList.forEach((songs) => {
+    songs.classList.remove("playing");
+  });
   songTitleDisplay.innerHTML = data[currentlyPlayingSongIndex].name;
   artistDisplay.innerHTML = data[currentlyPlayingSongIndex].artist;
   image.src = data[currentlyPlayingSongIndex].src;
   image.alt = data[currentlyPlayingSongIndex].alt;
   songsList[currentlyPlayingSongIndex].classList.add("playing");
+  songLength = data[currentlyPlayingSongIndex].time;
+  slider.max = songLength;
+  slider.value = 0;
+  progressBar.style.width = `0%`;
 }
 
 function formatTime(songTime) {
@@ -198,6 +207,31 @@ function startProgress() {
     if (songTime >= songLength) {
       clearInterval(time);
       isFinished = true;
+      if (isRepeating) {
+        songTime = 0;
+        slider.value = 0;
+        isFinished = true;
+        setDisplays();
+
+        if (isPaused === false) {
+          playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
+          startProgress();
+        }
+      } else {
+        if (currentlyPlayingSongIndex < data.length - 1) {
+          currentlyPlayingSongIndex++;
+          setCurrentlyPlayingSongDisplay();
+          songTime = 0;
+          slider.value = 0;
+          isFinished = true;
+          setDisplays();
+
+          if (isPaused === false) {
+            playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
+            startProgress();
+          }
+        }
+      }
     } else {
       isFinished = false;
       if (!isPaused) {
@@ -233,7 +267,6 @@ for (let index = 0; index < songsList.length; index++) {
     songsList.forEach((songs) => {
       songs.classList.remove("playing");
     });
-    songLength = data[index].time;
     setCurrentlyPlayingSongDisplay();
 
     if (isTimerStarted) {
@@ -252,3 +285,8 @@ for (let index = 0; index < songsList.length; index++) {
     }
   });
 }
+
+repeatButton.addEventListener("click", () => {
+  isRepeating = !isRepeating;
+  repeatButton.classList.toggle("active");
+});

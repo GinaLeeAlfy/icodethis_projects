@@ -222,3 +222,7 @@ li div:hover {
   color: var(--green);
   font-weight: bolder;
 }
+
+.active {
+  color: var(--green);
+}
