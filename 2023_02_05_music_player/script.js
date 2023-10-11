@@ -72,7 +72,14 @@ function startProgress() {
 playButton.addEventListener("click", (event) => {
   if (isFinished) {
     startProgress();
+    isPaused = false;
+    playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
   } else {
     isPaused = !isPaused;
+    if (isPaused === true) {
+      playButton.innerHTML = `<i class="fa-regular fa-circle-play fa-2xl"></i>`;
+    } else {
+      playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
+    }
   }
 });

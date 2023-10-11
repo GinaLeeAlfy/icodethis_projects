@@ -136,7 +136,8 @@ section button {
   align-items: center;
 }
 
-button .fa-circle-play {
+button .fa-circle-play,
+button .fa-circle-pause {
   font-size: 4em;
 }
 
