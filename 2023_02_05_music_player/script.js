@@ -113,19 +113,27 @@ if (songsList.length == data.length) {
 const progressBar = document.querySelector(".percentage-display");
 const playButton = document.querySelector(".play");
 const currentTimeDisplay = document.querySelector(".current-time");
+const totalTimeDisplay = document.querySelector(".total-time");
 const backButton = document.querySelector(".back");
 const slider = document.querySelector(".slider");
+const songTitleDisplay = document.querySelector(".current-song");
+const artistDisplay = document.querySelector(".artist");
 
-let songLength = data[1].time;
+let songLength = data[0].time;
 let songTime = 0;
 
 //set slider starting
 slider.max = songLength;
 slider.value = 0;
 progressBar.style.width = `0%`;
+setDisplays();
+songTitleDisplay.innerHTML = data[0].name;
+artistDisplay.innerHTML = data[0].artist;
 
 let isFinished = true;
 let isPaused = false;
+let isNeedClear = false;
+let isTimerStarted = false;
 
 slider.oninput = function adjustProgress() {
   songTime = slider.value;
@@ -152,10 +160,17 @@ function setDisplays() {
   formatTime(songTime);
   progressBar.style.width = (songTime / songLength) * 100 + "%";
   currentTimeDisplay.innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
+  formatTime(songLength);
+  totalTimeDisplay.innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
 }
 
 function startProgress() {
   let time = setInterval(frame, 1000);
+  if (isNeedClear) {
+    clearInterval(time);
+    isNeedClear = false;
+    console.log("happened");
+  }
 
   backButton.addEventListener("click", () => {
     clearInterval(time);
@@ -188,6 +203,7 @@ function startProgress() {
 playButton.addEventListener("click", (event) => {
   if (isFinished) {
     startProgress();
+    isTimerStarted = true;
     isPaused = false;
     playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
   } else {
@@ -199,3 +215,31 @@ playButton.addEventListener("click", (event) => {
     }
   }
 });
+
+for (let index = 0; index < songsList.length; index++) {
+  const element = songsList[index];
+  element.addEventListener("click", () => {
+    songsList.forEach((songs) => {
+      songs.classList.remove("playing");
+    });
+    songLength = data[index].time;
+    songTitleDisplay.innerHTML = data[index].name;
+    artistDisplay.innerHTML = `-${data[index].artist}-`;
+
+    if (isTimerStarted) {
+      isNeedClear = true;
+    }
+    songTime = 0;
+    slider.max = songLength;
+    slider.value = 0;
+    isFinished = true;
+    setDisplays();
+
+    if (isPaused === false) {
+      playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
+      startProgress();
+      isTimerStarted = true;
+    }
+    element.classList.add("playing");
+  });
+}
