@@ -149,7 +149,7 @@ function setCurrentlyPlayingSongDisplay() {
     songs.classList.remove("playing");
   });
   songTitleDisplay.innerHTML = data[currentlyPlayingSongIndex].name;
-  artistDisplay.innerHTML = data[currentlyPlayingSongIndex].artist;
+  artistDisplay.innerHTML = `-${data[currentlyPlayingSongIndex].artist}-`;
   image.src = data[currentlyPlayingSongIndex].src;
   image.alt = data[currentlyPlayingSongIndex].alt;
   songsList[currentlyPlayingSongIndex].classList.add("playing");
@@ -312,3 +312,6 @@ backButton.addEventListener("click", () => {
     startProgress();
   }
 });
+
+//todo shuffleButton
+//will probably want to map the data to new array and populate page with that array.
