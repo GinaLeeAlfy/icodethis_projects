@@ -87,6 +87,10 @@ let songsList = document.querySelectorAll("li");
 const songTemplate = document.querySelector(".clone");
 let songClone = songTemplate.cloneNode(true);
 
+let songTimeMinutes;
+let songTimeSeconds;
+let songTimeSecondsString;
+
 while (songsList.length < data.length) {
   songClone = songTemplate.cloneNode(true);
   songContainer.appendChild(songClone);
@@ -94,8 +98,16 @@ while (songsList.length < data.length) {
 }
 
 if (songsList.length == data.length) {
-  const names = document.querySelectorAll(".name");
+  const names = document.querySelectorAll(".song");
   const times = document.querySelectorAll(".time");
+
+  for (let index = 0; index < data.length; index++) {
+    const element = data[index];
+    names[index].innerHTML = element.name;
+
+    formatTime(element.time);
+    times[index].innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
+  }
 }
 
 const progressBar = document.querySelector(".percentage-display");
@@ -120,24 +132,24 @@ slider.oninput = function adjustProgress() {
   setDisplays();
 };
 
-function setDisplays() {
-  let songTimeMinutes;
-
+function formatTime(songTime) {
   if (songTime % 60 === 0) {
     songTimeMinutes = Math.round(songTime / 60);
   } else {
     songTimeMinutes = Math.floor(songTime / 60);
   }
 
-  let songTimeSeconds = songTime - songTimeMinutes * 60;
-  let songTimeSecondsString;
+  songTimeSeconds = songTime - songTimeMinutes * 60;
 
   if (songTimeSeconds < 10) {
     songTimeSecondsString = `0${songTimeSeconds}`;
   } else {
     songTimeSecondsString = songTimeSeconds.toString();
   }
+}
 
+function setDisplays() {
+  formatTime(songTime);
   progressBar.style.width = (songTime / songLength) * 100 + "%";
   currentTimeDisplay.innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
 }
