@@ -27,6 +27,7 @@ const data = [
 const progressBar = document.querySelector(".percentage-display");
 const playButton = document.querySelector(".play");
 const currentTimeDisplay = document.querySelector(".current-time");
+const backButton = document.querySelector(".back");
 let songLength = data[0].time;
 
 let isFinished = true;
@@ -35,6 +36,16 @@ let isPaused = false;
 function startProgress() {
   let songTime = 0;
   let time = setInterval(frame, 1000);
+
+  backButton.addEventListener("click", () => {
+    clearInterval(time);
+    songTime = 0;
+    isFinished = true;
+    currentTimeDisplay.innerHTML = "0:00";
+    isPaused = false;
+    playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
+    startProgress();
+  });
 
   function frame() {
     if (songTime >= songLength) {
