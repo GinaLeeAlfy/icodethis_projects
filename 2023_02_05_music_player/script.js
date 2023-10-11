@@ -30,10 +30,11 @@ const currentTimeDisplay = document.querySelector(".current-time");
 let songLength = data[0].time;
 
 let isFinished = true;
+let isPaused = false;
 
 function startProgress() {
   let songTime = 0;
-  let time = setInterval(frame, 100);
+  let time = setInterval(frame, 1000);
 
   function frame() {
     if (songTime >= songLength) {
@@ -41,29 +42,29 @@ function startProgress() {
       isFinished = true;
     } else {
       isFinished = false;
-      songTime++;
+      if (!isPaused) {
+        songTime++;
 
-      let songTimeMinutes;
+        let songTimeMinutes;
 
-      if (songTime % 60 === 0) {
-        songTimeMinutes = Math.round(songTime / 60);
-      } else {
-        songTimeMinutes = Math.floor(songTime / 60);
+        if (songTime % 60 === 0) {
+          songTimeMinutes = Math.round(songTime / 60);
+        } else {
+          songTimeMinutes = Math.floor(songTime / 60);
+        }
+
+        let songTimeSeconds = songTime - songTimeMinutes * 60;
+        let songTimeSecondsString;
+
+        if (songTimeSeconds < 10) {
+          songTimeSecondsString = `0${songTimeSeconds}`;
+        } else {
+          songTimeSecondsString = songTimeSeconds.toString();
+        }
+
+        progressBar.style.width = (songTime / songLength) * 100 + "%";
+        currentTimeDisplay.innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
       }
-
-      let songTimeSeconds = songTime - songTimeMinutes * 60;
-      let songTimeSecondsString;
-
-      if (songTimeSeconds < 10) {
-        songTimeSecondsString = `0${songTimeSeconds}`;
-      } else {
-        songTimeSecondsString = songTimeSeconds.toString();
-      }
-
-      console.log(songTime);
-
-      progressBar.style.width = (songTime / songLength) * 100 + "%";
-      currentTimeDisplay.innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
     }
   }
 }
@@ -71,5 +72,7 @@ function startProgress() {
 playButton.addEventListener("click", (event) => {
   if (isFinished) {
     startProgress();
+  } else {
+    isPaused = !isPaused;
   }
 });
