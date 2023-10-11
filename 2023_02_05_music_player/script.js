@@ -28,13 +28,47 @@ const progressBar = document.querySelector(".percentage-display");
 const playButton = document.querySelector(".play");
 const currentTimeDisplay = document.querySelector(".current-time");
 const backButton = document.querySelector(".back");
+const slider = document.querySelector(".slider");
+
 let songLength = data[0].time;
+let songTime = 0;
+
+//set slider starting
+slider.max = songLength;
+slider.value = 0;
+progressBar.style.width = `0%`;
 
 let isFinished = true;
 let isPaused = false;
 
+slider.oninput = function adjustProgress() {
+  songTime = slider.value;
+  setDisplays();
+};
+
+function setDisplays() {
+  let songTimeMinutes;
+
+  if (songTime % 60 === 0) {
+    songTimeMinutes = Math.round(songTime / 60);
+  } else {
+    songTimeMinutes = Math.floor(songTime / 60);
+  }
+
+  let songTimeSeconds = songTime - songTimeMinutes * 60;
+  let songTimeSecondsString;
+
+  if (songTimeSeconds < 10) {
+    songTimeSecondsString = `0${songTimeSeconds}`;
+  } else {
+    songTimeSecondsString = songTimeSeconds.toString();
+  }
+
+  progressBar.style.width = (songTime / songLength) * 100 + "%";
+  currentTimeDisplay.innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
+}
+
 function startProgress() {
-  let songTime = 0;
   let time = setInterval(frame, 1000);
 
   backButton.addEventListener("click", () => {
@@ -55,26 +89,8 @@ function startProgress() {
       isFinished = false;
       if (!isPaused) {
         songTime++;
-
-        let songTimeMinutes;
-
-        if (songTime % 60 === 0) {
-          songTimeMinutes = Math.round(songTime / 60);
-        } else {
-          songTimeMinutes = Math.floor(songTime / 60);
-        }
-
-        let songTimeSeconds = songTime - songTimeMinutes * 60;
-        let songTimeSecondsString;
-
-        if (songTimeSeconds < 10) {
-          songTimeSecondsString = `0${songTimeSeconds}`;
-        } else {
-          songTimeSecondsString = songTimeSeconds.toString();
-        }
-
-        progressBar.style.width = (songTime / songLength) * 100 + "%";
-        currentTimeDisplay.innerHTML = `${songTimeMinutes}:${songTimeSecondsString}`;
+        slider.value = songTime;
+        setDisplays();
       }
     }
   }
