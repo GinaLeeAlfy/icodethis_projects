@@ -116,6 +116,7 @@ const currentTimeDisplay = document.querySelector(".current-time");
 const totalTimeDisplay = document.querySelector(".total-time");
 const backButton = document.querySelector(".back");
 const repeatButton = document.querySelector(".repeat");
+const forwardButton = document.querySelector(".forward");
 const slider = document.querySelector(".slider");
 const songTitleDisplay = document.querySelector(".current-song");
 const artistDisplay = document.querySelector(".artist");
@@ -289,4 +290,18 @@ for (let index = 0; index < songsList.length; index++) {
 repeatButton.addEventListener("click", () => {
   isRepeating = !isRepeating;
   repeatButton.classList.toggle("active");
+});
+
+forwardButton.addEventListener("click", () => {
+  currentlyPlayingSongIndex++;
+  setCurrentlyPlayingSongDisplay();
+  if (isTimerStarted) {
+    isNeedClear = true;
+  }
+
+  songTime = 0;
+  slider.max = songLength;
+  slider.value = 0;
+  isFinished = true;
+  setDisplays();
 });
