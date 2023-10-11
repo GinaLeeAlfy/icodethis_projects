@@ -3,82 +3,82 @@ const data = [
     name: "The Greatest Show",
     time: 303,
     artist: "Keala Settle, Hugh Jackman, Zac Efron, & Zendaya",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
   {
     name: "A Million Dreams",
     time: 270,
     artist: "Ziv Zaifmann, Hugh Jackman, & Michelle Ingrid Williams",
     src: "",
-    alt: "",
+    alt: "Album Logo",
   },
   {
     name: "A Million Dreams (Reprise)",
     time: 61,
     artist: "Cameron Seely, Austyn Johnson",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
   {
     name: "Come Alive",
     time: 226,
     artist: "Keala Settle, Daniel Everidge, Hugh Jackman, & Zendaya",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
   {
     name: "The Other Side",
     time: 215,
     artist: "Hugh Jackman & Zac Efron",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
   {
     name: "Never Enough",
     time: 208,
     artist: "Loren Allred",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
   {
     name: "This Is Me",
     time: 235,
     artist: "Keala Settle & The Greatest Showman Ensemble",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
 
   {
     name: "Rewrite The Stars",
     time: 218,
     artist: "Zac Efron & Zendaya",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
 
   {
     name: "Tightrope",
     time: 235,
     artist: "Michelle Williams",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
 
   {
     name: "Never Enough (Reprise)",
     time: 81,
     artist: "Loren Allred",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
 
   {
     name: "From Now On",
     time: 350,
     artist: "Hugh Jackman & The Greatest Showman Ensemble",
-    src: "",
-    alt: "",
+    src: "https://images.pexels.com/photos/2219318/pexels-photo-2219318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "circus",
   },
 ];
 
@@ -118,8 +118,10 @@ const backButton = document.querySelector(".back");
 const slider = document.querySelector(".slider");
 const songTitleDisplay = document.querySelector(".current-song");
 const artistDisplay = document.querySelector(".artist");
+const image = document.querySelector("img");
 
-let songLength = data[0].time;
+let currentlyPlayingSongIndex = 0;
+let songLength = data[currentlyPlayingSongIndex].time;
 let songTime = 0;
 
 //set slider starting
@@ -127,8 +129,7 @@ slider.max = songLength;
 slider.value = 0;
 progressBar.style.width = `0%`;
 setDisplays();
-songTitleDisplay.innerHTML = data[0].name;
-artistDisplay.innerHTML = data[0].artist;
+setCurrentlyPlayingSongDisplay();
 
 let isFinished = true;
 let isPaused = false;
@@ -139,6 +140,14 @@ slider.oninput = function adjustProgress() {
   songTime = slider.value;
   setDisplays();
 };
+
+function setCurrentlyPlayingSongDisplay() {
+  songTitleDisplay.innerHTML = data[currentlyPlayingSongIndex].name;
+  artistDisplay.innerHTML = data[currentlyPlayingSongIndex].artist;
+  image.src = data[currentlyPlayingSongIndex].src;
+  image.alt = data[currentlyPlayingSongIndex].alt;
+  songsList[currentlyPlayingSongIndex].classList.add("playing");
+}
 
 function formatTime(songTime) {
   if (songTime % 60 === 0) {
@@ -219,12 +228,13 @@ playButton.addEventListener("click", (event) => {
 for (let index = 0; index < songsList.length; index++) {
   const element = songsList[index];
   element.addEventListener("click", () => {
+    currentlyPlayingSongIndex = index;
+
     songsList.forEach((songs) => {
       songs.classList.remove("playing");
     });
     songLength = data[index].time;
-    songTitleDisplay.innerHTML = data[index].name;
-    artistDisplay.innerHTML = `-${data[index].artist}-`;
+    setCurrentlyPlayingSongDisplay();
 
     if (isTimerStarted) {
       isNeedClear = true;
@@ -240,6 +250,5 @@ for (let index = 0; index < songsList.length; index++) {
       startProgress();
       isTimerStarted = true;
     }
-    element.classList.add("playing");
   });
 }
