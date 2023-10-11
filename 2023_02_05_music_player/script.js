@@ -134,7 +134,7 @@ setDisplays();
 setCurrentlyPlayingSongDisplay();
 
 let isFinished = true;
-let isPaused = false;
+let isPaused = true;
 let isNeedClear = false;
 let isTimerStarted = false;
 let isRepeating = false;
@@ -185,24 +185,12 @@ function setDisplays() {
 
 function startProgress() {
   let time = setInterval(frame, 1000);
+
   if (isNeedClear) {
     clearInterval(time);
     isNeedClear = false;
     console.log("happened");
   }
-
-  backButton.addEventListener("click", () => {
-    clearInterval(time);
-    songTime = 0;
-    slider.value = 0;
-    isFinished = true;
-    setDisplays();
-
-    if (isPaused === false) {
-      playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
-      startProgress();
-    }
-  });
 
   function frame() {
     if (songTime >= songLength) {
@@ -304,4 +292,23 @@ forwardButton.addEventListener("click", () => {
   slider.value = 0;
   isFinished = true;
   setDisplays();
+});
+
+backButton.addEventListener("click", () => {
+  if (songTime <= 4 && currentlyPlayingSongIndex > 0) {
+    currentlyPlayingSongIndex--;
+    setCurrentlyPlayingSongDisplay();
+  }
+  if (isTimerStarted) {
+    isNeedClear = true;
+  }
+  songTime = 0;
+  slider.value = 0;
+  isFinished = true;
+  setDisplays();
+
+  if (isPaused === false) {
+    playButton.innerHTML = `<i class="fa-regular fa-circle-pause fa-2xl"></i>`;
+    startProgress();
+  }
 });
