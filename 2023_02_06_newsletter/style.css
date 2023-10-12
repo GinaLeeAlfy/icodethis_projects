@@ -21,6 +21,7 @@ body {
   color: var(--white);
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .center {
@@ -45,6 +46,7 @@ body {
 .flex-evenly {
   display: flex;
   justify-content: space-evenly;
+  gap: 10px;
 }
 
 .flex-col {
@@ -109,4 +111,34 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: var(--transparent);
   color: var(--white);
+}
+
+@media (max-width: 800px) {
+  .center {
+    width: 100%;
+  }
+  .container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+  }
+
+  input[type="submit"] {
+    border-radius: 10px;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
 }
