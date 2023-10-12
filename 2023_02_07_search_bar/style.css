@@ -36,13 +36,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 15px;
 }
 
 .search-container {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 input[type="text"] {
@@ -54,6 +55,7 @@ input[type="text"] {
   border: none;
   width: 95%;
   font-size: 16px;
+  color: var(--white);
 }
 
 input[type="submit"] {
@@ -68,6 +70,7 @@ input[type="submit"] {
   outline: 3px solid var(--black);
   box-shadow: 0 0 0 6px var(--light-gray);
   font-size: 16px;
+  cursor: pointer;
 }
 
 button {
@@ -75,6 +78,7 @@ button {
   color: var(--pink);
   border: none;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .links {
@@ -94,10 +98,29 @@ button {
 
 .links a:hover {
   text-decoration: underline;
-  color: var(--black);
+  color: var(--white);
 }
 
-button:hover .links,
+button:hover + .links,
+.links:hover,
 .active {
   visibility: visible;
+}
+
+@media (min-width: 700px) {
+  body,
+  input[type="text"],
+  input[type="submit"],
+  button {
+    font-size: 20px;
+  }
+  input[type="submit"] {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 800px;
+  }
 }
