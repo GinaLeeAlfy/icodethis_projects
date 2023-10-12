@@ -54,6 +54,10 @@ section {
   overflow-y: scroll;
 }
 
+section::-webkit-scrollbar {
+  display: none;
+}
+
 .question-container {
   border: 2px solid var(--light-gray);
   display: flex;
