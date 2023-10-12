@@ -82,6 +82,7 @@ button {
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: var(--light-gray);
+  border-radius: 10px;
   visibility: hidden;
 }
 
@@ -96,6 +97,7 @@ button {
   color: var(--black);
 }
 
-button:hover .links {
+button:hover .links,
+.active {
   visibility: visible;
 }
