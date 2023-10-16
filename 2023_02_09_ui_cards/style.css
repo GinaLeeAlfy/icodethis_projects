@@ -60,13 +60,36 @@ body {
 
 .img-container {
   width: 100%;
+  overflow: hidden;
 }
 
 img {
   width: 100%;
+  object-fit: cover;
 }
 
 p {
   color: gray;
   margin: 0;
+}
+
+@media (min-width: 500px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .card {
+    max-width: 400px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 1670px) {
+  .center {
+    justify-content: center;
+  }
 }
