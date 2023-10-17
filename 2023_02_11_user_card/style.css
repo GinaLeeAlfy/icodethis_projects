@@ -4,8 +4,8 @@
   --transparent: transparent;
   --black: #303139;
   --blue: #6a82ee;
-  --gray: #c8cae0;
-  --light-gray: #e6ecf5;
+  --gray: #e7f0fb;
+  --light-gray: #f3f9fe;
 }
 
 * {
@@ -39,7 +39,7 @@ body {
   padding: 30px;
   gap: 20px;
   border-radius: 15px;
-  box-shadow: 0 0 40px -8px var(--transparent-gray);
+  box-shadow: 0 15px 0 -5px var(--gray);
 }
 
 .img-container {
@@ -87,4 +87,15 @@ button:hover {
   background-color: var(--blue);
   color: var(--white);
   border-color: var(--black);
+}
+
+@media (min-width: 450px) {
+  .container {
+    flex-wrap: nowrap;
+    max-width: 700px;
+  }
+
+  .center {
+    justify-content: center;
+  }
 }
