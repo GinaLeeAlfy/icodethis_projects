@@ -119,8 +119,23 @@ button {
   margin: 30px 0;
   cursor: pointer;
 }
+
 button:hover {
   background-color: var(--gray);
   color: var(--blue);
   outline: 3px solid var(--blue);
+}
+
+@media (min-width: 650px) {
+  .img-container {
+    border: 10px solid var(--gray);
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .container {
+    max-width: 800px;
+  }
 }
