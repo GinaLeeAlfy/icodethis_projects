@@ -2,6 +2,7 @@ const notification = document.querySelector(".notification");
 const colorDisplays = document.querySelectorAll(".color");
 const colorTexts = document.querySelectorAll("h3");
 const generateButton = document.querySelector("button");
+const colorCards = document.querySelectorAll(".card");
 
 let colorGenerated = "";
 let colorsPalette = [];
@@ -89,10 +90,54 @@ generateButton.addEventListener("click", () => {
 });
 
 addEventListener("keydown", (event) => {
+  console.log(event);
   if (event.code === "Space") {
     colorGenerated = "";
     colorsPalette = [];
     generateRandomColors();
     displayColorsAndText();
   }
+
+  if (event.code === "KeyC") {
+    navigator.clipboard.writeText(colorsPalette);
+    let colorsPaletteText = colorsPalette.toString().replaceAll(",", ", ");
+    notifyCopy(colorsPaletteText);
+    cancelTimer();
+  }
 });
+
+for (let index = 0; index < colorCards.length; index++) {
+  const element = colorCards[index];
+  element.addEventListener("click", () => {
+    navigator.clipboard.writeText(colorsPalette[index]);
+    notifyCopy(colorsPalette[index]);
+    cancelTimer();
+  });
+}
+
+function notifyCopy(textCopied) {
+  notification.innerHTML = `${textCopied} copied to your clipboard`;
+}
+
+let intervalID;
+
+function restartTimer() {
+  let time = 0;
+  notification.classList.remove("visible");
+  intervalID = setInterval(frame, 100);
+
+  function frame() {
+    if (time >= 50) {
+      clearInterval(intervalID);
+      notification.classList.remove("visible");
+    } else {
+      notification.classList.add("visible");
+      time++;
+    }
+  }
+}
+
+function cancelTimer() {
+  clearInterval(intervalID);
+  restartTimer();
+}
