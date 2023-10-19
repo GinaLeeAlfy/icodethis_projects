@@ -90,7 +90,6 @@ generateButton.addEventListener("click", () => {
 });
 
 addEventListener("keydown", (event) => {
-  console.log(event);
   if (event.code === "Space") {
     colorGenerated = "";
     colorsPalette = [];

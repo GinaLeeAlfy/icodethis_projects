@@ -69,6 +69,13 @@ body {
   cursor: pointer;
 }
 
+.card:hover {
+  color: var(--black);
+  box-shadow: 0 5px 20px -4px var(--transparent-gray);
+  position: relative;
+  top: -10px;
+}
+
 .color {
   width: 100%;
   aspect-ratio: 3/4;
