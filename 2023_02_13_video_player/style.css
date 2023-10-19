@@ -41,3 +41,12 @@ iframe {
   width: 100%;
   aspect-ratio: 16/9;
 }
+
+@media (min-width: 800px) {
+  .center {
+    justify-content: center;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}
