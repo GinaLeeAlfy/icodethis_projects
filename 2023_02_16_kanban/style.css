@@ -39,28 +39,36 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: var(--light-gray);
+  background-image: linear-gradient(
+      to bottom,
+      var(--transparent) 15px,
+      var(--light-gray) 15px
+    ),
+    linear-gradient(to right, var(--purple), var(--light-blue));
   gap: 20px;
+  margin-top: 20px;
 }
 
 .card {
   display: flex;
-  align-items: start;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
   background-color: var(--white);
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 10px 40px -15px;
+  box-shadow: 0 10px 20px -15px;
   margin: 0 10px;
 }
 
 header {
   padding: 0 10px;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 h1,
@@ -83,8 +91,10 @@ img {
 }
 
 .flex-col {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .flex-between {
@@ -138,4 +148,22 @@ button {
   background-color: var(--transparent);
   color: var(--dark-gray);
   font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-image: linear-gradient(to right, var(--purple), var(--light-blue));
+  color: var(--white);
+}
+
+@media (min-width: 500px) {
+  body {
+    font-size: 16px;
+  }
+  .center {
+    justify-content: center;
+  }
+  .card {
+    flex-wrap: nowrap;
+  }
 }
