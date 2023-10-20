@@ -1,0 +1,141 @@
+:root {
+  --gray: #ebebeb;
+  --light-gray: #f2f2f2;
+  --dark-gray: #757778;
+  --transparent-gray: #85868f77;
+  --transparent: transparent;
+  --black: #0c1227;
+  --blue: #383e8d;
+  --pink: #f0608e;
+  --light-blue: #35a6fa;
+  --purple: #e432ff;
+  --green: #43c4b6;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100svh;
+  background-color: var(--gray);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: var(--dark-gray);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 99svw;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--light-gray);
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  background-color: var(--white);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 10px 40px -15px;
+  margin: 0 10px;
+}
+
+header {
+  padding: 0 10px;
+  padding-top: 20px;
+}
+
+h1,
+h2 {
+  color: var(--blue);
+  margin: 0;
+}
+
+.img-container {
+  width: 100%;
+  max-width: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.priority {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: var(--white);
+}
+
+.high {
+  background-color: var(--pink);
+}
+
+.medium {
+  background-color: var(--light-blue);
+}
+
+.low {
+  background-color: var(--green);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flex p {
+  font-size: 12px;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0.5rem;
+  border-radius: 25px;
+  background-color: var(--gray);
+}
+
+.flex-between:last-of-type p {
+  margin-bottom: 0;
+}
+
+button {
+  padding: 2rem;
+  border: none;
+  background-color: var(--transparent);
+  color: var(--dark-gray);
+  font-size: 18px;
+}
