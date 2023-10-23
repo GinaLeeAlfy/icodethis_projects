@@ -129,6 +129,9 @@ section button:hover {
 }
 
 @media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
   .center {
     justify-content: center;
   }
