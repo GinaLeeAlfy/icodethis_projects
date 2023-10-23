@@ -75,6 +75,7 @@ button {
 button:hover {
   background-color: var(--teal);
   color: var(--dark-blue);
+  border-color: var(--white);
 }
 
 section {
@@ -124,4 +125,13 @@ footer {
 img {
   width: 100%;
   object-fit: cover;
+}
+
+@media (min-width: 500px) {
+  body {
+    font-size: 18px;
+  }
+  .center {
+    justify-content: center;
+  }
 }
