@@ -33,7 +33,8 @@ body {
   width: 99svw;
 }
 
-.container {
+.container,
+form {
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -48,6 +49,10 @@ body {
   text-align: center;
 }
 
+form {
+  display: none;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -56,6 +61,7 @@ body {
 }
 
 .card {
+  position: relative;
   width: 250px;
   height: 300px;
   display: flex;
@@ -80,6 +86,7 @@ img {
 
 .add {
   color: var(--blue);
+  cursor: pointer;
 }
 
 span {
@@ -92,13 +99,46 @@ span {
   align-items: center;
 }
 
-button {
+button,
+input[type="reset"],
+input[type="submit"] {
   color: var(--blue);
   border: 1px solid var(--blue);
   background-color: var(--black);
   padding: 1rem 3rem;
   border-radius: 25px;
   font-size: 16px;
+  cursor: pointer;
+  margin: 0px 10px;
+}
+
+button:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--blue);
+  color: var(--black);
+}
+
+input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.card input[type="radio"]:checked + .img-container {
+  outline: 5px solid var(--blue);
+}
+
+input[type="text"] {
+  border-radius: 25px;
+  border: 2px solid var(--blue);
+  padding: 1rem 2rem;
+  font-size: 14px;
 }
 
 @media (min-width: 650px) {
