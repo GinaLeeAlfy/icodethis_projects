@@ -64,7 +64,9 @@ function generateRandomColors() {
 
     if (colorGenerated.length === 6) {
       colorGenerated = `#${colorGenerated}`;
-      colorsPalette.push(colorGenerated);
+      if (!colorsPalette.includes(colorGenerated)) {
+        colorsPalette.push(colorGenerated);
+      }
       colorGenerated = "";
     }
   }
