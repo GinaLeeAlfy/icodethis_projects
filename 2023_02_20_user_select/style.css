@@ -53,7 +53,8 @@ form {
   display: none;
 }
 
-.card-container {
+.card-container,
+.user-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -139,6 +140,16 @@ input[type="text"] {
   border: 2px solid var(--blue);
   padding: 1rem 2rem;
   font-size: 14px;
+}
+
+.disabled {
+  display: none;
+  cursor: not-allowed;
+}
+
+.editable {
+  box-shadow: 0 0 20px -5px var(--blue);
+  cursor: pointer;
 }
 
 @media (min-width: 650px) {
