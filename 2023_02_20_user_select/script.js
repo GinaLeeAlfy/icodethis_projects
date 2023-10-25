@@ -105,7 +105,6 @@ function checkValues() {
 
 //remove userCards except firstChild
 function resetUserCards() {
-  let userCards = document.querySelectorAll(".user");
   while (userContainer.children.length > 1) {
     userContainer.removeChild(userContainer.lastChild);
   }
