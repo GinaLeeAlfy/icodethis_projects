@@ -76,6 +76,7 @@ function updateUserCards() {
     userCards = document.querySelectorAll(".user");
   }
 
+  //populate user cards
   if (userCards.length === userData.length) {
     const names = document.querySelectorAll("h3");
     const userImages = document.querySelectorAll(".user img");
@@ -91,6 +92,7 @@ function updateUserCards() {
   }
 }
 
+//find index of checked image
 function checkValues() {
   for (let index = 0; index < radioImages.length; index++) {
     const element = radioImages[index];
@@ -101,6 +103,7 @@ function checkValues() {
   }
 }
 
+//remove userCards except firstChild
 function resetUserCards() {
   let userCards = document.querySelectorAll(".user");
   while (userContainer.children.length > 1) {
@@ -108,15 +111,7 @@ function resetUserCards() {
   }
 }
 
-function addEditingListeners() {
-  let userCards = document.querySelectorAll(".user");
-  for (let index = 0; index < userCards.length; index++) {
-    const element = userCards[index];
-    element.classList.add("editable");
-    element.addEventListener("click", allowEditing(index));
-  }
-}
-
+//open form and cancel edit mode
 addUserButton.addEventListener("click", () => {
   isEditing = false;
   let userCards = document.querySelectorAll(".user");
@@ -139,6 +134,7 @@ addUserButton.addEventListener("click", () => {
 
 submit.addEventListener("click", (event) => {
   event.preventDefault();
+  //adding new user
   if (isEditing === false) {
     let isChecked = false;
     let checkedIndex;
@@ -151,6 +147,7 @@ submit.addEventListener("click", (event) => {
       }
     }
 
+    //require info to push to userData
     if (!userNameInput.value == "" && isChecked === true) {
       userData.push({
         name: `${userNameInput.value}`,
@@ -167,6 +164,7 @@ submit.addEventListener("click", (event) => {
     } else {
       alert("Requires username and checked Image");
     }
+    //if editing
   } else {
     let isChecked = true;
     let checkedIndex;
@@ -179,6 +177,7 @@ submit.addEventListener("click", (event) => {
       }
     }
 
+    //require info to update userData
     if (!userNameInput.value == "" && isChecked === true) {
       userData[userEditIndex].name = `${userNameInput.value}`;
       userData[userEditIndex].image = imagesData[checkedIndex];
@@ -196,10 +195,12 @@ submit.addEventListener("click", (event) => {
   }
 });
 
+//go back to main screen and clear form
 reset.addEventListener("click", () => {
   form.classList.toggle("hidden");
   mainContainer.classList.toggle("hidden");
 
+  //delete the editable user
   if (isEditing === true) {
     userData.splice(userEditIndex, 1);
     resetUserCards();
@@ -212,6 +213,7 @@ reset.addEventListener("click", () => {
 });
 
 manageUsersButton.addEventListener("click", () => {
+  //set edit mode
   if (manageUsersButton.innerHTML === "Manage users") {
     let userCards = document.querySelectorAll(".user");
     isEditing = true;
@@ -219,6 +221,8 @@ manageUsersButton.addEventListener("click", () => {
       element.classList.add("editable");
     });
     manageUsersButton.innerHTML = "Cancel manage users";
+
+    //exit edit mode
   } else {
     isEditing = false;
     let userCards = document.querySelectorAll(".user");
@@ -230,6 +234,7 @@ manageUsersButton.addEventListener("click", () => {
   }
 });
 
+//access userCards with event delegation
 userContainer.addEventListener("click", (event) => {
   if (event.target.classList.contains("user")) {
     if (isEditing === true) {
@@ -244,4 +249,5 @@ userContainer.addEventListener("click", (event) => {
   }
 });
 
+//intialize users
 updateUserCards();
