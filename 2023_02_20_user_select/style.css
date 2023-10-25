@@ -49,7 +49,7 @@ form {
   text-align: center;
 }
 
-form {
+.hidden {
   display: none;
 }
 
