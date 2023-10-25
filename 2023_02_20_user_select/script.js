@@ -60,7 +60,7 @@ const submit = document.querySelector("#submit");
 const reset = document.querySelector("#reset");
 const userNameInput = document.querySelector("#name");
 const radioImages = document.querySelectorAll(".card input");
-const userContainer = document.querySelector(".user-container");
+const userContainer = document.querySelector("#user-container");
 
 let isEditing = false;
 let userEditIndex;
@@ -88,8 +88,6 @@ function updateUserCards() {
       userImages[index].alt = element.image.alt;
       userCards[index].dataset.indexNumber = index;
     }
-  } else if (userCards.length > userData.length) {
-    userContainer.removeChild(userContainer.lastChild);
   }
 }
 
@@ -104,8 +102,8 @@ function checkValues() {
 }
 
 function resetUserCards() {
-  const userContainer = document.querySelector(".user-container");
-  while (userContainer.length > 1) {
+  let userCards = document.querySelectorAll(".user");
+  while (userContainer.children.length > 1) {
     userContainer.removeChild(userContainer.lastChild);
   }
 }
@@ -115,7 +113,6 @@ function addEditingListeners() {
   for (let index = 0; index < userCards.length; index++) {
     const element = userCards[index];
     element.classList.add("editable");
-    console.log(element);
     element.addEventListener("click", allowEditing(index));
   }
 }
@@ -188,7 +185,6 @@ submit.addEventListener("click", (event) => {
 
       form.classList.toggle("hidden");
       mainContainer.classList.toggle("hidden");
-      resetUserCards();
       updateUserCards();
       let userCards = document.querySelectorAll(".user");
       if (userCards.length > 3) {
@@ -203,6 +199,16 @@ submit.addEventListener("click", (event) => {
 reset.addEventListener("click", () => {
   form.classList.toggle("hidden");
   mainContainer.classList.toggle("hidden");
+
+  if (isEditing === true) {
+    userData.splice(userEditIndex, 1);
+    resetUserCards();
+    updateUserCards();
+  }
+  let userCards = document.querySelectorAll(".user");
+  if (userCards.length < 4) {
+    addUserButton.classList.remove("disabled");
+  }
 });
 
 manageUsersButton.addEventListener("click", () => {

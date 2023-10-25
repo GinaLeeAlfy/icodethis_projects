@@ -54,7 +54,7 @@ form {
 }
 
 .card-container,
-.user-container {
+#user-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
