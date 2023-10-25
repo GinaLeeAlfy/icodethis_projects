@@ -60,11 +60,12 @@ const submit = document.querySelector("#submit");
 const reset = document.querySelector("#reset");
 const userNameInput = document.querySelector("#name");
 const radioImages = document.querySelectorAll(".card input");
+const userContainer = document.querySelector(".user-container");
+
 let isEditing = false;
 let userEditIndex;
 
 function updateUserCards() {
-  const userContainer = document.querySelector(".user-container");
   let userCards = document.querySelectorAll(".user");
   const userTemplate = document.querySelector(".clone");
   let userClone = userTemplate.cloneNode(true);
@@ -85,6 +86,7 @@ function updateUserCards() {
       names[index].innerHTML = element.name;
       userImages[index].src = element.image.src;
       userImages[index].alt = element.image.alt;
+      userCards[index].dataset.indexNumber = index;
     }
   } else if (userCards.length > userData.length) {
     userContainer.removeChild(userContainer.lastChild);
@@ -108,8 +110,24 @@ function resetUserCards() {
   }
 }
 
-addUserButton.addEventListener("click", () => {
+function addEditingListeners() {
   let userCards = document.querySelectorAll(".user");
+  for (let index = 0; index < userCards.length; index++) {
+    const element = userCards[index];
+    element.classList.add("editable");
+    console.log(element);
+    element.addEventListener("click", allowEditing(index));
+  }
+}
+
+addUserButton.addEventListener("click", () => {
+  isEditing = false;
+  let userCards = document.querySelectorAll(".user");
+  for (let index = 0; index < userCards.length; index++) {
+    const element = userCards[index];
+    element.classList.remove("editable");
+  }
+  manageUsersButton.innerHTML = "Manage users";
   if (userCards.length > 3) {
     alert("Maximum number of users has been reached.");
   } else {
@@ -172,7 +190,6 @@ submit.addEventListener("click", (event) => {
       mainContainer.classList.toggle("hidden");
       resetUserCards();
       updateUserCards();
-      isEditing = false;
       let userCards = document.querySelectorAll(".user");
       if (userCards.length > 3) {
         addUserButton.classList.add("disabled");
@@ -189,18 +206,35 @@ reset.addEventListener("click", () => {
 });
 
 manageUsersButton.addEventListener("click", () => {
-  let userCards = document.querySelectorAll(".user");
-  for (let index = 0; index < userCards.length; index++) {
-    const element = userCards[index];
-    element.classList.add("editable");
-    element.addEventListener("click", () => {
-      isEditing = true;
-      userEditIndex = index;
-      userNameInput.value = userData[index].name;
-      radioImages[imagesData.indexOf(userData[index].image)].checked = true;
+  if (manageUsersButton.innerHTML === "Manage users") {
+    let userCards = document.querySelectorAll(".user");
+    isEditing = true;
+    userCards.forEach((element) => {
+      element.classList.add("editable");
+    });
+    manageUsersButton.innerHTML = "Cancel manage users";
+  } else {
+    isEditing = false;
+    let userCards = document.querySelectorAll(".user");
+    for (let index = 0; index < userCards.length; index++) {
+      const element = userCards[index];
+      element.classList.remove("editable");
+    }
+    manageUsersButton.innerHTML = "Manage users";
+  }
+});
+
+userContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("user")) {
+    if (isEditing === true) {
+      userEditIndex = event.target.dataset.indexNumber;
+      userNameInput.value = userData[userEditIndex].name;
+      radioImages[
+        imagesData.indexOf(userData[userEditIndex].image)
+      ].checked = true;
       form.classList.toggle("hidden");
       mainContainer.classList.toggle("hidden");
-    });
+    }
   }
 });
 
