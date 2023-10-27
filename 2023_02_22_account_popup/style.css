@@ -37,8 +37,8 @@ body {
 .container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  display: none;
+  max-width: 500px;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -58,11 +58,13 @@ footer {
 header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
 .img-container {
   width: 25%;
+  min-width: 59px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
@@ -86,6 +88,8 @@ span {
 section {
   border-bottom: 1px solid var(--gray);
   padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -123,10 +127,11 @@ footer button:hover {
 }
 
 .account {
+  max-width: 450px;
   background-color: var(--light-gray);
   color: var(--black);
   padding: 0.5rem;
-  border-radius: 50px;
+  border-radius: 400px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -139,4 +144,16 @@ footer button:hover {
 
 .visible {
   display: flex;
+}
+
+@media (min-width: 450px) {
+  body {
+    font-size: 18px;
+  }
+  .center {
+    justify-content: center;
+  }
+  button {
+    font-size: 18px;
+  }
 }
