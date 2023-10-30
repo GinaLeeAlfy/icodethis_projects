@@ -40,54 +40,31 @@ function formatInput() {
 }
 
 function setDisplays() {
-  let yearsDisplay = Math.floor(countdownTime / 31536000);
-  let monthsDisplay = Math.floor(
-    (countdownTime - yearsDisplay * 31536000) / 2678400
-  );
-  let daysDisplay = Math.floor(
-    (countdownTime - yearsDisplay * 31536000 - monthsDisplay * 2678400) / 86400
-  );
-  let hoursDisplay = Math.floor(
-    (countdownTime -
-      daysDisplay * 86400 -
-      monthsDisplay * 2678400 -
-      yearsDisplay * 31536000) /
-      3600
-  );
+  let daysDisplay = Math.floor(countdownTime / 86400);
+  let hoursDisplay = Math.floor((countdownTime - daysDisplay * 86400) / 3600);
   let minutesDisplay = Math.floor(
-    (countdownTime -
-      hoursDisplay * 3600 -
-      daysDisplay * 86400 -
-      monthsDisplay * 2678400 -
-      yearsDisplay * 31536000) /
-      60
+    (countdownTime - hoursDisplay * 3600 - daysDisplay * 86400) / 60
   );
   let secondsDisplay =
     countdownTime -
     minutesDisplay * 60 -
     hoursDisplay * 3600 -
-    daysDisplay * 86400 -
-    monthsDisplay * 2678400 -
-    yearsDisplay * 31536000;
+    daysDisplay * 86400;
 
-  counters[0].innerText = yearsDisplay;
-  counters[1].innerText = monthsDisplay;
-  counters[2].innerText = daysDisplay;
-  counters[3].innerText = hoursDisplay;
-  counters[4].innerText = minutesDisplay;
-  counters[5].innerText = secondsDisplay;
+  counters[0].innerText = daysDisplay;
+  counters[1].innerText = hoursDisplay;
+  counters[2].innerText = minutesDisplay;
+  counters[3].innerText = secondsDisplay;
 }
 
 function getDateInput() {
   let dateInputValue = new Date(dateInput.value);
   let dateInputValueTime = dateInputValue.getTime();
-  console.log(dateInputValue);
 
   let currentDate = new Date();
   let currentDateTime = currentDate.getTime();
   let timeDifferenceMS;
   let timeDifferenceS;
-  console.log(currentDate);
 
   if (dateInputValueTime > currentDateTime) {
     isStarted = true;
@@ -113,6 +90,8 @@ function getDateInput() {
         setDisplays();
       }
     }
+  } else if (dateInputValue == "Invalid Date") {
+    alert("Please choose a valid date/time.");
   } else {
     alert("Please choose a date/time in the future.");
     if (isStarted === true) {
