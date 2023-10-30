@@ -64,3 +64,18 @@ body {
 h2 {
   font-size: 30px;
 }
+
+@media (min-width: 500px) {
+  body,
+  input {
+    font-size: 18px;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+}
