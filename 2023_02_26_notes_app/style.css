@@ -1,7 +1,7 @@
 :root {
-  --blue: #3f7bfc;
-  --gray: #e5e5f1;
-  --light-gray: #f3f3ff;
+  --blue: #318cf4;
+  --gray: #a4abb8;
+  --light-gray: #f9f9f9;
   --transparent-gray: #85868f77;
   --transparent: transparent;
   --black: #151424;
@@ -18,7 +18,7 @@
 
 body {
   height: 100svh;
-  background-color: var(--gray);
+  background-color: var(--blue);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   color: var(--black);
@@ -71,10 +71,19 @@ header {
   gap: 10px;
 }
 
-#title {
+header .flex-col {
+  gap: 0;
+}
+
+#title,
+#session-title {
   font-weight: bold;
   font-size: 14px;
   height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 0;
+  border: none;
+  resize: none;
 }
 
 section {
@@ -86,17 +95,21 @@ section {
 .search-container,
 #session-title {
   position: relative;
-  width: 60%;
+  min-width: 122px;
 }
 
 #search {
   width: 100%;
+  padding: 0.5rem 1rem;
+  padding-right: 2rem;
+  border-radius: 25px;
+  border: 2px solid var(--gray);
 }
 
 .search-icon {
   position: absolute;
   top: 30%;
-  right: 5px;
+  right: 9px;
 }
 
 ul {
@@ -110,6 +123,12 @@ li {
   list-style: none;
   padding: 0.5rem;
   width: 45%;
+  border-radius: 5px;
+}
+
+.selected {
+  background-color: var(--blue);
+  color: var(--white);
 }
 
 article {
@@ -123,6 +142,26 @@ article {
 textarea {
   height: 90%;
   width: 90%;
+  border: none;
+  resize: none;
+}
+
+button {
+  background-color: var(--transparent);
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+span {
+  color: var(--gray);
+}
+
+.add {
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 0.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
 }
 
 @media (min-width: 550px) {
