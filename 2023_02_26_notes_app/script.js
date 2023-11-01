@@ -97,7 +97,7 @@ function markSelectedSession(index) {
   currentIndex = index;
 }
 
-//remove userCards except firstChild
+//remove sessions except firstChild
 function resetSessions() {
   while (sessionContainer.children.length > 1) {
     sessionContainer.removeChild(sessionContainer.lastChild);
