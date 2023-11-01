@@ -178,6 +178,14 @@ li p {
   pointer-events: none;
 }
 
+.hidden {
+  display: none;
+}
+
+.enabled {
+  color: var(--blue);
+}
+
 @media (min-width: 500px) {
   header .flex:first-of-type {
     width: 60%;
@@ -221,5 +229,11 @@ li p {
     grid-template-areas:
       "header header"
       "section article";
+  }
+
+  .maximize {
+    grid-template-areas:
+      "article article"
+      "article article";
   }
 }

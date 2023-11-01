@@ -51,6 +51,11 @@ function updateSessions() {
   }
 }
 
+function saveData() {
+  sessionData[currentIndex].sessionTitle = sessionTitleEl.value;
+  sessionData[currentIndex].sessionNotes = sessionNotesEl.value;
+}
+
 sessionContainer.addEventListener("click", (event) => {
   saveData();
   if (event.target.tagName === "LI") {
@@ -66,6 +71,7 @@ sessionContainer.addEventListener("click", (event) => {
 });
 
 editButton.addEventListener("click", () => {
+  editButton.classList.toggle("enabled");
   if (isEditing === false) {
     isEditing = true;
     titleEl.removeAttribute("readonly");
@@ -80,10 +86,16 @@ editButton.addEventListener("click", () => {
   }
 });
 
-function saveData() {
-  sessionData[currentIndex].sessionTitle = sessionTitleEl.value;
-  sessionData[currentIndex].sessionNotes = sessionNotesEl.value;
-}
+maximizeButton.addEventListener("click", () => {
+  const header = document.querySelector("header");
+  const section = document.querySelector("section");
+  const container = document.querySelector(".container");
+
+  maximizeButton.classList.toggle("enabled");
+  header.classList.toggle("hidden");
+  section.classList.toggle("hidden");
+  container.classList.toggle("maximize");
+});
 
 //load page
 updateSessions();
