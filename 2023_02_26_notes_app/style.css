@@ -126,6 +126,11 @@ li {
   padding: 0.5rem;
   width: 45%;
   border-radius: 5px;
+  cursor: pointer;
+}
+li:hover {
+  scale: calc(1.05);
+  outline: 2px solid var(--blue);
 }
 
 .selected {
@@ -152,6 +157,8 @@ button {
   background-color: var(--transparent);
   padding: 0.5rem 1rem;
   border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 span {
@@ -165,12 +172,27 @@ span {
   align-items: center;
 }
 
+span:hover {
+  scale: calc((1.05));
+  color: var(--black);
+}
+
 .add {
   color: var(--white);
   background-color: var(--blue);
   padding: 0.5rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
+}
+
+.add:hover {
+  scale: calc(1.05);
+  background-color: var(--gray);
+  color: var(blue);
+}
+
+.delete:hover {
+  outline: 2px solid var(--blue);
 }
 
 h4,
