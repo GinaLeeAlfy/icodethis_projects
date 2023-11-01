@@ -24,5 +24,34 @@ const sessionNotesEl = document.querySelector("#session-notes");
 
 const addSessionButton = document.querySelector(".add");
 const sessionContainer = document.querySelector("ul");
-let sessions = document.querySelector("li");
+let sessions = document.querySelectorAll("li");
 const sessionTemplate = document.querySelector(".clone");
+let sessionClone = sessionTemplate.cloneNode(true);
+
+function updateSessions() {
+  while (sessions.length < sessionData.length) {
+    sessionClone = sessionTemplate.cloneNode(true);
+    sessionContainer.appendChild(sessionClone);
+    sessions = document.querySelectorAll("li");
+  }
+
+  //populate sessions
+  if (sessions.length === sessionData.length) {
+    const sessionTitles = document.querySelectorAll("h4");
+
+    for (let index = 0; index < sessionData.length; index++) {
+      const element = sessionData[index];
+
+      sessionTitles[index].innerHTML = element.sessionTitle;
+    }
+  }
+}
+
+sessionContainer.addEventListener("click", (event) => {
+  console.log(event.target.tagName);
+
+  if (event.target.tagName === "LI") {
+  }
+});
+
+updateSessions();
