@@ -21,6 +21,7 @@ const maximizeButton = document.querySelector(".maximize");
 const titleEl = document.querySelector("#title");
 const sessionTitleEl = document.querySelector("#session-title");
 const sessionNotesEl = document.querySelector("#session-notes");
+const deleteSessionButton = document.querySelector(".delete");
 
 const addSessionButton = document.querySelector(".add");
 const sessionContainer = document.querySelector("ul");
@@ -32,6 +33,8 @@ let currentIndex = 0;
 let isEditing = false;
 
 function updateSessions() {
+  sessions = document.querySelectorAll("li");
+
   while (sessions.length < sessionData.length) {
     sessionClone = sessionTemplate.cloneNode(true);
     sessionContainer.appendChild(sessionClone);
@@ -54,19 +57,59 @@ function updateSessions() {
 function saveData() {
   sessionData[currentIndex].sessionTitle = sessionTitleEl.value;
   sessionData[currentIndex].sessionNotes = sessionNotesEl.value;
+  displayWordCounts();
+}
+
+function displayWordCounts() {
+  const wordCountsDisplay = document.querySelectorAll("li p");
+  const totalsDisplay = document.querySelector("header p");
+  sessions = document.querySelectorAll("li");
+  let totalWords = 0;
+
+  for (let index = 0; index < sessionData.length; index++) {
+    const element = sessionData[index];
+    wordCountsDisplay[index].innerHTML = `${countWords(
+      element.sessionNotes
+    )} words`;
+
+    totalWords += countWords(element.sessionNotes);
+  }
+
+  totalsDisplay.innerHTML = `${totalWords} total words | ${sessions.length} sessions`;
+}
+
+function countWords(s) {
+  s = s.replace(/(^\s*)|(\s*$)/gi, ""); //exclude  start and end white-space
+  s = s.replace(/[ ]{2,}/gi, " "); //2 or more space to 1
+  s = s.replace(/\n /, "\n"); // exclude newline with a start spacing
+  return s.split(" ").filter(function (str) {
+    return str != "";
+  }).length;
+}
+
+function markSelectedSession(index) {
+  sessions.forEach((element) => {
+    element.classList.remove("selected");
+  });
+  sessions[index].classList.add("selected");
+  sessionTitleEl.value = sessionData[index].sessionTitle;
+  sessionNotesEl.value = sessionData[index].sessionNotes;
+  currentIndex = index;
+}
+
+//remove userCards except firstChild
+function resetSessions() {
+  while (sessionContainer.children.length > 1) {
+    sessionContainer.removeChild(sessionContainer.lastChild);
+  }
+  sessions = document.querySelectorAll("li");
 }
 
 sessionContainer.addEventListener("click", (event) => {
   saveData();
   if (event.target.tagName === "LI") {
     let index = event.target.dataset.indexNumber;
-    sessions.forEach((element) => {
-      element.classList.remove("selected");
-    });
-    sessions[index].classList.add("selected");
-    sessionTitleEl.value = sessionData[index].sessionTitle;
-    sessionNotesEl.value = sessionData[index].sessionNotes;
-    currentIndex = index;
+    markSelectedSession(index);
   }
 });
 
@@ -97,8 +140,40 @@ maximizeButton.addEventListener("click", () => {
   container.classList.toggle("maximize");
 });
 
+addSessionButton.addEventListener("click", () => {
+  sessionData.push({ sessionTitle: "New Session", sessionNotes: "" });
+  updateSessions();
+  saveData();
+  sessions = document.querySelectorAll("li");
+  markSelectedSession(sessions.length - 1);
+});
+
+deleteSessionButton.addEventListener("click", () => {
+  sessions = document.querySelectorAll("li");
+  if (sessions.length > 1) {
+    sessionData.splice(currentIndex, 1);
+    resetSessions();
+    updateSessions();
+    sessions = document.querySelectorAll("li");
+    if (currentIndex - 1 >= 0) {
+      markSelectedSession(currentIndex - 1);
+    } else {
+      markSelectedSession(0);
+    }
+    saveData();
+  } else {
+    sessionData[0].sessionTitle = "New Session";
+    sessionData[0].sessionNotes = "";
+    updateSessions();
+    sessions = document.querySelectorAll("li");
+    markSelectedSession(sessions.length - 1);
+    saveData();
+  }
+});
+
 //load page
 updateSessions();
+displayWordCounts();
 sessions[0].classList.add("selected");
 sessionTitleEl.value = sessionData[0].sessionTitle;
 sessionNotesEl.value = sessionData[0].sessionNotes;
