@@ -35,7 +35,7 @@ body {
 
 .container {
   width: 90%;
-  height: 100%;
+  max-width: 1170px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -57,7 +57,15 @@ header button {
   background-color: var(--transparent);
   color: var(--black);
   border: none;
+  cursor: pointer;
+}
+
+.selected {
   border-bottom: 2px solid var(--black);
+}
+
+header button:hover {
+  border-bottom: 2px solid var(--gray);
 }
 
 section {
@@ -70,6 +78,8 @@ section {
 
 .search-container {
   position: relative;
+  width: 100%;
+  max-width: 350px;
 }
 
 input {
@@ -89,11 +99,18 @@ input {
 }
 
 section button {
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   background-color: var(--black);
   color: var(--white);
   border: none;
   border-radius: 5px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+section button:hover {
+  background-color: var(--gray);
+  color: var(--black);
 }
 
 .img-container {
@@ -123,4 +140,31 @@ img {
 
 .img-container:hover .info-container {
   display: flex;
+}
+
+.images {
+  justify-content: space-evenly;
+}
+
+span {
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  body,
+  button,
+  input {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 40px 80px;
+    gap: 60px;
+  }
+}
+
+@media (min-width: 880px) {
+  .center {
+    justify-content: center;
+  }
 }
