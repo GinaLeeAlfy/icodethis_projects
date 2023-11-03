@@ -1,7 +1,7 @@
 :root {
   --blue: #7ad9f6;
   --gray: #f7f7f7;
-  --dark-gray: #58625e;
+  --dark-gray: #707a76;
   --transparent-gray: #3d3d4277;
   --transparent: transparent;
   --black: #2f3336;
@@ -56,13 +56,9 @@ header {
 }
 
 section {
-  width: 100%;
   position: relative;
   background-color: var(--white);
   padding: 50px 0;
-  display: flex;
-  align-items: center;
-  justify-content: stretch;
 }
 
 .decor {
@@ -96,4 +92,42 @@ img {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+h3 {
+  color: var(--dark-gray);
+  margin-right: 40px;
+}
+
+ol {
+  counter-reset: section;
+  list-style: none;
+}
+
+li {
+  margin: 20px 0;
+  counter-increment: section;
+  position: relative;
+}
+
+li::before {
+  position: absolute;
+  content: counter(section);
+  border: 1px solid var(--dark-gray);
+  color: var(--black);
+  width: 28px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-size: larger;
+  top: 65px;
+  left: -35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+span {
+  padding: 5px;
+  aspect-ratio: 1/1;
 }
