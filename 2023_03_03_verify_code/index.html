@@ -9,17 +9,29 @@
   <body>
     <div class="center">
       <div class="container">
-        <h1>Verify your email address</h1>
-        <p>
-          We emailed you a four-digit code to example@email.com. Enter the code
-          below to confirm your email address.
-        </p>
+        <header>
+          <h1>Verify your email address</h1>
+          <p>
+            We emailed you a four-digit code to example@email.com. Enter the
+            code below to confirm your email address.
+          </p>
+        </header>
         <section>
-          <input type="number" />
-          <input type="number" />
-          <input type="number" />
-          <input type="number" />
+          <div class="numbers">
+            <input type="number" min="0" max="9" placeholder="0" />
+            <input type="number" min="0" max="9" placeholder="0" />
+            <input type="number" min="0" max="9" placeholder="0" />
+            <input type="number" min="0" max="9" placeholder="0" />
+          </div>
+          <input type="submit" value="Enter Code" id="submit" />
+          <p class="validity"></p>
         </section>
+        <footer>
+          <p>Make sure to keep this window open while checking your email.</p>
+          <button>Generate Code</button>
+          <p>The code is:</p>
+          <p class="code"></p>
+        </footer>
       </div>
     </div>
   </body>
