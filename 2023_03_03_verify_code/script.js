@@ -31,20 +31,15 @@ function focusBack() {
     input = numberInputs[nextInputIndex];
     input.focus();
   }
-  //put cursor at end of input
-  input.value = input.value;
-  //   setTimeout(function () {
-  //     input.selectionStart = input.selectionEnd = 10000;
-  //   }, 0);
 }
 
 numberInputs.forEach((element) => {
   element.addEventListener("keydown", (event) => {
     const key = event.key;
-    if (
-      (key == "Backspace" && element.value.length == 0) ||
-      key == "ArrowLeft"
-    ) {
+    if (key == "Backspace" && element.value.length == 0) {
+      focusBack();
+    } else if (key == "ArrowLeft") {
+      event.preventDefault();
       focusBack();
     } else if (key == "Backspace" || key == "Tab") {
       return;
