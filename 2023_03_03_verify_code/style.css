@@ -1,12 +1,12 @@
 :root {
-  --blue: #7ad9f6;
+  --blue: rgb(15, 13, 174);
   --gray: #f7f7f7;
-  --dark-gray: #707a76;
+  --dark-gray: #eff1f7;
   --transparent-gray: #3d3d4277;
   --transparent: transparent;
   --black: #2f3336;
-  --green: #a5e058;
-  --pink: #e36a7c;
+  --green: green;
+  --red: red;
   --white: #ffffff;
 }
 
@@ -34,12 +34,16 @@ body {
 
 .container {
   width: 99%;
-  max-width: 1170px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 30px;
   margin: 20px 0;
+  border: 4px solid var(--black);
+  border-radius: 15px;
+  background-color: var(--white);
+  box-shadow: 0 20px 40px -10px var(--transparent-gray);
 }
 
 header {
@@ -61,6 +65,7 @@ section {
 
 .numbers {
   width: 100%;
+  max-width: 300px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -73,20 +78,73 @@ footer {
   text-align: center;
   gap: 20px;
 }
+footer p:first-child,
+.code {
+  background-color: var(--dark-gray);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+}
 
 input {
   width: 20%;
+  min-width: 42px;
   padding: 1rem 5px;
-  font-size: 24px;
+  font-size: 32px;
   text-align: center;
-  border: 2px solid;
+  border: 2px solid var(--black);
+  border-radius: 10px;
+}
+.code,
+.validity {
+  font-size: 16px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@keyframes redFlash {
+  from,
+  to {
+    border-color: var(--black);
+  }
+  50% {
+    border-color: var(--red);
+  }
 }
 
 .invalid {
-  border-color: red;
+  border-color: var(--red);
   animation: redFlash 0.5s ease-in-out 2;
 }
 
 .valid {
-  border-color: green;
+  border-color: var(--green);
+}
+
+button {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: var(--black);
+}
+
+@media (min-width: 800px) {
+  .center {
+    justify-content: center;
+  }
 }
