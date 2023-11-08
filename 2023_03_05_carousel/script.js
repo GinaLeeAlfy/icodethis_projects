@@ -4,40 +4,30 @@ const prevButton = document.querySelector("section button");
 const carousel = document.querySelector(".carousel");
 
 let cardIndex = 0;
-
+let cardWidth;
+let carouselWidth;
 let isCardTwoVisible = false;
 let isCardThreeVisible = false;
-let isCardTwoLeft = false;
-let isCardThreeLeft = false;
 
 function checkVisibleCards() {
   const rectCarousel = carousel.getBoundingClientRect();
-  const rectCarouselLeft = rectCarousel.left + 3;
+  const rectCarouselLeft = rectCarousel.left - 3;
   const rectCarouselRight = rectCarousel.right + 3;
+  carouselWidth = rectCarouselRight - 3 - (rectCarouselLeft + 3);
 
   const rectTwo = cards[1].getBoundingClientRect();
   const rectTwoLeft = rectTwo.left;
   const rectTwoRight = rectTwo.right;
+  cardWidth = rectTwoRight - rectTwoLeft;
 
   const rectThree = cards[2].getBoundingClientRect();
   const rectThreeRight = rectThree.right;
   const rectThreeLeft = rectThree.left;
 
-  let isCardTwoVisible = false;
-  let isCardThreeVisible = false;
-  let isCardTwoLeft = false;
-  let isCardThreeLeft = false;
-
   if (rectCarouselLeft <= rectTwoLeft && rectCarouselRight >= rectTwoRight) {
     isCardTwoVisible = true;
   } else {
     isCardTwoVisible = false;
-  }
-
-  if (rectCarouselLeft >= rectTwoRight) {
-    isCardTwoLeft = true;
-  } else {
-    isCardTwoLeft = false;
   }
 
   if (
@@ -48,12 +38,9 @@ function checkVisibleCards() {
   } else {
     isCardThreeVisible = false;
   }
-  if (rectCarouselLeft >= rectThreeRight) {
-    isCardThreeLeft = true;
-  } else {
-    isCardThreeLeft = false;
-  }
+}
 
+function setCardIndex() {
   if (isCardThreeVisible) {
     cardIndex = 2;
   } else if (isCardTwoVisible) {
@@ -64,6 +51,7 @@ function checkVisibleCards() {
 }
 
 nextButton.addEventListener("click", () => {
+  checkVisibleCards();
   cardIndex++;
   if (cardIndex > cards.length - 1) {
     cardIndex = 0;
@@ -72,11 +60,16 @@ nextButton.addEventListener("click", () => {
 });
 
 prevButton.addEventListener("click", () => {
+  checkVisibleCards();
   cardIndex--;
   if (cardIndex < 0) {
     cardIndex = cards.length - 1;
   }
   cards[cardIndex].scrollIntoView();
+
+  //   if ((cardIndex = cards.length - 1)) {
+  //   }
 });
 
 checkVisibleCards();
+setCardIndex();
