@@ -81,8 +81,9 @@ section button {
 .carousel {
   display: flex;
   gap: 15px;
-  overflow-x: auto;
+  overflow-x: scroll;
   padding: 15px 0;
+  scroll-behavior: smooth;
 }
 
 .carousel::-webkit-scrollbar {
@@ -140,6 +141,18 @@ footer button:hover {
   color: var(--black);
 }
 
+@media (min-width: 700px) {
+  .card {
+    min-width: 300px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .card {
+    min-width: 375px;
+  }
+}
+
 @media (min-width: 1365px) {
   .center {
     justify-content: center;
@@ -149,6 +162,6 @@ footer button:hover {
   }
 
   .card {
-    width: 402px;
+    min-width: 405px;
   }
 }
