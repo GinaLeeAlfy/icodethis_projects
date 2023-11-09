@@ -3,11 +3,11 @@
   --lighter-blue: #87d3ed;
   --blue: #4490e4;
   --tan: #f5efe6;
-  --gray: #7c7c7c;
+  --gray: #3a394c;
   --transparent-gray: #3d3d4277;
   --transparent: transparent;
-  --black: #030303;
-  --red: #ec6648;
+  --black: #282639;
+  --pink: #ff686a;
   --white: #ffffff;
 }
 
@@ -20,7 +20,7 @@ body {
   background-color: var(--tan);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: var(--gray);
+  color: var(--white);
   display: flex;
   justify-content: center;
 }
@@ -38,9 +38,71 @@ body {
   max-width: 1365px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   margin: 20px 0;
   background-color: var(--white);
   border-radius: 15px;
-  padding: 20px 0;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background-color: var(--pink);
+  padding: 10px;
+}
+
+section {
+  background-color: var(--black);
+  padding: 10px;
+}
+
+footer {
+  background-color: var(--gray);
+}
+
+textarea,
+section p {
+  background-color: var(--gray);
+  color: var(--white);
+  padding: 1rem;
+}
+
+.images {
+  position: relative;
+  display: flex;
+  gap: 25%;
+}
+
+.img-container {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--white);
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.img-container:nth-child(odd) {
+  z-index: 2;
+}
+
+header .img-container:nth-child(even) {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  bottom: 0;
+  z-index: 1;
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.message-container .img-container {
+  width: 40%;
 }
