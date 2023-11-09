@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <div class="container">
+        <section>
+          <h1>Help us do more</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+            exercitationem, laboriosam cum voluptatibus sint maiores deserunt,
+            labore ut sequi et distinctio aliquam minima nam consequuntur
+            asperiores odit sit alias recusandae. Reprehenderit et officiis
+            fuga.
+          </p>
+        </section>
+        <form action="">
+          <legend>Select gift frequency</legend>
+          <fieldset>
+            <label for="monthly">Monthly</label>
+            <input type="radio" name="frequency" id="monthly" value="monthly" />
+            <label for="once">One time</label>
+            <input type="radio" name="frequency" id="once" />
+          </fieldset>
+          <legend>Select amount (in US dollar)</legend>
+          <fieldset>
+            <label for="ten">$10</label>
+            <input type="radio" name="amount" id="ten" />
+            <label for="twenty">$20</label>
+            <input type="radio" name="amount" id="twenty" />
+            <label for="thirty">$30</label>
+            <input type="radio" name="amount" id="thirty" />
+            <label for="forty">$40</label>
+            <input type="radio" name="amount" id="forty" />
+            <label for="other">Other</label>
+            <input type="radio" name="amount" id="other" />
+          </fieldset>
+          <fieldset>
+            <input type="checkbox" id="fees" />
+            <label for="fees"
+              >Yes, I'll generously add $0.75 each payment to cover the
+              transaction fees.</label
+            >
+          </fieldset>
+          <fieldset>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+            <button>Click here to give anonymously</button>
+          </fieldset>
+          <input type="submit" id="submit" value="Donate now" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
