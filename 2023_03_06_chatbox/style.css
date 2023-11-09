@@ -59,6 +59,10 @@ section {
   background-color: var(--black);
   padding: 10px;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
 }
 
 section::-webkit-scrollbar {
@@ -71,12 +75,28 @@ footer {
 }
 
 textarea,
-section p {
+.message-text {
   background-color: var(--gray);
   color: var(--white);
   padding: 1rem;
   resize: none;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+textarea {
+  height: 100%;
+  width: 100%;
+}
+
+.message-text {
+  max-width: 70%;
+}
+
+.message-text p {
+  overflow-wrap: break-word;
 }
 
 .images {
@@ -121,13 +141,12 @@ header .img-container:nth-child(even) {
 .message-container {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .message-container .img-container {
-  width: 40%;
-  max-width: 100px;
+  width: 60px;
   min-width: 60px;
-  margin-right: 10px;
 }
 
 a {
@@ -143,15 +162,38 @@ input {
   border-radius: 25px;
   margin: 10px 0;
 }
+input {
+  padding: 0.5rem 2rem;
+}
 
 .disclaimer {
-  display: flex;
+  height: 100%;
+  display: none;
   flex-direction: column;
   align-items: start;
 }
 
 .chat {
+  height: 100%;
   display: none;
   flex-direction: column;
   align-items: end;
+}
+
+.visible {
+  display: flex;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+@media (min-width: 600px) {
+  .message-container .img-container {
+    width: 100px;
+  }
+
+  .message-text {
+    max-width: 80%;
+  }
 }
