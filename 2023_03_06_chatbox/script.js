@@ -1,9 +1,20 @@
-const agreeButton = document.querySelector("button");
+const openChatButton = document.querySelector(".chat-button");
+const agreeButton = document.querySelector("footer button");
 const disclaimerEl = document.querySelector(".disclaimer");
 const chatEl = document.querySelector(".chat");
 const textChat = document.querySelector("textarea");
 const sendButton = document.querySelector("#submit");
 const section = document.querySelector("section");
+const container = document.querySelector(".container");
+
+openChatButton.addEventListener("click", () => {
+  container.classList.toggle("visible-grid");
+  if (openChatButton.innerHTML == "Open Chat") {
+    openChatButton.innerHTML = "Close Chat";
+  } else {
+    openChatButton.innerHTML = "Open Chat";
+  }
+});
 
 agreeButton.addEventListener("click", () => {
   disclaimerEl.classList.toggle("visible");
