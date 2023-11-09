@@ -8,50 +8,37 @@ let cardWidth;
 let carouselWidth;
 let isCardTwoVisible = false;
 let isCardThreeVisible = false;
+let onScreenCards = [];
 
 function checkVisibleCards() {
+  onScreenCards = [];
   const rectCarousel = carousel.getBoundingClientRect();
   const rectCarouselLeft = rectCarousel.left - 3;
   const rectCarouselRight = rectCarousel.right + 3;
-  carouselWidth = rectCarouselRight - 3 - (rectCarouselLeft + 3);
 
-  const rectTwo = cards[1].getBoundingClientRect();
-  const rectTwoLeft = rectTwo.left;
-  const rectTwoRight = rectTwo.right;
-  cardWidth = rectTwoRight - rectTwoLeft;
+  for (let index = 0; index < cards.length; index++) {
+    const element = cards[index];
 
-  const rectThree = cards[2].getBoundingClientRect();
-  const rectThreeRight = rectThree.right;
-  const rectThreeLeft = rectThree.left;
+    let rectEl = element.getBoundingClientRect();
+    let rectElLeft = rectEl.left;
+    let rectElRight = rectEl.right;
 
-  if (rectCarouselLeft <= rectTwoLeft && rectCarouselRight >= rectTwoRight) {
-    isCardTwoVisible = true;
-  } else {
-    isCardTwoVisible = false;
-  }
-
-  if (
-    rectCarouselLeft <= rectThreeLeft &&
-    rectCarouselRight >= rectThreeRight
-  ) {
-    isCardThreeVisible = true;
-  } else {
-    isCardThreeVisible = false;
-  }
-}
-
-function setCardIndex() {
-  if (isCardThreeVisible) {
-    cardIndex = 2;
-  } else if (isCardTwoVisible) {
-    cardIndex = 1;
-  } else {
-    cardIndex = 0;
+    if (index == 8 || index == 0) {
+      if (rectElLeft >= rectCarouselLeft && rectElRight <= rectCarouselRight) {
+        onScreenCards.push(index);
+      }
+    } else if (
+      (rectElLeft >= rectCarouselLeft && rectElLeft <= rectCarouselRight) ||
+      (rectElRight <= rectCarouselRight && rectElRight >= rectCarouselLeft)
+    ) {
+      onScreenCards.push(index);
+    }
   }
 }
 
 nextButton.addEventListener("click", () => {
   checkVisibleCards();
+  cardIndex = onScreenCards[onScreenCards.length - 1];
   cardIndex++;
   if (cardIndex > cards.length - 1) {
     cardIndex = 0;
@@ -61,15 +48,10 @@ nextButton.addEventListener("click", () => {
 
 prevButton.addEventListener("click", () => {
   checkVisibleCards();
+  cardIndex = onScreenCards[0];
   cardIndex--;
   if (cardIndex < 0) {
     cardIndex = cards.length - 1;
   }
   cards[cardIndex].scrollIntoView();
-
-  //   if ((cardIndex = cards.length - 1)) {
-  //   }
 });
-
-checkVisibleCards();
-setCardIndex();
