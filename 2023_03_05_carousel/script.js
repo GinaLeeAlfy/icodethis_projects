@@ -9,6 +9,7 @@ let carouselWidth;
 let isCardTwoVisible = false;
 let isCardThreeVisible = false;
 let onScreenCards = [];
+let prevCardIndex;
 
 function checkVisibleCards() {
   onScreenCards = [];
@@ -23,15 +24,38 @@ function checkVisibleCards() {
     let rectElLeft = rectEl.left;
     let rectElRight = rectEl.right;
 
-    if (index == 8 || index == 0) {
-      if (rectElLeft >= rectCarouselLeft && rectElRight <= rectCarouselRight) {
-        onScreenCards.push(index);
-      }
-    } else if (
+    if (
       (rectElLeft >= rectCarouselLeft && rectElLeft <= rectCarouselRight) ||
       (rectElRight <= rectCarouselRight && rectElRight >= rectCarouselLeft)
     ) {
       onScreenCards.push(index);
+    }
+  }
+
+  if (onScreenCards.length > 1) {
+    let rectZero = cards[onScreenCards[0]].getBoundingClientRect();
+    let rectZeroLeft = rectZero.left;
+    let rectZeroRight = rectZero.right;
+
+    if (
+      rectZeroLeft <= rectCarouselLeft ||
+      rectZeroRight >= rectCarouselRight
+    ) {
+      onScreenCards.splice(0, 1);
+    }
+  }
+
+  if (onScreenCards.length > 1) {
+    let rectLast =
+      cards[onScreenCards[onScreenCards.length - 1]].getBoundingClientRect();
+    let rectLastLeft = rectLast.left;
+    let rectLastRight = rectLast.right;
+
+    if (
+      rectLastLeft <= rectCarouselLeft ||
+      rectLastRight >= rectCarouselRight
+    ) {
+      onScreenCards.splice(onScreenCards.length - 1, 1);
     }
   }
 }
@@ -39,11 +63,14 @@ function checkVisibleCards() {
 nextButton.addEventListener("click", () => {
   checkVisibleCards();
   cardIndex = onScreenCards[onScreenCards.length - 1];
-  cardIndex++;
-  if (cardIndex > cards.length - 1) {
-    cardIndex = 0;
+  if (onScreenCards.length > 1 || prevCardIndex == cardIndex) {
+    cardIndex++;
+    if (cardIndex > cards.length - 1) {
+      cardIndex = 0;
+    }
   }
   cards[cardIndex].scrollIntoView();
+  prevCardIndex = cardIndex;
 });
 
 prevButton.addEventListener("click", () => {
