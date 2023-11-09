@@ -73,10 +73,14 @@ fieldset {
 }
 
 label {
-  position: relative;
   border-radius: 25px;
 }
 
+.frequency div,
+.amount div {
+  display: flex;
+  position: relative;
+}
 .frequency label {
   padding: 0.5rem 1rem;
 }
@@ -96,8 +100,14 @@ input[type="radio"] {
   opacity: 0;
 }
 
-.frequency label input[type="radio"]:checked + label {
+.frequency input[type="radio"]:checked + label {
   background-color: var(--gray);
+}
+
+.amount input[type="radio"]:checked + label {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
 }
 
 .flex-col {

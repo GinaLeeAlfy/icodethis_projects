@@ -22,35 +22,52 @@
         <form action="">
           <legend>Select gift frequency</legend>
           <fieldset class="frequency">
-            <label for="monthly"
-              >Monthly
-              <input type="radio" name="frequency" id="monthly" value="monthly"
-            /></label>
-            <label for="once"
-              >One time <input type="radio" name="frequency" id="once"
-            /></label>
+            <div>
+              <input
+                type="radio"
+                name="frequency"
+                id="monthly"
+                value="monthly"
+                checked
+              />
+              <label for="monthly">Monthly</label>
+            </div>
+            <div>
+              <input type="radio" name="frequency" id="once" value="once" />
+              <label for="once">One time</label>
+            </div>
           </fieldset>
           <legend>Select amount (in US dollar)</legend>
           <fieldset class="amount">
-            <label for="ten"
-              >$10
-              <input type="radio" name="amount" id="ten" />
-            </label>
-            <label for="twenty"
-              >$20 <input type="radio" name="amount" id="twenty"
-            /></label>
+            <div>
+              <input type="radio" name="amount" id="ten" value="10" />
+              <label for="ten">$10</label>
+            </div>
+            <div>
+              <input type="radio" name="amount" id="twenty" value="20" />
+              <label for="twenty">$20</label>
+            </div>
 
-            <label for="thirty"
-              >$30 <input type="radio" name="amount" id="thirty"
-            /></label>
+            <div>
+              <input
+                type="radio"
+                name="amount"
+                id="thirty"
+                value="30"
+                checked
+              />
+              <label for="thirty">$30</label>
+            </div>
 
-            <label for="forty"
-              >$40 <input type="radio" name="amount" id="forty"
-            /></label>
+            <div>
+              <input type="radio" name="amount" id="forty" value="40" />
+              <label for="forty">$40</label>
+            </div>
 
-            <label for="other"
-              >Other <input type="radio" name="amount" id="other"
-            /></label>
+            <div>
+              <input type="radio" name="amount" id="other" value="other" />
+              <label for="other">Other</label>
+            </div>
           </fieldset>
           <fieldset class="no-wrap">
             <input type="checkbox" id="fees" />
