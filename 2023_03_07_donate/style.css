@@ -40,7 +40,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* gap: 20px; */
   margin-top: 20px;
   background-color: var(--gray);
   border-radius: 15px;
@@ -50,9 +49,10 @@ body {
 section,
 form {
   min-width: 260px;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 10px;
 }
 
@@ -66,6 +66,47 @@ fieldset:first-of-type {
 fieldset {
   border: none;
   margin-bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0;
+}
+
+label {
+  position: relative;
+  border-radius: 25px;
+}
+
+.frequency label {
+  padding: 0.5rem 1rem;
+}
+
+.amount label {
+  border: 1px solid var(--black);
+  background-color: var(--gray);
+  padding: 0.5rem 1rem;
+}
+
+input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.frequency label input[type="radio"]:checked + label {
+  background-color: var(--gray);
+}
+
+.flex-col {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
 }
 
 @media (min-width: 550px) {

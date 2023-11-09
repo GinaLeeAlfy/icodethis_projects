@@ -21,37 +21,50 @@
         </section>
         <form action="">
           <legend>Select gift frequency</legend>
-          <fieldset>
-            <label for="monthly">Monthly</label>
-            <input type="radio" name="frequency" id="monthly" value="monthly" />
-            <label for="once">One time</label>
-            <input type="radio" name="frequency" id="once" />
+          <fieldset class="frequency">
+            <label for="monthly"
+              >Monthly
+              <input type="radio" name="frequency" id="monthly" value="monthly"
+            /></label>
+            <label for="once"
+              >One time <input type="radio" name="frequency" id="once"
+            /></label>
           </fieldset>
           <legend>Select amount (in US dollar)</legend>
-          <fieldset>
-            <label for="ten">$10</label>
-            <input type="radio" name="amount" id="ten" />
-            <label for="twenty">$20</label>
-            <input type="radio" name="amount" id="twenty" />
-            <label for="thirty">$30</label>
-            <input type="radio" name="amount" id="thirty" />
-            <label for="forty">$40</label>
-            <input type="radio" name="amount" id="forty" />
-            <label for="other">Other</label>
-            <input type="radio" name="amount" id="other" />
+          <fieldset class="amount">
+            <label for="ten"
+              >$10
+              <input type="radio" name="amount" id="ten" />
+            </label>
+            <label for="twenty"
+              >$20 <input type="radio" name="amount" id="twenty"
+            /></label>
+
+            <label for="thirty"
+              >$30 <input type="radio" name="amount" id="thirty"
+            /></label>
+
+            <label for="forty"
+              >$40 <input type="radio" name="amount" id="forty"
+            /></label>
+
+            <label for="other"
+              >Other <input type="radio" name="amount" id="other"
+            /></label>
           </fieldset>
-          <fieldset>
+          <fieldset class="no-wrap">
             <input type="checkbox" id="fees" />
             <label for="fees"
               >Yes, I'll generously add $0.75 each payment to cover the
               transaction fees.</label
             >
           </fieldset>
-          <fieldset>
+          <fieldset class="flex-col">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" />
             <button>Click here to give anonymously</button>
           </fieldset>
+
           <input type="submit" id="submit" value="Donate now" />
         </form>
       </div>
