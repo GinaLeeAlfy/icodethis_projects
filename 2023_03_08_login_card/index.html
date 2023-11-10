@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Card</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="center">
       <div class="container">
         <section>
-          <button>X</button>
+          <button><i class="fa-solid fa-x fa-2xl"></i></button>
         </section>
         <form action="">
           <h1>Log In</h1>
@@ -25,13 +29,17 @@
             placeholder="Enter your email address"
           />
           <div class="flex">
-            <a href="">Forgot password?</a>
-            <input type="submit" id="submit" value="Next ->" />
+            <a href="" class="pass">Forgot password?</a>
+            <button type="submit" id="submit">
+              Next <i class="fa-solid fa-arrow-right-long fa-xl"></i>
+            </button>
           </div>
-          <p>Or log in with</p>
+          <p class="middle">Or log in with</p>
           <div class="flex">
-            <button>I Facebook</button>
-            <button>I Google</button>
+            <button>
+              <i class="fa-brands fa-facebook fa-2xl"></i> Facebook
+            </button>
+            <button><i class="fa-brands fa-google fa-2xl"></i> Google</button>
           </div>
           <p>Don't have an account yet? <a href="">Sign up</a></p>
         </form>

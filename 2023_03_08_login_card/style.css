@@ -1,15 +1,12 @@
 :root {
-  --light-blue: #41c9e4;
-  --lighter-blue: #87d3ed;
   --blue: #056586;
   --tan: #f9eff0;
-  --light-gray: #2f2d40;
+  --dark-gray: #7e7e7e;
   --gray: #c3c3c5;
   --transparent-gray: #3d3d4277;
   --transparent-white: #ffffffde;
   --transparent: transparent;
   --black: #191a49;
-  --pink: #ff686a;
   --white: #ffffff;
 }
 
@@ -72,12 +69,22 @@ input[type="email"] {
 a {
   color: var(--blue);
 }
-input[type="submit"] {
+
+a:hover {
+  text-decoration: none;
+}
+
+button[type="submit"] {
+  cursor: pointer;
   padding: 1rem 2rem;
   background-color: var(--blue);
-  border: none;
+  border: 1px solid var(--blue);
   color: var(--white);
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .flex {
@@ -93,16 +100,79 @@ input[type="submit"] {
 }
 
 section button {
+  cursor: pointer;
   background-color: var(--transparent-white);
+  color: var(--blue);
   border: none;
   padding: 0.5rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section button:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 form button {
+  cursor: pointer;
   padding: 0.5rem;
   width: 48%;
   border-radius: 5px;
+  background-color: var(--transparent);
+  border: 1px solid var(--gray);
+}
+
+form button:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--white);
+}
+
+.middle {
+  align-self: center;
+  color: var(--dark-gray);
+}
+
+.pass {
+  text-decoration: none;
+}
+
+.pass:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 500px) {
+  body,
+  section button,
+  form button,
+  input[type="submit"] {
+    font-size: 18px;
+  }
+  form button {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 750px) {
+  .center {
+    justify-content: center;
+  }
+  .container {
+    flex-direction: row-reverse;
+  }
+  form {
+    padding: 50px;
+    gap: 20px;
+  }
+  section {
+    width: 40%;
+  }
 }
