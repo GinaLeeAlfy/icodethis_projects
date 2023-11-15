@@ -24,41 +24,81 @@
             <div class="task"></div>
             <div class="task"></div>
           </div>
-          <p>3 remaining to complete</p>
+          <p class="count">3 remaining to complete</p>
         </section>
         <section>
           <h2>Checklist</h2>
           <div>
-            <input type="checkbox" name="checklist" id="industry" checked />
+            <input
+              type="checkbox"
+              name="checklist"
+              id="industry"
+              checked
+              onchange="countChecks()"
+            />
             <label for="industry">Industry</label>
           </div>
           <div>
-            <input type="checkbox" name="checklist" id="website" checked />
+            <input
+              type="checkbox"
+              name="checklist"
+              id="website"
+              checked
+              onchange="countChecks()"
+            />
             <label for="website">Website URL</label>
           </div>
           <div>
-            <input type="checkbox" name="checklist" id="company-size" checked />
+            <input
+              type="checkbox"
+              name="checklist"
+              id="company-size"
+              checked
+              onchange="countChecks()"
+            />
             <label for="company-size">Company size</label>
           </div>
           <div>
-            <input type="checkbox" name="checklist" id="description" />
+            <input
+              type="checkbox"
+              name="checklist"
+              id="description"
+              onchange="countChecks()"
+            />
             <label for="description">Description</label>
           </div>
           <div>
-            <input type="checkbox" name="checklist" id="logo" />
+            <input
+              type="checkbox"
+              name="checklist"
+              id="logo"
+              onchange="countChecks()"
+            />
             <label for="logo">Logo</label>
           </div>
           <div>
-            <input type="checkbox" name="checklist" id="location" checked />
+            <input
+              type="checkbox"
+              name="checklist"
+              id="location"
+              checked
+              onchange="countChecks()"
+            />
             <label for="location">Location</label>
           </div>
           <div>
-            <input type="checkbox" name="checklist" id="custom-button" />
+            <input
+              type="checkbox"
+              name="checklist"
+              id="custom-button"
+              onchange="countChecks()"
+            />
             <label for="custom-button">Custom button</label>
           </div>
           <div class="decor"></div>
         </section>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

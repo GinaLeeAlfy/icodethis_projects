@@ -82,7 +82,7 @@ section:last-of-type {
 .task {
   width: 13%;
   height: 100%;
-  background-color: var(--black);
+  /* background-color: var(--black); */
   border-radius: 25px;
 }
 
