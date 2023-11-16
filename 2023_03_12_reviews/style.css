@@ -163,3 +163,20 @@ h2 span {
   border-color: var(--blue);
   color: var(--blue);
 }
+
+@media (min-width: 600px) {
+  body,
+  input,
+  button {
+    font-size: 18px;
+  }
+  .container {
+    padding: 50px;
+  }
+  .review-box {
+    padding: 30px;
+  }
+  .center {
+    justify-content: center;
+  }
+}
