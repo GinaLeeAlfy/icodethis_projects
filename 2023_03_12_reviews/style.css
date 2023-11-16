@@ -1,0 +1,139 @@
+:root {
+  --off-white: #f8f6ff;
+  --pink: #d76a6a;
+  --blue: #8680f8;
+  --orange: #d5a66a;
+  --gold: #ffc55d;
+  --dark-blue: #211f32;
+  --gray: #9293a1;
+  --dark-gray: #2c2b40;
+  --transparent-gray: #3d3d4288;
+  --transparent-white: #ffffffde;
+  --transparent: transparent;
+  --black: #1d1c2c;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 98svw;
+}
+
+.container {
+  width: 98%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 30px;
+  padding: 20px;
+  background-color: var(--dark-blue);
+  border-radius: 5px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-container span {
+  position: absolute;
+  left: 0.75rem;
+  top: 35%;
+  color: var(--gray);
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  padding-left: 3rem;
+  background-color: var(--dark-gray);
+  color: var(--white);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.buttons-container button {
+  background-color: var(--black);
+  color: var(--gray);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.review-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--dark-gray);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+h2 span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--pink);
+}
+
+.depth {
+  height: 15px;
+}
+
+.fa-star {
+  color: var(--gold);
+}
