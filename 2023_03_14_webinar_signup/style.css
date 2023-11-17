@@ -90,3 +90,14 @@ img {
 span {
   margin: 0 1rem;
 }
+
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+textarea,
+select {
+  background-color: var(--transparent);
+  border: 2px solid var(--gray);
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+}
