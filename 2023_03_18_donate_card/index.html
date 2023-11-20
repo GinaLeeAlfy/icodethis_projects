@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="container">
+        <header>
+          <h1>Your gift changes lives</h1>
+          <p>
+            Pledge your support today so that we can help more women in 2019.
+          </p>
+        </header>
+        <form>
+          <div class="radio-button">
+            <input type="radio" name="donation" id="five" />
+            <label for="five">$5</label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" name="donation" id="ten" />
+            <label for="ten">$10</label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" name="donation" id="fifteen" />
+            <label for="fifteen">$15</label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" name="donation" id="custom" />
+            <label for="custom"
+              >$
+              <input
+                type="number"
+                placeholder="Amount"
+                name="amount"
+                id="amount"
+                min=".5"
+              />
+            </label>
+          </div>
+        </form>
+        <footer>
+          <input type="submit" name="submit" id="submit" value="DONATE" />
+        </footer>
+        <button class="exit">X</button>
+        <span class="decor"><i class="fa-solid fa-ribbon fa-2xl"></i></span>
+      </div>
+    </div>
+  </body>
+</html>
