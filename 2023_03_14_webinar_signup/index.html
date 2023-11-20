@@ -26,63 +26,66 @@
         </header>
         <form>
           <h2>Join the event</h2>
-          <div class="flex-col">
-            <label for="first-name">First name</label>
-            <input
-              type="text"
-              name="first-name"
-              id="first-name"
-              placeholder="Enter your first name"
-              required
-            />
+          <div class="half">
+            <div class="flex-col">
+              <label for="first-name">First name</label>
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                placeholder="Enter your first name"
+                required
+              />
+            </div>
+            <div class="flex-col">
+              <label for="last-name">Last name</label>
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                placeholder="Enter your last name"
+                required
+              />
+            </div>
+            <div class="flex-col">
+              <label for="email">Business email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="flex-col">
+              <label for="title">Title</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="What is your job title?"
+              />
+            </div>
+            <div class="flex-col">
+              <label for="company-name">Company name</label>
+              <input
+                type="text"
+                name="company-name"
+                id="company-name"
+                placeholder="Where do you work?"
+              />
+            </div>
+            <div class="flex-col">
+              <label for="company-size">Company size</label>
+              <select name="company-size" id="company-size">
+                <option value="">Select</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
           </div>
-          <div class="flex-col">
-            <label for="last-name">Last name</label>
-            <input
-              type="text"
-              name="last-name"
-              id="last-name"
-              placeholder="Enter your last name"
-              required
-            />
-          </div>
-          <div class="flex-col">
-            <label for="email">Business email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div class="flex-col">
-            <label for="title">Title</label>
-            <input
-              type="text"
-              name="title"
-              id="title"
-              placeholder="What is your job title?"
-            />
-          </div>
-          <div class="flex-col">
-            <label for="company-name">Company name</label>
-            <input
-              type="text"
-              name="company-name"
-              id="company-name"
-              placeholder="Where do you work?"
-            />
-          </div>
-          <div class="flex-col">
-            <label for="company-size">Company size</label>
-            <select name="company-size" id="company-size">
-              <option value="">Select</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
-          </div>
+
           <div class="flex-col">
             <label for="additional">What are you hoping to learn about?</label>
             <textarea
@@ -117,8 +120,8 @@
           </div>
           <div class="flex-col">
             <h3>GUESTS</h3>
-            <div class="flex">
-              <div class="flex">
+            <div class="flex wrap">
+              <div class="flex profile">
                 <div class="img-container">
                   <img
                     src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjByZWQlMjBoYWlyfGVufDB8fDB8fHww"
@@ -130,7 +133,7 @@
                   <p>Cofounder, Jea</p>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex profile">
                 <div class="img-container">
                   <img
                     src="https://images.unsplash.com/photo-1525786210598-d527194d3e9a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tYW4lMjBnbGFzc2VzfGVufDB8fDB8fHww"
@@ -138,11 +141,11 @@
                   />
                 </div>
                 <div class="flex-col">
-                  <h4>Lisa Alvin</h4>
-                  <p>Cofounder, Jea</p>
+                  <h4>Jenny Pick</h4>
+                  <p>Head of Education, Jea</p>
                 </div>
               </div>
-              <div class="flex">
+              <div class="flex profile">
                 <div class="img-container">
                   <img
                     src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbiUyMGhhdCUyMGdsYXNzZXN8ZW58MHx8MHx8fDA%3D"
@@ -150,15 +153,15 @@
                   />
                 </div>
                 <div class="flex-col">
-                  <h4>Lisa Alvin</h4>
-                  <p>Cofounder, Jea</p>
+                  <h4>Peter Scott</h4>
+                  <p>Founder, Jea</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="flex-col">
             <h3>HOSTED BY</h3>
-            <div class="flex">
+            <div class="flex profile">
               <div class="img-container">
                 <img
                   src="https://images.unsplash.com/photo-1600442715817-4d9c8b6c729f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFuJTIwc3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D"
@@ -166,8 +169,8 @@
                 />
               </div>
               <div class="flex-col">
-                <h4>Lisa Alvin</h4>
-                <p>Cofounder, Jea</p>
+                <h4>Josh Jacob</h4>
+                <p>Educator, Web</p>
               </div>
             </div>
           </div>
