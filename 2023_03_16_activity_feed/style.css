@@ -1,0 +1,111 @@
+:root {
+  --off-white: #f6f8fc;
+  --blue: #6390e8;
+  --dark-blue: #211f32;
+  --gray: #edf3fc;
+  --dark-gray: #858585;
+  --transparent-gray: #3d3d4288;
+  --transparent-white: #ffffffde;
+  --transparent: transparent;
+  --black: #22252f;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 100svw;
+}
+
+.container {
+  width: 98%;
+  max-width: 800px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+span {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 1rem;
+  width: fit-content;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%;
+  background-color: var(--white);
+  padding: 20px;
+  box-shadow: 0 5px 30px -10px var(--transparent-gray);
+  display: none;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+}
+
+.tooltip p:last-of-type {
+  color: var(--dark-gray);
+}
+
+.tooltip button {
+  align-self: center;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  background-color: var(--gray);
+  color: var(--black);
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+}
+
+.notification {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img-container {
+  min-width: 70px;
+  max-width: 90px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+span:hover .tooltip,
+.tooltip:hover {
+  display: flex;
+}
