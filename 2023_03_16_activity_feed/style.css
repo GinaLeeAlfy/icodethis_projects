@@ -56,18 +56,34 @@ span {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .tooltip {
   position: absolute;
   top: 100%;
   background-color: var(--white);
+  color: var(--black);
   padding: 20px;
   box-shadow: 0 5px 30px -10px var(--transparent-gray);
   display: none;
   flex-direction: column;
   align-items: start;
   gap: 15px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 125%;
+  height: 115%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .tooltip p:last-of-type {
@@ -83,6 +99,11 @@ span {
   font-weight: bold;
   font-size: 16px;
   border: none;
+}
+
+.tooltip button:hover {
+  background-color: var(--blue);
+  color: var(--white);
 }
 
 .notification {
@@ -106,6 +127,17 @@ img {
 }
 
 span:hover .tooltip,
-.tooltip:hover {
+.tooltip:hover,
+.visible {
   display: flex;
+}
+
+@media (min-width: 800px) {
+  body,
+  button {
+    font-size: 18px;
+  }
+  .center {
+    justify-content: center;
+  }
 }
