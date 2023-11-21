@@ -45,7 +45,6 @@ body {
   gap: 30px;
   border-radius: 10px;
   background-color: var(--off-black);
-  box-shadow: 0 10px 40px -20px;
   padding: 20px;
 }
 
