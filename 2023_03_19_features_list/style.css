@@ -35,7 +35,7 @@ body {
 .container {
   position: relative;
   width: 98%;
-  max-width: 800px;
+  max-width: 1038px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -52,11 +52,16 @@ footer {
   padding: 20px;
 }
 
+header {
+  grid-area: header;
+}
+
 section {
   padding-top: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  grid-area: section;
 }
 
 article {
@@ -74,6 +79,7 @@ footer {
   border-radius: 15px;
   margin-bottom: 20px;
   text-align: center;
+  grid-area: footer;
 }
 
 a {
@@ -99,4 +105,39 @@ button {
 button:hover {
   background-color: var(--black);
   color: var(--white);
+}
+
+@media (min-width: 800px) {
+  body,
+  button {
+    font-size: 18px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header section"
+      "footer footer";
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 50px;
+  }
+
+  footer {
+    padding: 50px;
+  }
+
+  header {
+    align-self: flex-start;
+    padding-top: 50px;
+  }
+
+  .center {
+    justify-content: center;
+  }
 }
