@@ -1,0 +1,138 @@
+:root {
+  --off-white: #fefcfb;
+  --purple: #b4b3fb;
+  --light-purple: #fafafe;
+  --orange: #ffc585;
+  --light-orange: #fff6ee;
+  --pink: #ffb5bf;
+  --light-pink: #ffeff2;
+  --transparent-white: #ffffffde;
+  --transparent: transparent;
+  --black: #22252f;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 100svw;
+}
+
+.container {
+  width: 98%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 30px;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 40px -25px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 5px solid var(--purple);
+  cursor: pointer;
+  background-color: var(--light-purple);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+article:first-of-type {
+  border-color: var(--orange);
+  background-color: var(--light-orange);
+}
+
+article:last-of-type {
+  border-color: var(--pink);
+  background-color: var(--light-pink);
+}
+
+.question {
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+  gap: 20px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+  padding: 10px 0;
+}
+
+.answer {
+  display: none;
+}
+
+h2 {
+  font-weight: 400;
+  pointer-events: none;
+}
+
+.question button {
+  background-color: var(--transparent);
+  color: var(--black);
+  font-size: 32px;
+  border: none;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+
+.open .question button {
+  font-size: 24px;
+}
+
+.open .answer {
+  display: flex;
+}
+
+@media (min-width: 800px) {
+  body {
+    font-size: 18px;
+  }
+
+  .question button {
+    font-size: 32px;
+  }
+
+  .center {
+    justify-content: center;
+  }
+  .container {
+    padding: 50px;
+  }
+}
