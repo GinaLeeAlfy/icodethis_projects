@@ -42,6 +42,8 @@ body {
   gap: 30px;
   border-radius: 10px;
   background-color: var(--white);
+  box-shadow: 0 10px 40px -20px;
+
   padding: 20px;
 }
 
@@ -69,7 +71,7 @@ button {
 }
 
 button:hover {
-  scale: (calc(1.05));
+  scale: (calc(1.1));
   box-shadow: 0 10px 40px -20px;
   z-index: 1;
 }
@@ -91,4 +93,36 @@ span {
   top: 35%;
   left: 15px;
   color: var(--dark-gray);
+}
+
+@media (min-width: 700px) {
+  body,
+  button,
+  input {
+    font-size: 18px;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .container {
+    padding: 85px;
+    gap: 50px;
+  }
+
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  button {
+    padding: 3rem;
+  }
+  .search-container {
+    width: 65%;
+  }
+  input[type="text"] {
+    width: 100%;
+
+    padding-left: 3rem;
+  }
 }
