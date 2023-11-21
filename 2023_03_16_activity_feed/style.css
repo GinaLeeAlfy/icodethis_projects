@@ -128,7 +128,7 @@ img {
 
 span:hover .tooltip,
 .tooltip:hover,
-.visible {
+.visible .tooltip {
   display: flex;
 }
 
