@@ -48,11 +48,17 @@ body {
 section {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+section > * {
+  flex: 1 auto;
 }
 
 footer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 textarea {
@@ -60,7 +66,8 @@ textarea {
   background-color: var(--transparent);
   border: none;
   border-bottom: 1px solid var(--dark-blue);
-  width: 100%;
+  /* width: 100%; */
+  min-width: 130px;
   color: var(--gray);
   font-size: 16px;
   padding: 1rem;
@@ -71,7 +78,7 @@ textarea::placeholder {
 }
 
 .img-container {
-  width: 100px;
+  max-width: 100px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
@@ -79,6 +86,7 @@ textarea::placeholder {
   justify-content: center;
   align-items: center;
   border: 10px solid var(--dark-blue);
+  margin: auto;
 }
 
 img {
