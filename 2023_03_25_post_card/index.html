@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post Card</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="center">
@@ -16,8 +20,6 @@
               alt="man in gray shirt and hat"
             />
           </div>
-        </section>
-        <section>
           <textarea
             name="post"
             id="post"
@@ -26,15 +28,15 @@
             placeholder="What's happening?"
             maxlength="155"
           ></textarea>
-          <footer>
-            <div class="options">
-              <button>img</button>
-              <button>video</button>
-              <button>smile</button>
-            </div>
-            <button>Post</button>
-          </footer>
         </section>
+        <footer>
+          <div class="options">
+            <button><i class="fa-regular fa-image fa-lg"></i></button>
+            <button><i class="fa-solid fa-video fa-lg"></i></button>
+            <button><i class="fa-regular fa-face-smile fa-lg"></i></button>
+          </div>
+          <input type="submit" value="Post" />
+        </footer>
       </div>
     </div>
   </body>
