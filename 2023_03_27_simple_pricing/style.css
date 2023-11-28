@@ -96,7 +96,6 @@ button {
 button:hover {
   background-color: var(--blue);
   color: var(--white);
-  scale: calc(1.05);
 }
 
 .card:first-of-type button {
