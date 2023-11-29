@@ -5,7 +5,8 @@
   --purple: #574280;
   --light-purple: #634e89;
   --gray: #a3a7c8;
-  --transparent-white: #ffffff32;
+  --transparent-gray: #ffffff32;
+  --transparent-white: #ffffff76;
   --transparent: transparent;
   --black: #22252f;
   --white: #ffffff;
@@ -72,19 +73,19 @@ section div {
 }
 
 .border-bottom {
-  border-bottom: 1px solid var(--transparent-white);
+  border-bottom: 1px solid var(--transparent-gray);
 }
 
 .border-top {
-  border-top: 1px solid var(--transparent-white);
+  border-top: 1px solid var(--transparent-gray);
 }
 
 .border-right {
-  border-right: 1px solid var(--transparent-white);
+  border-right: 1px solid var(--transparent-gray);
 }
 
 .border-left {
-  border-left: 1px solid var(--transparent-white);
+  border-left: 1px solid var(--transparent-gray);
 }
 
 section div p:first-of-type {
@@ -93,7 +94,8 @@ section div p:first-of-type {
 }
 
 section div p:last-of-type {
-  font-size: 12px;
+  font-size: 11px;
+  color: var(--transparent-white);
 }
 
 button {
@@ -115,4 +117,31 @@ button {
   right: 20px;
   background-color: var(--blue);
   z-index: -1;
+}
+
+@media (min-width: 600px) {
+  body,
+  button {
+    font-size: 18px;
+  }
+  .center {
+    justify-content: center;
+  }
+
+  .container {
+    padding: 75px;
+    flex-wrap: nowrap;
+  }
+
+  section div {
+    padding: 20px;
+  }
+
+  section div p:first-of-type {
+    font-size: 40px;
+  }
+
+  button {
+    padding: 1rem 2rem;
+  }
 }
