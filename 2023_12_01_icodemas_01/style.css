@@ -1,9 +1,4 @@
 :root {
-  --gray: #878792;
-  --light-gray: #f6f5f8;
-  --transparent: transparent;
-  --black: #22252f;
-  --white: #ffffff;
   --green: #1a300d;
   --off-white: #f9fbfc;
 }
@@ -75,11 +70,16 @@ h2 {
     font-size: 18px;
   }
 
+  h1 {
+    font-size: 56px;
+  }
+
   h2 {
     font-size: 48px;
   }
 
-  h1 {
-    font-size: 56px;
+  .flex-col {
+    aspect-ratio: 3/4;
+    justify-content: center;
   }
 }
