@@ -62,6 +62,7 @@ section {
 section:first-of-type .img-container {
   width: 24%;
   padding: 50px;
+  cursor: pointer;
 }
 
 section:last-of-type .img-container {
@@ -106,11 +107,46 @@ button {
   padding: 0.5rem 1rem;
   border: 2px solid var(--blue);
   font-size: 16px;
+  cursor: pointer;
 }
 
 button:hover {
   color: var(--blue);
   background-color: var(--white);
+}
+
+.selected {
+  border: inset var(--blue);
+}
+
+.star-percentage {
+  unicode-bidi: bidi-override;
+  color: var(--black);
+  font-size: 36px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.stars-filled {
+  color: var(--yellow);
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  /* Allows us to grab the width of the span elements */
+  span {
+    display: inline-block;
+  }
+}
+.stars-empty {
+  padding: 0;
+  display: block;
+  z-index: 0;
 }
 
 @media (min-width: 650px) {
