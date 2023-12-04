@@ -75,11 +75,6 @@ section:last-of-type .img-container {
   left: 0;
   padding: 5px;
   color: var(--white);
-  background-color: var(--pink);
-}
-
-.img-container:first-of-type p {
-  background-color: var(--blue);
 }
 
 img {
@@ -95,9 +90,22 @@ section:first-of-type img {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 15px;
+  gap: 10px;
   flex-basis: 50%;
   text-align: left;
+}
+
+.price {
+  display: flex;
+  gap: 10px;
+}
+
+.sale h2:first-child {
+  text-decoration: line-through;
+}
+
+.sale h2:last-child {
+  color: var(--pink);
 }
 
 button {
@@ -121,7 +129,7 @@ button:hover {
 
 .star-percentage {
   unicode-bidi: bidi-override;
-  color: var(--black);
+  color: var(--yellow);
   font-size: 36px;
   position: relative;
   margin: 0;
@@ -129,7 +137,6 @@ button:hover {
 }
 
 .stars-filled {
-  color: var(--yellow);
   padding: 0;
   position: absolute;
   z-index: 1;
