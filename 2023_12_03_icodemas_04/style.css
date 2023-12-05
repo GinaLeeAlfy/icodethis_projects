@@ -58,8 +58,7 @@ button {
   color: var(--off-white);
   padding: 1rem 2rem;
   border: 2px solid var(--red);
-  border-radius: 25px;
-
+  border-radius: 50px;
   margin-top: 10px;
 }
 
