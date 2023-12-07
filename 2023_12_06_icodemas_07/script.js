@@ -1,4 +1,8 @@
 const productsContainer = document.querySelector(".product-container");
+const filtersButton = document.querySelector(".filter button");
+const filterSection = document.querySelector(".filter");
+const applyButton = document.querySelector("#submit");
+const clearButton = document.querySelector("#reset");
 
 const data = [
   {
@@ -194,3 +198,30 @@ function hasNumber(myString) {
 data.forEach((value) => {
   createProducts(value);
 });
+
+let widthMatch = window.matchMedia("(max-width: 801px)");
+
+//add or remove on screen change
+widthMatch.addEventListener("change", function (mm) {
+  if (mm.matches) {
+    console.log("add");
+    filtersButton.addEventListener("click", addFullScreen);
+  } else {
+    console.log("too big");
+    filtersButton.removeEventListener("click", addFullScreen);
+  }
+});
+
+//add if screen is small
+if (widthMatch.matches) {
+  filtersButton.addEventListener("click", addFullScreen);
+}
+
+applyButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  filterSection.classList.remove("full-screen");
+});
+
+function addFullScreen() {
+  filterSection.classList.add("full-screen");
+}
