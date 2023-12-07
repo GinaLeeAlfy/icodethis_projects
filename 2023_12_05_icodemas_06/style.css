@@ -1,7 +1,7 @@
 :root {
   --blue: #197592;
   --light-blue: #d0e7fc;
-  --pink: #fcd6cf;
+  --pink: #e45952;
   --black: #14181d;
   --transparent: transparent;
   --white: #ffffff;
@@ -39,6 +39,7 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .product {
@@ -66,7 +67,6 @@ body {
   left: 0;
   padding: 5px;
   color: var(--white);
-  background-color: var(--blue);
 }
 
 .img-container button {
@@ -109,10 +109,21 @@ img {
   gap: 10px;
 }
 
-.sale h2:first-child {
+.sale h3:first-child {
+  color: var(--pink);
+}
+
+.sale h3:last-child {
   text-decoration: line-through;
 }
 
-.sale h2:last-child {
-  color: var(--pink);
+i {
+  margin-left: 5px;
+}
+
+@media (min-width: 800px) {
+  body,
+  button {
+    font-size: 18px;
+  }
 }
