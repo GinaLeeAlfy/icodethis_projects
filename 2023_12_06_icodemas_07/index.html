@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iCodemas 7</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="container">
+        <section class="filter">
+          <button>Filters</button>
+          <form action="">
+            <fieldset>
+              <legend>Category</legend>
+              <div class="flex">
+                <input type="checkbox" name="category" id="accessories" />
+                <label for="accessories">Accessories</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="category" id="candies" />
+                <label for="candies">Candies</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="category" id="cookies" />
+                <label for="cookies">Cookies</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="category" id="ornaments" />
+                <label for="ornaments">Ornaments</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Colors</legend>
+              <div class="flex">
+                <input type="checkbox" name="colors" id="brown" />
+                <label for="brown">Brown</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="colors" id="green" />
+                <label for="green">Green</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="colors" id="red" />
+                <label for="red">Red</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="colors" id="white" />
+                <label for="white">White</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Size</legend>
+              <div class="flex">
+                <input type="checkbox" name="size" id="small" />
+                <label for="small">Small</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="size" id="medium" />
+                <label for="medium">Medium</label>
+              </div>
+              <div class="flex">
+                <input type="checkbox" name="size" id="large" />
+                <label for="large">Large</label>
+              </div>
+            </fieldset>
+            <div class="flex between">
+              <input type="reset" name="reset" id="reset" value="Clear" />
+              <input type="submit" name="submit" id="submit" value="Apply" />
+            </div>
+          </form>
+        </section>
+        <section class="product-container"></section>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
