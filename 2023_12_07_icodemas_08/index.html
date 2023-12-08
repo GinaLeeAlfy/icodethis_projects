@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iCodemas 8</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="container">
+        <header>
+          <div class="flex-wrap">
+            <button class="home-btn">iCodemas</button>
+            <div class="search-container">
+              <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+          <nav>
+            <button>Featured</button>
+            <button>Shop</button>
+            <button>FAQ</button>
+            <button>
+              <i class="fa-solid fa-bag-shopping fa-lg"></i>
+              <span>2</span>
+            </button>
+          </nav>
+        </header>
+        <section class="cart">
+          <h5>Your cart</h5>
+          <div class="items-container">
+            <div class="item">
+              <div class="img-container">
+                <img
+                  src="https://icodethis.com/images/iCodeMas/gingerbread_cookie.png"
+                  alt="Gingerbread Man Cookie"
+                />
+              </div>
+              <div class="item-info">
+                <h4>Gingerbread Man Cookie</h4>
+                <p>$12.99</p>
+                <div class="counter">
+                  <button><i class="fa-solid fa-minus"></i></button>
+                  <input
+                    type="number"
+                    name="item-count"
+                    id="item1"
+                    value="2"
+                    step="1"
+                    min="0"
+                    max="99"
+                  />
+                  <button><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img-container">
+                <img
+                  src="https://icodethis.com/images/iCodeMas/tree.png"
+                  alt="Christmas Tree Decoration"
+                />
+              </div>
+              <div class="item-info">
+                <h4>Christmas Tree Decoration</h4>
+                <p>$19.99</p>
+                <div class="counter">
+                  <button><i class="fa-solid fa-minus"></i></button>
+                  <input
+                    type="number"
+                    name="item-count"
+                    id="item2"
+                    value="1"
+                    step="1"
+                    min="0"
+                    max="99"
+                  />
+                  <button><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <div class="total-container">
+              <h2>Subtotal</h2>
+              <h2>$45.97</h2>
+            </div>
+            <button>
+              Proceed to checkout <i class="fa-solid fa-arrow-right fa-lg"></i>
+            </button>
+          </footer>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
