@@ -5,6 +5,7 @@
   --off-white: #f0f3fb;
   --black: #131625;
   --green: #03c536;
+  --transparent: transparent;
 }
 
 * {
@@ -45,10 +46,16 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
   background-color: var(--white);
-  box-shadow: 0 5px 30px -15px;
+  box-shadow: 0 10px 30px -15px;
   padding: 1rem;
+}
+
+.notification:nth-of-type(3),
+.notification:nth-of-type(4) {
+  border-radius: 50px;
 }
 
 .notification:nth-of-type(even) {
@@ -56,19 +63,50 @@ body {
   color: var(--white);
 }
 
+.notification:nth-of-type(5) .flex,
+.notification:nth-of-type(6) .flex {
+  justify-content: center;
+}
+
 .notification span {
   background-color: var(--green);
   color: var(--white);
   border-radius: 50%;
   aspect-ratio: 1/1;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 
-.notification:nth-last-of-type(odd) span {
+.notification:nth-of-type(even) span {
   background-color: var(--white);
   color: var(--green);
 }
 
 .flex {
   display: flex;
+  align-items: center;
   gap: 10px;
+  width: 100%;
+}
+
+.notification button {
+  background-color: var(--transparent);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.notification:nth-of-type(even) button {
+  color: var(--white);
 }
