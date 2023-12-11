@@ -35,12 +35,19 @@
               value="25"
               step="1"
               min="1"
+              onchange="unselect(value)"
             />
             <button><i class="fa-solid fa-plus"></i></button>
           </div>
           <fieldset>
             <div class="radio-button">
-              <input type="radio" name="amount" id="twenty-five" value="25" />
+              <input
+                type="radio"
+                name="amount"
+                id="twenty-five"
+                value="25"
+                checked
+              />
               <label for="twenty-five">$25</label>
             </div>
             <div class="radio-button">
@@ -76,5 +83,6 @@
         </form>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

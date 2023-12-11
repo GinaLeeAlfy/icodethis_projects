@@ -93,6 +93,10 @@ input[type="number"] {
   border-color: var(--dark-blue);
 }
 
+.counter button:disabled {
+  cursor: not-allowed;
+}
+
 fieldset {
   display: flex;
   gap: 10px;
