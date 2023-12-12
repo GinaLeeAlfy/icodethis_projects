@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e7d2ae1e33.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="container">
+        <header>
+          <div class="flex">
+            <h1>Where do you want to play?</h1>
+            <button><i class="fa-solid fa-x fa-2xl"></i></button>
+          </div>
+          <div class="flex">
+            <div class="flex align">
+              <input type="radio" name="location" id="bergen" />
+              <label for="bergen">Bergen</label>
+            </div>
+            <div class="flex align">
+              <input type="radio" name="location" id="oslo" />
+              <label for="oslo">Oslo</label>
+            </div>
+          </div>
+        </header>
+        <form>
+          <h2>Choose the party size</h2>
+          <div class="flex stretch">
+            <div class="radio-button">
+              <input type="radio" name="people" id="two" value="2" />
+              <label for="two"
+                ><span><i class="fa-solid fa-user-group fa-xl"></i></span> 2
+                people</label
+              >
+            </div>
+            <div class="radio-button">
+              <input type="radio" name="people" id="four" value="4" />
+              <label for="four"
+                ><span><i class="fa-solid fa-user-group fa-xl"></i></span
+                ><span><i class="fa-solid fa-user-group fa-xl"></i></span>
+                <span>4 people</span></label
+              >
+            </div>
+            <div class="radio-button">
+              <input type="radio" name="people" id="six" value="6" />
+              <label for="six"
+                ><span><i class="fa-solid fa-people-group fa-xl"></i></span
+                ><span><i class="fa-solid fa-people-group fa-xl"></i></span> 6
+                people</label
+              >
+            </div>
+          </div>
+          <button type="submit">
+            Continue
+            <span><i class="fa-solid fa-arrow-right-long fa-2xl"></i></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
