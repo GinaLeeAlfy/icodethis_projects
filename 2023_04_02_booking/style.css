@@ -96,6 +96,7 @@ header input[type="radio"] {
   width: 2rem;
   height: 2rem;
   accent-color: var(--white);
+  cursor: pointer;
 }
 label {
   cursor: pointer;
@@ -129,7 +130,11 @@ label {
   min-height: 98px;
 }
 
-form input[type="radio"]:checked + label {
+.radio-button input[type="radio"]:hover + label {
+  border-color: var(--pink);
+}
+
+.radio-button input[type="radio"]:checked + label {
   background-color: var(--dark-blue);
   color: var(--white);
   border-color: var(--dark-blue);
