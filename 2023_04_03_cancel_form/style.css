@@ -1,0 +1,147 @@
+:root {
+  --dark-gray: #5b6978;
+  --white: #ffffff;
+  --black: #10121a;
+  --purple: #a078f2;
+  --tan: #fcf6ed;
+  --gray: #f4f8f9;
+  --orange: #eb7f00;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--tan);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--dark-gray);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 98svw;
+}
+
+.container {
+  position: relative;
+  width: 99%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 5px;
+  gap: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--purple);
+}
+
+form {
+  background-color: var(--white);
+  box-shadow: 0 0 30px -15px var(--orange);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  border-radius: 10px;
+}
+
+fieldset {
+  border: none;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.radio-button {
+  position: relative;
+}
+
+input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-button label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+  width: 33px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 2px solid var(--gray);
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+input[type="radio"]:hover + label {
+  border-color: var(--orange);
+}
+
+textarea {
+  margin-top: 10px;
+  padding: 10px;
+  resize: 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--white);
+  border: 2px solid var(--white);
+  padding: 0.5rem 1rem;
+  align-self: center;
+  color: var(--orange);
+  border-radius: 10px;
+}
+
+input[type="submit"]:hover {
+  border-color: var(--orange);
+  color: var(--purple);
+}
+
+@media (min-width: 615px) {
+  body,
+  input[type="submit"] {
+    font-size: 18px;
+  }
+  .center {
+    justify-content: center;
+  }
+  form {
+    padding: 30px;
+  }
+
+  .radio-button label {
+    width: 40px;
+  }
+}
