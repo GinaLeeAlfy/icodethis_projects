@@ -4,6 +4,8 @@ const sendButton = document.querySelector("#submit");
 const section = document.querySelector("section");
 const container = document.querySelector(".container");
 const footer = document.querySelector("footer");
+const receivedMessage = document.querySelector(".received");
+const santaSentInfo = document.querySelector(".received .sent-info");
 
 openChatButton.addEventListener("click", () => {
   container.classList.toggle("visible-grid");
@@ -69,6 +71,17 @@ sendButton.addEventListener("click", (event) => {
     section.append(newMessage);
     newMessage.scrollIntoView();
     textChat.value = "";
+
+    newMessage.addEventListener("click", () => {
+      sentInfo.classList.toggle("visible");
+    });
+
+    const allSentInfo = document.querySelectorAll(".sent-info");
+    for (let index = 1; index < allSentInfo.length; index++) {
+      const element = allSentInfo[index];
+      element.classList.remove("visible");
+    }
+    sentInfo.classList.add("visible");
   } else {
     return;
   }
@@ -76,4 +89,8 @@ sendButton.addEventListener("click", (event) => {
 
 footer.addEventListener("click", () => {
   textChat.focus();
+});
+
+receivedMessage.addEventListener("click", () => {
+  santaSentInfo.classList.toggle("visible");
 });
