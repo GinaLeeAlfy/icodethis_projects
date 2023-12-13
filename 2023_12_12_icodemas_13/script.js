@@ -3,6 +3,7 @@ const textChat = document.querySelector("#chat-text");
 const sendButton = document.querySelector("#submit");
 const section = document.querySelector("section");
 const container = document.querySelector(".container");
+const footer = document.querySelector("footer");
 
 openChatButton.addEventListener("click", () => {
   container.classList.toggle("visible-grid");
@@ -71,4 +72,8 @@ sendButton.addEventListener("click", (event) => {
   } else {
     return;
   }
+});
+
+footer.addEventListener("click", () => {
+  textChat.focus();
 });
