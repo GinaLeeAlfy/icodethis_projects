@@ -6,6 +6,7 @@
   --tan: #fcf6ed;
   --gray: #f4f8f9;
   --orange: #eb7f00;
+  --transparent-gray: #dedede75;
 }
 
 * {
@@ -27,13 +28,12 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100svh;
-  width: 98svw;
+  width: 100svw;
 }
 
 .container {
   position: relative;
-  width: 99%;
-  max-width: 1500px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -41,18 +41,30 @@ body {
   margin-top: 5px;
   border-radius: 10px;
   gap: 20px;
+  margin-top: auto;
 }
 
 footer {
   position: relative;
   width: 100%;
-  background: url("https://icodethis.com/images/iCodeMas/footer_bg.png");
+  background: url("https://icodethis.com/images/iCodeMas/footer_bg.png")
+    no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 20px 5px;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+}
+
+.footer-container {
+  display: flex;
   flex-wrap: wrap;
-  /* padding-left: 50px; */
-  /* overflow: hidden; */
+  gap: 10px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .decor {
@@ -60,6 +72,8 @@ footer {
   right: 0;
   top: auto;
   bottom: -5px;
+  z-index: 1;
+  width: min(15rem, 35%);
 }
 
 img {
@@ -69,10 +83,19 @@ img {
 .flex-col {
   display: flex;
   flex-direction: column;
-  /* width: 20%; */
-  /* min-width: 150px; */
-  margin: auto;
-  z-index: 1;
+  gap: 20px;
+  z-index: 2;
+  max-width: 150px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  cursor: pointer;
 }
 
 a {
@@ -80,7 +103,45 @@ a {
   text-decoration: none;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+a:hover {
+  text-decoration: underline;
+}
+
+small {
+  margin: 40px 0;
+}
+
+@media (min-width: 350px) {
+  footer {
+    padding: 20px;
+  }
+
+  .decor {
+    width: min(15rem, 50%);
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  footer {
+    padding: 100px;
+    /* justify-content: space-between; */
+  }
+
+  .decor {
+    width: min(15rem, 50%);
+  }
+
+  .flex-col {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 900px) {
+  .footer-container {
+    justify-content: space-between;
+  }
 }
