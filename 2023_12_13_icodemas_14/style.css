@@ -1,12 +1,7 @@
 :root {
-  --dark-gray: #5b6978;
   --white: #ffffff;
   --black: #10121a;
-  --purple: #a078f2;
-  --tan: #fcf6ed;
   --gray: #f4f8f9;
-  --orange: #eb7f00;
-  --transparent-gray: #dedede75;
 }
 
 * {
