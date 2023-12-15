@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Settings</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <form action="">
+        <fieldset>
+          <h2>Get email updates when:</h2>
+          <div class="flex">
+            <input type="checkbox" name="updates" id="owner" value="owner" />
+            <label for="owner">You're the owner</label>
+          </div>
+          <div class="flex">
+            <input
+              type="checkbox"
+              name="updates"
+              id="assignee"
+              value="assignee"
+            />
+            <label for="assignee">You're the assignee</label>
+          </div>
+          <div class="flex">
+            <input
+              type="checkbox"
+              name="updates"
+              id="reporter"
+              value="reporter"
+            />
+            <label for="reporter">You're the reporter</label>
+          </div>
+          <div class="flex">
+            <input
+              type="checkbox"
+              name="updates"
+              id="mentions"
+              value="mentions"
+            />
+            <label for="mentions">Someone mentions you</label>
+          </div>
+          <div class="flex">
+            <input
+              type="checkbox"
+              name="updates"
+              id="assigning"
+              value="assigning"
+            />
+            <label for="assigning">Someone is assigning you</label>
+          </div>
+        </fieldset>
+
+        <p>
+          You may also receive other email notifications your admin configured.
+          <a href="">Learn more</a>
+        </p>
+
+        <fieldset>
+          <h2>Email format</h2>
+          <div class="flex">
+            <input type="radio" name="format" id="HTML" value="HTML" />
+            <label for="HTML">HTML</label>
+          </div>
+          <div class="flex">
+            <input type="radio" name="format" id="text" value="text" />
+            <label for="text">Text</label>
+          </div>
+        </fieldset>
+        <input type="submit" name="submit" id="submit" value="Save" />
+      </form>
+    </div>
+  </body>
+</html>
