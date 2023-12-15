@@ -46,19 +46,18 @@ body {
 footer {
   position: relative;
   width: 100%;
-  background: url("https://icodethis.com/images/iCodeMas/footer_bg.png")
-    no-repeat;
+  background: url("https://icodethis.com/images/iCodeMas/footer_bg.png");
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-left: 50px;
+  /* padding-left: 50px; */
   /* overflow: hidden; */
 }
 
 .decor {
   position: absolute;
-  right: auto;
+  right: 0;
   top: auto;
   bottom: -5px;
 }
@@ -70,8 +69,10 @@ img {
 .flex-col {
   display: flex;
   flex-direction: column;
-  width: 20%;
-  min-width: 150px;
+  /* width: 20%; */
+  /* min-width: 150px; */
+  margin: auto;
+  z-index: 1;
 }
 
 a {
