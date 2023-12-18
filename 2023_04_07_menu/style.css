@@ -2,8 +2,8 @@
   --white: #ffffff;
   --off-white: #d4f9f4;
   --black: #0f1034;
-  --gray: #f8f9ff;
-  --dark-gray: #eff1fe;
+  --gray: #f5f5f5;
+  --dark-gray: #dfdfe2;
   --purple: #6658ff;
   --transparent: transparent;
 }
@@ -87,6 +87,11 @@ button:hover {
   background-color: var(--white);
   padding: 10px;
   z-index: 2;
+}
+
+.button:last-of-type .link-container {
+  left: auto;
+  right: 0;
 }
 
 .active .link-container {
