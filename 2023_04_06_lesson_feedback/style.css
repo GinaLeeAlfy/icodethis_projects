@@ -1,0 +1,152 @@
+:root {
+  --white: #ffffff;
+  --off-white: #ecebf2;
+  --black: #191929;
+  --gray: #fafafe;
+  --dark-gray: #c3c3c3;
+  --purple: #6658ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+  width: 100svw;
+}
+
+form {
+  position: relative;
+  width: 100%;
+  max-width: 675px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 5px;
+  background-color: var(--white);
+  box-shadow: 0 0 50px -40px;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 30px 5px;
+  text-align: center;
+}
+
+fieldset,
+.flex {
+  width: 100%;
+  max-width: 675px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  border: none;
+  padding: 0;
+}
+.flex {
+  max-width: 575px;
+}
+
+.radio-button {
+  position: relative;
+}
+
+input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+label {
+  background-color: var(--purple);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 100%;
+  border: 2px solid var(--purple);
+  cursor: pointer;
+  box-shadow: 0 0 50px -20px var(--purple);
+}
+
+input[type="radio"]:hover + label {
+  border-color: var(--black);
+  scale: calc(1.05);
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--white);
+  color: var(--purple);
+}
+
+span {
+  margin: auto;
+}
+
+a {
+  color: var(--black);
+}
+
+a:hover {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--gray);
+  border: 1px solid var(--dark-gray);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 1rem;
+  text-align: left;
+  width: 49%;
+  cursor: pointer;
+}
+
+button p {
+  margin-top: auto;
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button:hover {
+  border-color: var(--purple);
+}
+
+button:hover p:not(i) {
+  text-decoration: underline;
+}
+
+@media (min-width: 500px) {
+  body,
+  button {
+    font-size: 18px;
+  }
+  form {
+    padding: 75px 5px;
+  }
+}
