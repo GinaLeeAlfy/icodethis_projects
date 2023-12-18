@@ -37,20 +37,21 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   margin-top: 20px;
   background-color: var(--gray);
   border: 10px solid var(--white);
   box-shadow: 0 0 50px -30px;
   border-radius: 5px;
-  padding: 10px;
   text-align: left;
 }
 
 .flex {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .button {
@@ -115,4 +116,23 @@ a:hover {
 .flex:last-of-type button:last-of-type {
   background-color: var(--black);
   color: var(--white);
+}
+
+.flex:last-of-type button:last-of-type:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+@media (min-width: 665px) {
+  body,
+  button {
+    font-size: 18px;
+  }
+  nav {
+    padding: 20px;
+  }
+
+  .flex {
+    flex-grow: initial;
+  }
 }
