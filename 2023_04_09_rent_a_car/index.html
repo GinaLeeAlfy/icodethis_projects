@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent A Car</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <form action="">
+        <div class="decor-top"></div>
+        <div class="decor-bottom"></div>
+        <h1>Search for a rental car</h1>
+        <fieldset>
+          <label for="location">Pick up location</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="City, airport, region, district..."
+          />
+          <div class="flex">
+            <input
+              type="checkbox"
+              name="elsewhere"
+              id="elsewhere"
+              value="elsewhere"
+            />
+            <label for="elsewhere">Deliver the car somewhere else</label>
+          </div>
+        </fieldset>
+        <div class="flex">
+          <fieldset>
+            <label for="pickup-date">Date of pickup</label>
+            <input type="date" name="pickup-date" id="pickup-date" />
+            <input
+              type="time"
+              name="pickup-time"
+              id="pickup-time"
+              min="08:00"
+              max="22:00"
+              step="1800"
+              value="10:00"
+            />
+          </fieldset>
+          <fieldset>
+            <label for="delivery-date">Date of delivery</label>
+            <input type="date" name="delivery-date" id="delivery-date" />
+            <input
+              type="time"
+              name="delivery-time"
+              id="delivery-time"
+              min="08:00"
+              max="22:00"
+              step="1800"
+              value="10:00"
+            />
+          </fieldset>
+        </div>
+        <div class="flex">
+          <input type="checkbox" name="age" id="age" value="age" />
+          <label for="age"
+            >The driver's age is between 30 and 65?
+            <span>&#8505;</span>
+          </label>
+        </div>
+        <ul>
+          <li><span>&#10004;</span>No credit card fees</li>
+          <li><span>&#10004;</span>No change fees</li>
+          <li><span>&#10004;</span>Price match guarantee</li>
+        </ul>
+        <input type="submit" name="submit" id="submit" value="Search" />
+      </form>
+    </div>
+  </body>
+</html>
