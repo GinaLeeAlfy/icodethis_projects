@@ -1,0 +1,154 @@
+:root {
+  --white: #ffffff;
+  --off-white: #f1f0f7;
+  --gray: #dadee1;
+  --black: #171337;
+  --green: #1ec770;
+  --light-purple: #f9edfe;
+  --purple: #9b07e6;
+  --light-blue: #eeeeff;
+  --blue: #a7c4e3;
+  --transparent: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 100svw;
+}
+
+.container {
+  width: 98%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  background-color: var(--white);
+  box-shadow: 0 0 50px -30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 40px 10px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+button {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 1px 10px;
+  cursor: pointer;
+  border: 2px solid var(--blue);
+  align-self: flex-end;
+}
+
+header button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 1.5rem;
+  padding: 1px 11px;
+  background-color: var(--transparent);
+}
+
+button:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+header button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+  border: 3px solid var(--gray);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  border-color: var(--green);
+  border-top: none;
+  border-right: none;
+}
+
+input[type="checkbox"]:checked:before {
+  color: var(--green);
+  content: "\00A0\2713\00A0";
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  left: auto;
+  right: -5px;
+  bottom: 0;
+  font-size: 1.5rem;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+@media (min-width: 350px) {
+  body {
+    font-size: 18px;
+  }
+  /* header button {
+    top: 20px;
+    left: 20px;
+  } */
+}
