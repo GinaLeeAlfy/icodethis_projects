@@ -1,0 +1,156 @@
+:root {
+  --white: #ffffff;
+  --off-white: #edeff7;
+  --light-gray: #837cb3;
+  --gray: #272546;
+  --black: #1a1832;
+  --light-purple: #d7c7f5;
+  --purple: #672cb9;
+  --dark-purple: #6417ae;
+  --yellow: #f0c660;
+  --transparent: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--light-purple);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 100svw;
+}
+
+.container {
+  position: relative;
+  width: 98%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  background-color: var(--black);
+  box-shadow: 0 20px 10px -15px var(--black);
+  border-radius: 5px;
+  text-align: center;
+  padding: 2rem 0.5rem;
+}
+
+button:first-of-type {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--light-gray);
+  cursor: pointer;
+  background-color: var(--transparent);
+  border: 2px solid var(--transparent);
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+button:first-of-type:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--gray);
+  padding: 1rem 1.5rem;
+}
+
+.flex {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.checkbox-button {
+  position: relative;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:hover + label:before {
+  color: var(--dark-purple);
+}
+
+label:before {
+  color: var(--yellow);
+  font-size: 2.5rem;
+  content: "\2606";
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: "\2605";
+}
+
+button:last-of-type {
+  background-image: linear-gradient(
+    -45deg,
+    var(--dark-purple) 50%,
+    var(--purple) 50%
+  );
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:last-of-type:hover {
+  background-image: linear-gradient(-45deg, var(--gray) 50%, var(--purple) 50%);
+  outline: 2px solid var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-gray);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--white);
+}
+
+@media (min-width: 400px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 4rem 0.5rem;
+  }
+
+  button:first-of-type {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  form {
+    padding: 2rem 4rem;
+  }
+}
