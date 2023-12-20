@@ -1,0 +1,134 @@
+:root {
+  --white: #ffffff;
+  --off-white: #f2f5ff;
+  --gray: #bbbbbb;
+  --black: #1a1832;
+  --blue: #61a1ff;
+  --purple: #966ce3;
+  --green: #8ddc3a;
+  --yellow: #f0c660;
+  --transparent: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100svh;
+  width: 100svw;
+}
+
+.container {
+  width: 98%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--white);
+  box-shadow: 0 10px 40px -30px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2rem 0.5rem;
+}
+
+.base {
+  position: relative;
+  top: 0;
+  height: 50%;
+  max-width: 400px;
+  background-image: linear-gradient(120deg, var(--blue), var(--purple));
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 2rem 0.5rem;
+  padding-bottom: 0;
+  border-radius: 10px;
+}
+
+.top {
+  position: relative;
+  background-color: var(--white);
+  color: var(--black);
+  width: 80%;
+  padding: 2rem 0.5rem;
+  box-shadow: 0 10px 40px -30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.img-container {
+  border-radius: 50%;
+  width: 25%;
+  min-width: 80px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.top p {
+  border: 1px solid var(--gray);
+  padding: 3px 6px;
+  border-radius: 25px;
+}
+
+i {
+  color: var(--green);
+  margin-right: 5px;
+}
+
+button {
+  font-size: 1rem;
+  background-image: linear-gradient(to right, var(--blue), var(--purple));
+  border: none;
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-image: linear-gradient(to left, var(--blue), var(--purple));
+  text-decoration: underline;
+}
+
+@media (min-width: 400px) {
+  body {
+    font-size: 18px;
+  }
+
+  .base {
+    padding: 2rem;
+  }
+  .center {
+    justify-content: center;
+  }
+}
