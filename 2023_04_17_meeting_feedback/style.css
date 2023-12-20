@@ -153,4 +153,8 @@ a:hover {
   form {
     padding: 2rem 4rem;
   }
+
+  .center {
+    justify-content: center;
+  }
 }
