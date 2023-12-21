@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <div class="container">
+        <header>
+          <h1>What's happening?</h1>
+          <button>&#10005;</button>
+        </header>
+        <form action="">
+          <p>Check all that apply.</p>
+          <fieldset>
+            <div class="flex">
+              <input type="checkbox" name="problem" id="video" value="video" />
+              <label for="video"
+                >Video Problem
+                <span>Blurry, cuts out, or looks strange in some way.</span>
+              </label>
+            </div>
+            <div class="flex">
+              <input type="checkbox" name="problem" id="sound" value="sound" />
+              <label for="sound"
+                >Sound Problem
+                <span
+                  >Hard to hear, not matched with video, or missing in some
+                  parts.</span
+                >
+              </label>
+            </div>
+            <div class="flex">
+              <input
+                type="checkbox"
+                name="problem"
+                id="subtitles"
+                value="subtitles"
+              />
+              <label for="subtitles"
+                >Subtitles or captions Problem
+                <span
+                  >Missing, hard to read, not matched with sound, misspellings,
+                  or poor translations.</span
+                >
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label for="comment">It's something else</label>
+            <textarea
+              name="comment"
+              id="comment"
+              cols="50"
+              rows="8"
+              placeholder="Let us know what's going on..."
+            ></textarea>
+          </fieldset>
+          <input
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Submit Report"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
