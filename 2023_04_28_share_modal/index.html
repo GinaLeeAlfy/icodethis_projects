@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#606265] flex justify-center items-center min-h-screen">
+    <div
+      class="container bg-white p-8 text-center rounded space-y-8 flex flex-col items-center shadow-xl max-w-2xl text-lg"
+    >
+      <button
+        class="text-gray-400 border border-white aspect-square rounded-[50%] px-3 py-1 hover:border-current text-2xl self-end hover:text-black"
+      >
+        X
+      </button>
+      <h1 class="text-4xl font-semibold">Share this article</h1>
+      <p class="max-w-sm">
+        If you liked this article share it with your friends. They will thank
+        you later.
+      </p>
+      <div class="space-x-4 space-y-1">
+        <button
+          class="bg-[#405896] border-2 hover:border-current text-white px-2 py-1 rounded hover:bg-white hover:text-[#405896]"
+        >
+          Facebook
+        </button>
+        <button
+          class="bg-[#1EA1F1] border-2 border-current text-white px-2 py-1 rounded hover:bg-white hover:text-[#1EA1F1]"
+        >
+          Twitter
+        </button>
+        <button
+          class="bg-black border-2 border-current text-white px-2 py-1 rounded hover:bg-white hover:text-black"
+        >
+          Reddit
+        </button>
+      </div>
+      <p><span class="font-bold">4.5k</span> Shares</p>
+      <a href="" class="text-orange-500 hover:underline font-semibold"
+        >Close this window</a
+      >
+    </div>
+  </body>
+</html>
