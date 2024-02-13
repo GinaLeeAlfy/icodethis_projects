@@ -1,4 +1,4 @@
-# Projects from iCodeThis.com HTML5/CSS/JS.
+# Over 100 Projects from iCodeThis.com HTML5/CSS/JS.
 You can view them all at [iCodeThis](https://www.iCodeThis.com/GinaLeeAlfy).
 
 Here are a few of my favorite ones:
